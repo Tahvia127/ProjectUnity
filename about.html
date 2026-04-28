@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — Project UNITY</title>
+<link rel="icon" type="image/png" href="images/cropped-icon-square-transparent-1-32x32.png">
+<link rel="apple-touch-icon" href="images/cropped-icon-square-transparent-1-192x192.png">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{--teal:#00C9B7;--tm:#0A9B8E;--purp:#7B2D8E;--dk:#1B2A4A;--bk:#1A1A1A;--wh:#FFF;--bg:#F0F4F8;--grad:linear-gradient(135deg,#00C9B7,#5B4DC7,#7B2D8E);--fd:'Bricolage Grotesque',sans-serif;--fb:'Poppins',sans-serif;--mw:1200px;--sp:clamp(60px,8vw,120px)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--bk);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.c{max-width:var(--mw);margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+h1,h2,h3,h4{font-family:var(--fd);line-height:1.15}
+h1{font-weight:800;font-size:clamp(2.2rem,4.5vw,3.4rem);color:var(--dk)}
+h2{font-weight:700;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--dk)}
+h3{font-weight:600;font-size:clamp(1rem,1.8vw,1.3rem);color:var(--purp)}
+p{font-size:clamp(.95rem,1.1vw,1.05rem)}
+.sl{font-family:var(--fb);font-weight:600;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;color:var(--tm);margin-bottom:12px}
+.sh{margin-bottom:40px}
+.sh h2{margin-bottom:10px}
+.sh p{color:rgba(26,26,26,.6);max-width:560px}
+.ctr{text-align:center}
+.ctr p{margin:0 auto}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:50px;font-family:var(--fb);font-weight:600;font-size:.92rem;cursor:pointer;border:none;transition:all .3s ease}
+.bp{background:var(--tm);color:var(--wh);box-shadow:0 4px 16px rgba(10,155,142,.3)}
+.bp:hover{background:var(--teal);transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,201,183,.4)}
+.bo{background:0 0;color:var(--wh);border:2px solid rgba(255,255,255,.4)}
+.bo:hover{background:rgba(255,255,255,.1);border-color:var(--wh);transform:translateY(-2px)}
+.bod{background:0 0;color:var(--dk);border:2px solid var(--dk)}
+.bod:hover{background:var(--dk);color:var(--wh);transform:translateY(-2px)}
+
+/* Animations */
+.fu{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.fu.v{opacity:1;transform:translateY(0)}
+
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(27,42,74,.06)}
+.ni{max-width:var(--mw);margin:0 auto;padding:0 clamp(20px,4vw,40px);display:flex;align-items:center;justify-content:space-between;height:68px}
+.nl{display:flex;align-items:center;gap:10px}
+.nli{width:34px;height:34px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center}
+.nlt{font-family:var(--fd);font-weight:700;font-size:1.05rem;color:var(--dk)}
+.nlt span{color:var(--purp);font-weight:400}
+.nk{display:flex;align-items:center;gap:28px;list-style:none}
+.nk a{font-weight:500;font-size:.87rem;color:var(--dk);transition:color .2s;position:relative}
+.nk a:hover{color:var(--tm)}
+.nk .dd{position:relative;cursor:pointer}
+.nk .dm{position:absolute;top:calc(100% + 10px);left:-16px;background:var(--wh);border-radius:12px;box-shadow:0 12px 48px rgba(27,42,74,.1);padding:10px 0;min-width:210px;opacity:0;visibility:hidden;transform:translateY(6px);transition:all .2s}
+.nk .dd:hover .dm{opacity:1;visibility:visible;transform:translateY(0)}
+.dm a{display:block;padding:9px 18px;font-size:.85rem}
+.dm a:hover{background:var(--bg)}
+.nc{padding:9px 22px;font-size:.83rem;background:var(--tm);color:var(--wh)!important;border-radius:50px;font-weight:600}
+.nc:hover{background:var(--teal)!important}
+.mb{display:none;background:0 0;border:0;cursor:pointer;width:30px;height:30px;flex-direction:column;justify-content:center;align-items:center;gap:5px}
+.mb span{width:22px;height:2px;background:var(--dk);border-radius:2px}
+
+/* Announcement */
+.ann{background:var(--grad);color:var(--wh);text-align:center;padding:14px 20px;font-weight:600;font-size:.95rem;margin-top:68px;display:flex;align-items:center;justify-content:center;gap:8px}
+.ann a{color:var(--wh);text-decoration:underline;text-underline-offset:3px}
+
+/* Hero */
+.hero{background:var(--dk);padding:clamp(80px,12vw,140px) 0 clamp(60px,10vw,100px);position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'';position:absolute;top:-30%;right:-10%;width:70%;height:160%;background:radial-gradient(ellipse,rgba(0,201,183,.1),transparent 55%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-30%;left:-10%;width:50%;height:120%;background:radial-gradient(ellipse,rgba(123,45,142,.07),transparent 55%);pointer-events:none}
+.hc{position:relative;z-index:2;max-width:760px;margin:0 auto}
+.hc h1{color:var(--wh);margin-bottom:14px}
+.hrt{display:block;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hc p{color:rgba(255,255,255,.65);font-size:clamp(1rem,1.2vw,1.1rem);margin:0 auto 32px;max-width:600px;line-height:1.8}
+.hb{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+
+/* Programs */
+.pc{background:var(--bg);border-radius:20px;padding:36px 32px;border:1px solid rgba(27,42,74,.04);transition:all .4s ease;display:block}
+.pc:hover{transform:translateY(-6px) rotate(-.3deg);box-shadow:0 16px 48px rgba(27,42,74,.12);border-color:rgba(10,155,142,.12)}
+.pcb{display:inline-block;background:rgba(10,155,142,.1);color:var(--tm);font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:50px;margin-bottom:14px}
+.pc h3{font-family:var(--fd);font-weight:700;font-size:1.25rem;color:var(--dk);margin-bottom:10px}
+.pc p{color:rgba(26,26,26,.55);font-size:.9rem;margin-bottom:8px;line-height:1.7}
+.pcl{font-weight:600;font-size:.88rem;color:var(--tm);display:inline-flex;align-items:center;gap:6px;margin-top:12px;transition:gap .3s}
+.pc:hover .pcl{gap:12px}
+
+/* Impact */
+.imp{padding:var(--sp) 0;background:var(--dk);position:relative;overflow:hidden}
+.imp::before{content:'';position:absolute;top:-20%;left:-10%;width:50%;height:140%;background:radial-gradient(ellipse,rgba(0,201,183,.06),transparent 60%);pointer-events:none}
+.imp .sl{color:var(--teal)}
+.imp h2{color:var(--wh)}
+.ig{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;position:relative;z-index:2}
+.is{text-align:center;padding:36px 20px;background:rgba(255,255,255,.04);border-radius:18px;border:1px solid rgba(255,255,255,.06);transition:all .3s}
+.is:hover{background:rgba(255,255,255,.08);transform:translateY(-4px)}
+.isn{font-family:var(--fd);font-weight:800;font-size:clamp(2.6rem,5vw,3.4rem);color:var(--teal);line-height:1;margin-bottom:6px}
+.isl{font-weight:500;font-size:.88rem;color:rgba(255,255,255,.55)}
+
+/* Collab marquee */
+.cm{padding:var(--sp) 0 calc(var(--sp)*.6);background:var(--bg);text-align:center;overflow:hidden}
+.cml{font-weight:600;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(27,42,74,.3);margin-bottom:28px}
+.cmr{display:flex;gap:44px;animation:mq 55s linear infinite;width:max-content}
+.cli{height:38px;opacity:.3;filter:grayscale(100%);transition:all .3s;flex-shrink:0;object-fit:contain}
+.cli:hover{opacity:.75;filter:grayscale(0)}
+@keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* Testimonial */
+.tq{max-width:780px;margin:0 auto;background:var(--bg);border-radius:22px;padding:clamp(32px,5vw,48px);border:1px solid rgba(27,42,74,.04)}
+.tqt{font-family:var(--fd);font-weight:600;font-size:clamp(1rem,1.4vw,1.15rem);color:var(--dk);line-height:1.7;margin-bottom:24px;padding-left:20px;border-left:3px solid var(--teal)}
+.ta{display:flex;align-items:center;gap:14px}
+.tap{width:48px;height:48px;border-radius:50%;object-fit:cover}
+.tai h4{font-weight:600;font-size:.92rem;color:var(--dk)}
+.tai p{font-size:.82rem;color:rgba(26,26,26,.45);margin:0}
+
+/* Student cards */
+.sc{background:var(--wh);border-radius:14px;padding:28px 24px;border:1px solid rgba(27,42,74,.04);transition:all .3s}
+.sc:hover{box-shadow:0 8px 32px rgba(27,42,74,.08);transform:translateY(-3px)}
+.scs{margin-bottom:14px;display:flex;gap:2px}
+.scs svg{width:15px;height:15px;fill:var(--teal)}
+.sc p{font-size:.88rem;color:rgba(26,26,26,.6);line-height:1.75;margin-bottom:16px;font-style:italic}
+.sca{font-weight:600;font-size:.83rem;color:var(--dk)}
+.scc{font-size:.76rem;color:var(--tm);font-weight:500}
+
+/* Map */
+.mp{max-width:860px;margin:36px auto 0;background:var(--bg);border-radius:18px;padding:52px 36px;border:2px dashed rgba(27,42,74,.1);color:rgba(27,42,74,.35);font-weight:500;font-size:.9rem;text-align:center}
+
+/* Newsletter */
+.nl-s{padding:var(--sp) 0;background:var(--dk);text-align:center;position:relative;overflow:hidden}
+.nl-s::before{content:'';position:absolute;inset:0;background:var(--grad);opacity:.07;pointer-events:none}
+.nl-s h2{color:var(--wh);margin-bottom:10px;position:relative;z-index:2}
+.nl-s p{color:rgba(255,255,255,.55);margin-bottom:28px;position:relative;z-index:2}
+.nf{display:flex;gap:10px;max-width:460px;margin:0 auto;position:relative;z-index:2}
+.nf input{flex:1;padding:13px 18px;border:1px solid rgba(255,255,255,.12);border-radius:50px;background:rgba(255,255,255,.06);color:var(--wh);font-family:var(--fb);font-size:.88rem;outline:0;transition:border-color .3s}
+.nf input::placeholder{color:rgba(255,255,255,.3)}
+.nf input:focus{border-color:var(--teal)}
+
+/* Footer */
+.ft{background:#111B2E;padding:52px 0 28px;color:rgba(255,255,255,.45)}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:40px}
+.fbr p{font-size:.85rem;color:rgba(255,255,255,.35);line-height:1.7;margin-top:14px;max-width:300px}
+.ft h4{font-family:var(--fd);font-weight:600;font-size:.88rem;color:var(--wh);margin-bottom:16px}
+.fk{list-style:none;display:flex;flex-direction:column;gap:10px}
+.fk a{font-size:.85rem;color:rgba(255,255,255,.4);transition:color .2s}
+.fk a:hover{color:var(--teal)}
+.fbt{border-top:1px solid rgba(255,255,255,.06);padding-top:20px;display:flex;justify-content:space-between;align-items:center;font-size:.78rem}
+.fsc{display:flex;gap:14px}
+.fsc a{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;transition:all .3s;font-size:.7rem;color:rgba(255,255,255,.5);font-weight:600}
+.fsc a:hover{background:var(--tm);color:var(--wh)}
+
+/* Scroll btn */
+.stb{position:fixed;bottom:24px;right:24px;z-index:998;width:44px;height:44px;border-radius:50%;background:var(--dk);border:2px solid rgba(0,201,183,.3);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transform:translateY(12px);transition:all .4s ease}
+.stb.v{opacity:1;transform:translateY(0)}
+.stb:hover{background:var(--tm);border-color:var(--tm);transform:translateY(-2px)}
+.stb svg{width:18px;height:18px;stroke:var(--teal);fill:none;stroke-width:2.5;stroke-linecap:round}
+.stb:hover svg{stroke:var(--wh)}
+
+/* Grids */
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:36px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px}
+
+/* Responsive */
+@media(max-width:900px){.nk{display:none}.mb{display:flex}.ig{grid-template-columns:repeat(3,1fr);gap:14px}.is{padding:24px 14px}.g3{grid-template-columns:repeat(2,1fr)}.fg{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:600px){.g2{grid-template-columns:1fr}.ig{grid-template-columns:1fr}.hb{flex-direction:column;align-items:center}.nf{flex-direction:column}.fg{grid-template-columns:1fr}.fbt{flex-direction:column;gap:14px;text-align:center}}
+
+.hd{background:var(--dk);padding:clamp(70px,10vw,110px) 0 clamp(50px,7vw,80px);position:relative;overflow:hidden;margin-top:68px;text-align:center}
+.hd::before{content:'';position:absolute;top:-30%;right:-10%;width:70%;height:160%;background:radial-gradient(ellipse,rgba(0,201,183,.1),transparent 55%);pointer-events:none}
+.hd::after{content:'';position:absolute;bottom:-30%;left:-10%;width:50%;height:120%;background:radial-gradient(ellipse,rgba(123,45,142,.07),transparent 55%);pointer-events:none}
+.hd .hc{max-width:740px;margin:0 auto}
+.hd h1{color:var(--wh);margin-bottom:14px}
+.hd h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hd p{color:rgba(255,255,255,.6);margin:0 auto 28px;max-width:560px;line-height:1.8}
+.hd .hb{justify-content:center}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,201,183,.12);color:var(--teal);font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:18px}
+.badge svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+.cd{background:var(--bg);border-radius:16px;padding:30px 26px;border:1px solid rgba(27,42,74,.04);transition:all .3s}
+.cd:hover{box-shadow:0 8px 32px rgba(27,42,74,.08);transform:translateY(-4px)}
+.cd.wh{background:var(--wh)}
+.ci{width:46px;height:46px;border-radius:13px;margin-bottom:18px;display:flex;align-items:center;justify-content:center}
+.ci svg{width:22px;height:22px;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ci.t{background:rgba(0,201,183,.1)}.ci.t svg{stroke:var(--tm)}
+.ci.p{background:rgba(123,45,142,.1)}.ci.p svg{stroke:var(--purp)}
+.ci.b{background:rgba(27,42,74,.08)}.ci.b svg{stroke:var(--dk)}
+.cd h4{font-family:var(--fd);font-weight:700;font-size:1rem;color:var(--dk);margin-bottom:6px}
+.cd p{font-size:.88rem;color:rgba(26,26,26,.55);line-height:1.7}
+
+.dei{max-width:720px;margin:0 auto;background:var(--bg);border-radius:18px;padding:clamp(28px,4vw,44px);border-left:4px solid var(--teal)}
+.dei h3{font-family:var(--fd);font-weight:700;font-size:1.1rem;color:var(--dk);margin-bottom:10px}
+.dei p{font-size:.9rem;color:rgba(26,26,26,.55);line-height:1.8}
+.plg{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:28px}
+.plg img{height:44px;opacity:.35;filter:grayscale(100%);transition:all .3s;object-fit:contain}
+.plg img:hover{opacity:.75;filter:grayscale(0)}
+
+
+/* Mobile nav */
+.nk.op{display:flex!important;position:fixed;top:68px;left:0;right:0;background:var(--wh);flex-direction:column;align-items:stretch;padding:18px 24px;gap:4px;box-shadow:0 12px 32px rgba(27,42,74,.08);border-top:1px solid rgba(27,42,74,.06);max-height:calc(100vh - 68px);overflow-y:auto}
+.nk.op li{width:100%}
+.nk.op .dd .dm{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding:4px 0 4px 16px;min-width:0;display:none}
+.nk.op .dd.op .dm{display:block}
+.nk.op a{display:block;padding:11px 8px;font-size:.95rem}
+.nk.op .nc{margin-top:8px;text-align:center}
+.mb.op span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.mb.op span:nth-child(2){opacity:0}
+.mb.op span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mb span{transition:all .25s ease}
+
+
+/* A11y type bump */
+.nlg{height:40px;width:auto;display:block}
+@media(max-width:600px){.nlg{height:34px}}
+body{font-size:16.5px;line-height:1.75}
+p{font-size:clamp(1rem,1.15vw,1.125rem);line-height:1.75}
+.btn{font-size:.98rem;padding:15px 30px}
+.nk a{font-size:.94rem}
+.nc{font-size:.9rem}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:4px}
+
+/* --- global motion --- */
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes gradShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes spinSlow{to{transform:rotate(360deg)}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes popIn{0%{opacity:0;transform:scale(.9)}60%{transform:scale(1.02)}100%{opacity:1;transform:scale(1)}}
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
+.hero,.hd,.ph,section[class*="hero"]{background-size:200% 200%;animation:gradShift 18s ease infinite}
+.fu{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.fu.in{opacity:1;transform:translateY(0)}
+.fu-l{opacity:0;transform:translateX(-30px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.fu-l.in{opacity:1;transform:translateX(0)}
+.fu-r{opacity:0;transform:translateX(30px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.fu-r.in{opacity:1;transform:translateX(0)}
+.card,.pc,.gc,.vc,.tm,.bc,.gr-card,.acri,.stat,.ic,.ev,.nc{transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .35s ease}
+.card:hover,.pc:hover,.gc:hover,.vc:hover,.tm:hover,.bc:hover,.gr-card:hover,.acri:hover,.ic:hover,.ev:hover,.nc:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(10,30,60,.12)}
+.btn{position:relative;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(10,155,142,.25)}
+.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent);transform:translateX(-100%);transition:transform .6s ease}
+.btn:hover::after{transform:translateX(100%)}
+.stat .num,.stn,.big{transition:transform .4s ease}
+.stat:hover .num,.stat:hover .stn{transform:scale(1.08)}
+.nlg{transition:transform .4s ease}
+.nl:hover .nlg{transform:scale(1.04) rotate(-1deg)}
+nav a,.nm a{position:relative;transition:color .25s ease}
+nav a::after,.nm a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--teal);transition:width .3s ease}
+nav a:hover::after,.nm a:hover::after{width:100%}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
+
+
+.subnav{position:sticky;top:68px;z-index:90;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(27,42,74,.08)}
+.subnav ul{list-style:none;display:flex;gap:28px;overflow-x:auto;padding:14px 0;margin:0;scrollbar-width:none}
+.subnav ul::-webkit-scrollbar{display:none}
+.subnav a{font-weight:600;font-size:.88rem;color:var(--dk);white-space:nowrap;padding:6px 0;position:relative}
+.subnav a:hover{color:var(--tm)}
+#leadership,#board,#advisory{scroll-margin-top:130px}
+
+.tg{display:grid;gap:34px;margin-top:40px}.tg.c4{grid-template-columns:repeat(4,1fr)}.tg.c3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.tg.c4{grid-template-columns:repeat(3,1fr)}.tg.c3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.tg.c4,.tg.c3{grid-template-columns:repeat(2,1fr);gap:22px}}
+.tm{text-align:center;cursor:pointer;transition:all .3s;background:var(--wh);border-radius:18px;padding:26px 20px;border:1px solid rgba(27,42,74,.06)}
+.tm:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(27,42,74,.1);border-color:rgba(10,155,142,.2)}
+.tmph{width:180px;height:180px;border-radius:50%;object-fit:cover;margin:0 auto 18px;border:4px solid rgba(27,42,74,.04);transition:border-color .3s;box-shadow:0 8px 24px rgba(27,42,74,.08)}
+.tm:hover .tmph{border-color:var(--tm);box-shadow:0 10px 28px rgba(10,155,142,.22)}
+.tm h4{font-family:var(--fd);font-weight:700;font-size:1.15rem;color:var(--dk);margin-bottom:4px;line-height:1.25}
+.tmr{font-size:.92rem;color:var(--tm);font-weight:600;line-height:1.4}
+@media(max-width:600px){.tmph{width:140px;height:140px}.tm h4{font-size:1rem}}
+.tsl{font-family:var(--fd);font-weight:700;font-size:1.05rem;color:var(--dk);padding-bottom:10px;margin-bottom:24px;border-bottom:2px solid rgba(27,42,74,.06)}
+.mdl{position:fixed;inset:0;background:rgba(27,42,74,.65);backdrop-filter:blur(6px);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px}
+.mdl.op{display:flex}
+.mdi{background:var(--wh);border-radius:18px;max-width:520px;width:100%;max-height:80vh;overflow-y:auto;padding:36px;position:relative;box-shadow:0 24px 80px rgba(27,42,74,.2)}
+.mdx{position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;background:var(--bg);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s}
+.mdx:hover{background:rgba(10,155,142,.1)}.mdx svg{width:14px;height:14px;stroke:var(--dk);fill:none;stroke-width:2.5;stroke-linecap:round}
+.mdph{width:90px;height:90px;border-radius:50%;object-fit:cover;margin-bottom:16px;border:3px solid var(--bg)}
+.mdi h3{font-family:var(--fd);font-weight:700;font-size:1.2rem;color:var(--dk);margin-bottom:3px}
+.mdrl{font-size:.85rem;color:var(--tm);font-weight:600;margin-bottom:14px;display:block}
+.mdlk{display:flex;gap:10px;margin-bottom:16px}
+.mdlk a{padding:7px 14px;border-radius:50px;font-size:.8rem;font-weight:600;background:var(--bg);color:var(--dk);transition:all .3s;display:inline-flex;align-items:center;gap:5px}
+.mdlk a:hover{background:var(--tm);color:var(--wh)}
+.mdi p{font-size:.88rem;color:rgba(26,26,26,.6);line-height:1.8}
+@media(max-width:900px){.tg.c4{grid-template-columns:repeat(2,1fr)}.tg.c3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.tg.c4,.tg.c3{grid-template-columns:1fr}}
+.nlt{font-family:var(--fd);font-weight:700;font-size:1.05rem;color:var(--dk)}.nlt span{color:var(--purp);font-weight:400}
+.dm a{display:block;padding:9px 18px;font-size:.85rem}.dm a:hover{background:var(--bg)}
+.nc{padding:9px 22px;font-size:.83rem;background:var(--tm);color:var(--wh)!important;border-radius:50px;font-weight:600}.nc:hover{background:var(--teal)!important}
+.hd .hc{max-width:740px;margin:0 auto;position:relative;z-index:2}
+.hd p{color:rgba(255,255,255,.6);margin:0 auto 28px;max-width:620px;line-height:1.8}
+.bg{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:28px}
+.bc{background:var(--wh);border-radius:20px;padding:36px 28px;text-align:center;border:1px solid rgba(27,42,74,.04);transition:all .3s}
+.bc:hover{transform:translateY(-5px);box-shadow:0 14px 44px rgba(27,42,74,.1)}
+.bcp{width:200px;height:200px;border-radius:50%;object-fit:cover;margin:0 auto 22px;border:5px solid var(--bg);box-shadow:0 8px 26px rgba(27,42,74,.08)}
+.bc h3{font-family:var(--fd);font-weight:700;font-size:1.4rem;color:var(--dk);margin-bottom:8px;line-height:1.25}
+.bcr{font-size:1rem;color:var(--tm);font-weight:600;margin-bottom:14px;display:block}
+.bc p{font-size:.88rem;color:rgba(26,26,26,.6);line-height:1.7;margin-bottom:18px}
+.bck{display:flex;justify-content:center;gap:10px}
+.bck a{padding:7px 14px;border-radius:50px;font-size:.78rem;font-weight:600;background:var(--bg);color:var(--dk);transition:all .3s;display:inline-flex;align-items:center;gap:5px}
+.bck a:hover{background:var(--tm);color:var(--wh)}
+.nf input::placeholder{color:rgba(255,255,255,.3)}.nf input:focus{border-color:var(--teal)}
+.fk a{font-size:.85rem;color:rgba(255,255,255,.4);transition:color .2s}.fk a:hover{color:var(--teal)}
+.stb.v{opacity:1;transform:translateY(0)}.stb:hover{background:var(--tm);border-color:var(--tm);transform:translateY(-2px)}
+.stb svg{width:18px;height:18px;stroke:var(--teal);fill:none;stroke-width:2.5;stroke-linecap:round}.stb:hover svg{stroke:var(--wh)}
+@media(max-width:900px){.nk{display:none}.mb{display:flex}.bg{grid-template-columns:1fr;gap:18px}.fg{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:600px){.fg{grid-template-columns:1fr}.fbt{flex-direction:column;gap:14px;text-align:center}.nf{flex-direction:column}}
+.tg{display:grid;gap:34px;margin-top:40px}.tg.c4{grid-template-columns:repeat(4,1fr)}.tg.c3{grid-template-columns:repeat(3,1fr)}
+.tm{text-align:center;cursor:pointer;transition:all .3s;background:var(--wh);border-radius:18px;padding:26px 20px;border:1px solid rgba(27,42,74,.06)}.tm:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(27,42,74,.1);border-color:rgba(10,155,142,.2)}.tmph{width:180px;height:180px;border-radius:50%;object-fit:cover;margin:0 auto 18px;border:4px solid rgba(27,42,74,.04);transition:border-color .3s;box-shadow:0 8px 24px rgba(27,42,74,.08)}.tm:hover .tmph{border-color:var(--tm);box-shadow:0 10px 28px rgba(10,155,142,.22)}.tm h4{font-family:var(--fd);font-weight:700;font-size:1.15rem;color:var(--dk);margin-bottom:4px;line-height:1.25}.tmr{font-size:.92rem;color:var(--tm);font-weight:600;line-height:1.4}@media(max-width:900px){.tg.c4{grid-template-columns:repeat(3,1fr)}.tg.c3{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.tg.c4,.tg.c3{grid-template-columns:repeat(2,1fr);gap:22px}.tmph{width:140px;height:140px}.tm h4{font-size:1rem}}
+.tsl{font-family:var(--fd);font-weight:700;font-size:1.05rem;color:var(--dk);padding-bottom:10px;margin-bottom:24px;border-bottom:2px solid rgba(27,42,74,.06)}
+.mdl{position:fixed;inset:0;background:rgba(27,42,74,.65);backdrop-filter:blur(6px);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px}
+.mdl.op{display:flex}
+.mdi{background:var(--wh);border-radius:18px;max-width:520px;width:100%;max-height:80vh;overflow-y:auto;padding:36px;position:relative;box-shadow:0 24px 80px rgba(27,42,74,.2)}
+.mdx{position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;background:var(--bg);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s}
+.mdx:hover{background:rgba(10,155,142,.1)}.mdx svg{width:14px;height:14px;stroke:var(--dk);fill:none;stroke-width:2.5;stroke-linecap:round}
+.mdph{width:90px;height:90px;border-radius:50%;object-fit:cover;margin-bottom:16px;border:3px solid var(--bg)}
+.mdi h3{font-family:var(--fd);font-weight:700;font-size:1.2rem;color:var(--dk);margin-bottom:3px}
+.mdrl{font-size:.85rem;color:var(--tm);font-weight:600;margin-bottom:14px;display:block}
+.mdlk{display:flex;gap:10px;margin-bottom:16px}
+.mdlk a{padding:7px 14px;border-radius:50px;font-size:.8rem;font-weight:600;background:var(--bg);color:var(--dk);transition:all .3s;display:inline-flex;align-items:center;gap:5px}
+.mdlk a:hover{background:var(--tm);color:var(--wh)}
+.mdi p{font-size:.88rem;color:rgba(26,26,26,.6);line-height:1.8}
+@media(max-width:900px){.tg.c4{grid-template-columns:repeat(2,1fr)}.tg.c3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.tg.c4,.tg.c3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="ni">
+  <a href="index.html" class="nl" aria-label="Project UNITY home"><img src="images/logo-transparent-dark-scaled.png" alt="Project UNITY" class="nlg"></a>
+  <ul class="nk">
+    <li><a href="index.html">Home</a></li>
+    <li class="dd"><a href="javascript:void(0)" role="button" aria-haspopup="true">Our Work &#9662;</a><div class="dm"><a href="catalyst-academy.html">Catalyst Academy</a><a href="catalyst-academy-2025.html">2025 Cohort</a><a href="catalyst-academy-2024.html">2024 Cohort</a><a href="catalyst-academy-2023.html">2023 Cohort</a><a href="catalyst-academy.html#mentors">Mentors</a><a href="catalyst-academy.html#speakers">Guest Speakers</a><a href="yphic.html">Y-PHIC</a><a href="research.html">Research &amp; Press</a></div></li>
+    <li class="dd"><a href="javascript:void(0)" role="button" aria-haspopup="true">Get Involved &#9662;</a><div class="dm"><a href="catalyst-academy.html#apply">Apply as a Student</a><a href="catalyst-academy.html#become-mentor">Become a Mentor</a><a href="support.html">Support Us</a></div></li>
+    <li class="dd"><a href="javascript:void(0)" role="button" aria-haspopup="true">About &#9662;</a><div class="dm"><a href="about.html">About Us</a><a href="about.html#leadership">Leadership</a><a href="about.html#board">Board of Directors</a><a href="about.html#advisory">Advisory Board</a></div></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="catalyst-academy.html#apply" class="nc">Apply Now</a></li>
+  </ul>
+  <button class="mb" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></nav>
+
+<section class="hd">
+<div class="c"><div class="hc fu">
+  <div class="badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg> About Us</div>
+  <h1>About Project <em>UNITY</em></h1>
+  <p>A 501(c)(3) nonprofit empowering next-generation health innovators to tackle urgent health challenges and drive systems change in public health, medicine, and digital health.</p>
+</div></div>
+</section>
+<nav class="subnav" aria-label="About sections"><div class="c"><ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#leadership">Leadership</a></li>
+<li><a href="#board">Board</a></li>
+<li><a href="#advisory">Advisory</a></li>
+</ul></div></nav>
+<section id="overview" style="padding:var(--sp) 0;background:var(--wh);scroll-margin-top:130px">
+<div class="c">
+  <div class="sh ctr fu"><div class="sl">Our Approach</div><h2>How We Work</h2></div>
+  <div style="max-width:680px;margin:0 auto" class="fu">
+    <img src="images/our-approach-diagram-1024x471.png" alt="Our Approach" style="width:100%;border-radius:14px">
+  </div>
+</div></section>
+
+<section style="padding:var(--sp) 0;background:var(--bg)">
+<div class="c">
+  <div class="sh ctr fu"><div class="sl">Our Three Pillars</div><h2>What We Do</h2></div>
+  <div class="g3 fu">
+    <div class="cd wh"><div class="ci t"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><h4>Education</h4><p>Through Catalyst Academy and bootcamps, we deliver curriculum that bridges public health theory with hands-on research.</p></div>
+    <div class="cd wh"><div class="ci p"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div><h4>Mentorship</h4><p>Every student is paired with graduate-level mentors from leading institutions who guide research and career navigation.</p></div>
+    <div class="cd wh"><div class="ci b"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><h4>Community Innovation</h4><p>Through Y-PHIC and our intervention model, we support youth-led projects creating measurable, lasting impact.</p></div>
+  </div>
+</div></section>
+
+<section style="padding:var(--sp) 0;background:var(--wh)">
+<div class="c">
+  <div class="sh ctr fu"><div class="sl">Our Story</div><h2>How It Started</h2></div>
+  <div style="max-width:700px;margin:0 auto" class="fu">
+    <p style="color:rgba(26,26,26,.6);line-height:1.9;margin-bottom:14px">Project UNITY began during the COVID-19 pandemic, when a group of pre-medical students recognized a critical gap in public health education. With infection rates rising and access to reliable information limited, they created nationwide webinars to educate high-risk communities on mental health, diabetes, heart disease, and nutrition.</p>
+    <p style="color:rgba(26,26,26,.6);line-height:1.9;margin-bottom:14px">The overwhelming response sparked a bigger vision. What started as a grassroots effort grew into a nonprofit with a clear mission: to educate and empower future leaders to bridge medicine, public health, and digital health to improve care and advance equity.</p>
+    <p style="color:rgba(26,26,26,.6);line-height:1.9">As healthcare evolves, so must the people who shape it. We believe a strong foundation in public and digital health is essential to addressing systemic challenges and creating lasting impact.</p>
+  </div>
+</div></section>
+
+<section style="padding:var(--sp) 0;background:var(--bg)">
+<div class="c">
+  <div class="sh ctr fu"><div class="sl">Working Across Three Fields</div><h2>Our Disciplines</h2></div>
+  <div class="g3 fu">
+    <div class="cd wh" style="border-top:3px solid var(--tm)"><h4 style="color:var(--tm)">Public Health</h4><p>Population-level thinking, epidemiology, health equity, social determinants, and community-based research.</p></div>
+    <div class="cd wh" style="border-top:3px solid #5B4DC7"><h4 style="color:#5B4DC7">Medicine</h4><p>Clinical perspectives, patient care, evidence-based practice, and bridging population health to individual outcomes.</p></div>
+    <div class="cd wh" style="border-top:3px solid var(--purp)"><h4 style="color:var(--purp)">Digital Health</h4><p>Health technology, AI in healthcare, data science, telehealth, and digital tools for equity and access.</p></div>
+  </div>
+</div></section>
+
+<section style="padding:var(--sp) 0;background:var(--wh)">
+<div class="c">
+  <div class="sh ctr fu"><div class="sl">Support</div><h2>Our Partners &amp; Sponsors</h2></div>
+  <div class="plg fu"><img src="images/American-Public-Health-Association-300x121.png" alt="APHA"><img src="images/Common-Health-Coalition-300x169.png" alt="Common Health Coalition"><img src="images/GenServe-AI-300x88.png" alt="GenServe AI"><img src="images/MIMIT-Health-300x109.png" alt="MIMIT Health"><img src="images/NODE-Health-300x118.png" alt="NODE Health"><img src="images/VALID-AI-300x136.png" alt="VALID AI"></div>
+</div></section>
+
+<section style="padding:var(--sp) 0;background:var(--bg)">
+<div class="c"><div class="dei fu">
+  <h3>Diversity, Equity, &amp; Inclusion Statement</h3>
+  <p>At Project UNITY, we are committed to building a diverse, equitable, and inclusive community. We actively engage individuals from diverse racial, cultural, professional, and socio-economic backgrounds, believing that diverse perspectives strengthen our impact. We strive to cultivate a team that reflects the communities we partner with &mdash; fostering trust, youth mentorship, and lasting relationships that inspire positive health outcomes.</p>
+</div></div></section>
+
+<section id="leadership" style="padding:calc(var(--sp)*.6) 0 20px;background:var(--wh);scroll-margin-top:130px"><div class="c"><div class="sh ctr fu"><div class="sl">Our People</div><h2>Leadership</h2></div></div></section><section style="padding:var(--sp) 0;background:var(--wh)"><div class="c fu">
+  <p style="text-align:center;color:rgba(26,26,26,.6);max-width:620px;margin:0 auto">Our Co-Founders &amp; Executive Directors, <strong>Morish Shah</strong> and <strong>Pranav Mehta</strong>, serve on our <a href="board-of-directors.html" style="color:var(--tm);font-weight:600">Board of Directors</a>. Meet the team leading programs, research, and growth below.</p>
+</div></section><section style="padding:var(--sp) 0;background:var(--bg)"><div class="c fu">
+  <div class="tsl">Education & Programming</div>
+  <div class="tg c4 fu"><div class="tm" data-bio="m2" onclick="document.getElementById('m2').classList.add('op')">
+  <img src="images/Justin-Chang-MPH.jpeg" alt="Justin Chang, MPH" class="tmph"><h4>Justin Chang, MPH</h4><div class="tmr">Senior Director of Education</div>
+</div>
+<div class="mdl" id="m2"><div class="mdi">
+  <button class="mdx" onclick="this.parentElement.parentElement.classList.remove('op')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <img src="images/Justin-Chang-MPH.jpeg" alt="Justin Chang, MPH" class="mdph"><h3>Justin Chang, MPH</h3><span class="mdrl">Senior Director of Education</span>
+  <div class="mdlk"><a href="https://www.linkedin.com/in/justin-y-chang/" target="_blank">LinkedIn</a><a href="mailto:justin.chang@projectunitynfp.org">Email</a></div>
+  <p>Justin is the Senior Director of Education, directing Catalyst Academy. He graduated from UCLA in Neuroscience, got his MPH from George Washington University, and is a medical student at GW.</p>
+</div></div><div class="tm" data-bio="m3" onclick="document.getElementById('m3').classList.add('op')">
+  <img src="images/Rotimi-Kukoyi-1024x576.png" alt="Rotimi Kukoyi" class="tmph"><h4>Rotimi Kukoyi</h4><div class="tmr">Co-Director of Y-PHIC</div>
+</div>
+<div class="mdl" id="m3"><div class="mdi">
+  <button class="mdx" onclick="this.parentElement.parentElement.classList.remove('op')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <img src="images/Rotimi-Kukoyi-1024x576.png" alt="Rotimi Kukoyi" class="mdph"><h3>Rotimi Kukoyi</h3><span class="mdrl">Co-Director of Y-PHIC</span>
+  <div class="mdlk"><a href="https://www.linkedin.com/in/rotimi-kukoyi/" target="_blank">LinkedIn</a><a href="mailto:rotimi.kuyoki@projectunitynfp.org">Email</a></div>
+  <p>Rotimi is a 2025 Truman Scholar at UNC Chapel Hill pursuing BSPH in Health Policy and Management. He co-directs Y-PHIC in partnership with the Common Health Coalition.</p>
+</div></div><div class="tm" data-bio="m4" onclick="document.getElementById('m4').classList.add('op')">
+  <img src="images/Sarah-Gup.jpg" alt="Sarah Guo" class="tmph"><h4>Sarah Guo</h4><div class="tmr">Co-Director of Y-PHIC</div>
+</div>
+<div class="mdl" id="m4"><div class="mdi">
+  <button class="mdx" onclick="this.parentElement.parentElement.classList.remove('op')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <img src="images/Sarah-Gup.jpg" alt="Sarah Guo" class="mdph"><h3>Sarah Guo</h3><span class="mdrl">Co-Director of Y-PHIC</span>
+  <div class="mdlk"><a href="https://www.linkedin.com/in/sarah-guo-37924b22b/" target="_blank">LinkedIn</a><a href="mailto:sarah.guo@projectunitynfp.org">Email</a></div>
+  <p>Sarah is a senior at Rice University studying Health Sciences with a minor in Statistics. She co-directs Y-PHIC, connecting nonprofit founders with graduate mentors.</p>
+</div></div><div class="tm" data-bio="m5" onclick="document.getElementById('m5').classList.add('op')">
+  <img src="images/Meredith-Loui-MPH-977x1024.jpg" alt="Meredith Loui, MPH" class="tmph"><h4>Meredith Loui, MPH</h4><div class="tmr">Program Development Lead</div>
+</div>
+<div class="mdl" id="m5"><div class="mdi">
+  <button class="mdx" onclick="this.parentElement.parentElement.classList.remove('op')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <img src="images/Meredith-Loui-MPH-977x1024.jpg" alt="Meredith Loui, MPH" class="mdph"><h3>Meredith Loui, MPH</h3><span class="mdrl">Program Development Lead</span>
+  <div class="mdlk"><a href="https://www.linkedin.com/in/meredith-loui-a802a9207/" target="_blank">LinkedIn</a><a href="mailto:meredith.loui@projectunitynfp.org">Email</a></div>
+  <p>Meredith earned her MPH from GW with a focus in health promotion. She works with the American Journal of Public Health and serves as Program Development Lead.</p>
+</div></div></div>
+</div></section><section style="padding:var(--sp) 0;background:var(--wh)"><div class="c fu">
+  <div class="tsl">Growth, Marketing, & Creative</div>
+  <div class="tg c4 fu"><div class="tm" data-bio="m7" onclick="document.getElementById('m7').classList.add('op')">
+  <img src="images/Diana-Jacob.jpg" alt="Diana Jacob" class="tmph"><h4>Diana Jacob</h4><div class="tmr">Director of Marketing</div>
+</div>
+<div class="mdl" id="m7"><div class="mdi">
+  <button class="mdx" onclick="this.parentElement.parentElement.classList.remove('op')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <img src="images/Diana-Jacob.jpg" alt="Diana Jacob" class="mdph"><h3>Diana Jacob</h3><span class="mdrl">Director of Marketing</span>
+  <div class="mdlk"><a href="https://www.linkedin.com/in/-dianajacob/" target="_blank">LinkedIn</a><a href="mailto:diana.jacob@projectunitynfp.org">Email</a></div>
+  <p>Diana graduated from The College of New Jersey in Biology and is pursuing her MPH at George Washington University. She leads social media and outreach.</p>
+</div></div><div class="tm" data-bio="m8" onclick="document.getElementById('m8').classList.add('op')">
+  <img src="images/Lana-Kim-1024x1010.jpeg" alt="Lana Kim" class="tmph"><h4>Lana Kim</h4><div class="tmr">Social Media Lead</div>
+</div>
+<div class="mdl" id="m8"><div class="mdi">
+  <button class="mdx" onclick="this.parentElement.parentElement.classList.remove('op')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <img src="images/Lana-Kim-1024x1010.jpeg" alt="Lana Kim" class="mdph"><h3>Lana Kim</h3><span class="mdrl">Social Media Lead</span>
+  <div class="mdlk"><a href="https://www.linkedin.com/in/lanakim245/" target="_blank">LinkedIn</a><a href="mailto:lana.kim@projectunitynfp.org">Email</a></div>
+  <p>Lana is a Junior at Georgetown University studying Human Science. Her research centers on health disparities among minoritized populations.</p>
+</div></div></div>
+</div></section><section style="padding:var(--sp) 0;background:var(--bg)"><div class="c fu">
+  <div class="tsl">Research & Publication</div>
+  <div class="tg c4 fu"><div class="tm" data-bio="m9" onclick="document.getElementById('m9').classList.add('op')">
+  <img src="images/Rohan-Shah.jpeg" alt="Rohan Shah" class="tmph"><h4>Rohan Shah</h4><div class="tmr">Co-Director of Research</div>
+</div>
+<div class="mdl" id="m9"><div class="mdi">
+  <button class="mdx" onclick="this.parentElement.parentElement.classList.remove('op')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <img src="images/Rohan-Shah.jpeg" alt="Rohan Shah" class="mdph"><h3>Rohan Shah</h3><span class="mdrl">Co-Director of Research</span>
+  <div class="mdlk"><a href="https://www.linkedin.com/in/rohan-s-389272131/" target="_blank">LinkedIn</a><a href="mailto:rohan.shah@projectunitynfp.org">Email</a></div>
+  <p>Rohan is a fourth-year medical student at Northwestern Feinberg with over 30 peer-reviewed publications, pursuing academic psychiatry.</p>
+</div></div><div class="tm" data-bio="m10" onclick="document.getElementById('m10').classList.add('op')">
+  <img src="images/Sareena-Shah-683x1024.jpeg" alt="Sareena Shah" class="tmph"><h4>Sareena Shah</h4><div class="tmr">Co-Director of Research</div>
+</div>
+<div class="mdl" id="m10"><div class="mdi">
+  <button class="mdx" onclick="this.parentElement.parentElement.classList.remove('op')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <img src="images/Sareena-Shah-683x1024.jpeg" alt="Sareena Shah" class="mdph"><h3>Sareena Shah</h3><span class="mdrl">Co-Director of Research</span>
+  <div class="mdlk"><a href="mailto:sareena.shah@projectunitynfp.org">Email</a></div>
+  <p>Sareena is a fourth-year medical student at University of Missouri Kansas-City with over 35 peer-reviewed publications, pursuing anesthesiology.</p>
+</div></div><div class="tm" data-bio="m11" onclick="document.getElementById('m11').classList.add('op')">
+  <img src="images/Zakariya-Gordon-1-768x1024.jpg" alt="Zakariya Gordon" class="tmph"><h4>Zakariya Gordon</h4><div class="tmr">Editor</div>
+</div>
+<div class="mdl" id="m11"><div class="mdi">
+  <button class="mdx" onclick="this.parentElement.parentElement.classList.remove('op')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <img src="images/Zakariya-Gordon-1-768x1024.jpg" alt="Zakariya Gordon" class="mdph"><h3>Zakariya Gordon</h3><span class="mdrl">Editor</span>
+  <div class="mdlk"><a href="https://www.linkedin.com/in/zakariya-gordon-4b83b01b5/" target="_blank">LinkedIn</a><a href="mailto:zakariya.gordon@projectunitynfp.org">Email</a></div>
+  <p>Zakariya graduated from Spelman College in Biochemistry and is pursuing her MPH at GW in Mother, Youth, and Child Health.</p>
+</div></div></div>
+</div></section><section id="board" style="padding:calc(var(--sp)*.6) 0 20px;background:var(--bg);scroll-margin-top:130px"><div class="c"><div class="sh ctr fu"><div class="sl">Our People</div><h2>Board of Directors</h2></div></div></section><section style="padding:var(--sp) 0;background:var(--bg)"><div class="c">
+  <div class="bg fu">
+    <article class="bc">
+      <img class="bcp" src="images/Morish-Shah.png" alt="Morish Shah">
+      <h3>Morish Shah</h3>
+      <span class="bcr">Co-Founder &amp; Executive Director</span>
+      <p>Morish co-founded Project UNITY in 2020 to build the public-health leadership pipeline he wished existed as a high-school student. He oversees the organization&apos;s strategy, partnerships, and long-term vision.</p>
+      <div class="bck">
+        <a href="https://www.linkedin.com/in/morish-shah/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:morish.shah@projectunitynfp.org">Email</a>
+      </div>
+    </article>
+
+    <article class="bc">
+      <img class="bcp" src="images/Pranav-Mehta.jpg" alt="Pranav Mehta">
+      <h3>Pranav Mehta</h3>
+      <span class="bcr">Co-Founder &amp; Executive Director</span>
+      <p>Pranav co-founded Project UNITY and has led programmatic growth from the first Catalyst Academy cohort through Y-PHIC&apos;s national launch. On the Board, he focuses on organizational sustainability and national partnerships.</p>
+      <div class="bck">
+        <a href="https://www.linkedin.com/in/pranav-mehta310/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:pranav.mehta@projectunitynfp.org">Email</a>
+      </div>
+    </article>
+
+    <article class="bc">
+      <img class="bcp" src="images/Dr-Nitin-Shah-683x1024.jpg" alt="Dr. Nitin Shah, MD">
+      <h3>Dr. Nitin Shah, MD</h3>
+      <span class="bcr">Professor, Loma Linda University</span>
+      <p>Dr. Shah is Founding President of Anekant Community Center and has led more than 300 medical missions across 15 countries. On the Board, he provides clinical, academic, and global-health perspective.</p>
+      <div class="bck">
+        <a href="mailto:info@projectunitynfp.com?subject=Board%20Inquiry%20-%20Dr.%20Nitin%20Shah">Contact</a>
+      </div>
+    </article>
+  </div>
+</div></section><section id="advisory" style="padding:calc(var(--sp)*.6) 0 20px;background:var(--wh);scroll-margin-top:130px"><div class="c"><div class="sh ctr fu"><div class="sl">Our People</div><h2>Advisory Board</h2></div></div></section><section style="padding:var(--sp) 0;background:var(--wh)"><div class="c">
+  <div class="g3 fu"><div class="cd wh" style="text-align:center;cursor:pointer" onclick="document.getElementById('a0').classList.add('op')">
+  <img src="images/Dr-Ashish-Atreja.jpg" alt="Dr. Ashish Atreja, MD, MPH" style="width:90px;height:90px;border-radius:50%;object-fit:cover;margin:0 auto 14px;border:3px solid rgba(27,42,74,.04)">
+  <h4>Dr. Ashish Atreja, MD, MPH</h4><p style="font-size:.82rem;color:var(--tm)">Chief Information & Digital Health Officer, UC Davis Health</p>
+</div>
+<div class="mdl" id="a0"><div class="mdi">
+  <button class="mdx" onclick="this.parentElement.parentElement.classList.remove('op')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <img src="images/Dr-Ashish-Atreja.jpg" alt="Dr. Ashish Atreja, MD, MPH" class="mdph"><h3>Dr. Ashish Atreja, MD, MPH</h3><span class="mdrl">Chief Information & Digital Health Officer, UC Davis Health</span>
+  <p>Dr. Atreja oversees UC Davis Health's digital health expansion. He coined the term Evidence-based Digital Medicine and is referred to as the app doctor for pioneering digital therapeutics.</p>
+</div></div><div class="cd wh" style="text-align:center;cursor:pointer" onclick="document.getElementById('a1').classList.add('op')">
+  <img src="images/Dr-Romi-Chopra.jpg" alt="Dr. Romi Chopra, MD" style="width:90px;height:90px;border-radius:50%;object-fit:cover;margin:0 auto 14px;border:3px solid rgba(27,42,74,.04)">
+  <h4>Dr. Romi Chopra, MD</h4><p style="font-size:.82rem;color:var(--tm)">Founder, MIMIT Health</p>
+</div>
+<div class="mdl" id="a1"><div class="mdi">
+  <button class="mdx" onclick="this.parentElement.parentElement.classList.remove('op')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <img src="images/Dr-Romi-Chopra.jpg" alt="Dr. Romi Chopra, MD" class="mdph"><h3>Dr. Romi Chopra, MD</h3><span class="mdrl">Founder, MIMIT Health</span>
+  <p>Dr. Chopra is an interventional radiologist with over 30 years of experience. He opened MIMIT in 2004, specializing in minimally invasive treatments.</p>
+</div></div><div class="cd wh" style="text-align:center;cursor:pointer" onclick="document.getElementById('a2').classList.add('op')">
+  <img src="images/Chelsea-Cipriano.png" alt="Chelsea Cipriano, MPH" style="width:90px;height:90px;border-radius:50%;object-fit:cover;margin:0 auto 14px;border:3px solid rgba(27,42,74,.04)">
+  <h4>Chelsea Cipriano, MPH</h4><p style="font-size:.82rem;color:var(--tm)">Managing Director, Common Health Coalition</p>
+</div>
+<div class="mdl" id="a2"><div class="mdi">
+  <button class="mdx" onclick="this.parentElement.parentElement.classList.remove('op')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <img src="images/Chelsea-Cipriano.png" alt="Chelsea Cipriano, MPH" class="mdph"><h3>Chelsea Cipriano, MPH</h3><span class="mdrl">Managing Director, Common Health Coalition</span>
+  <p>Chelsea leads the Common Health Coalition working to ensure the U.S. health system is prepared for the next crisis. She previously served at NYC Department of Health.</p>
+</div></div><div class="cd wh" style="text-align:center;cursor:pointer" onclick="document.getElementById('a3').classList.add('op')">
+  <img src="images/Dr-Cassandra-Diep.jpg" alt="Dr. Cassandra S. Diep, PhD" style="width:90px;height:90px;border-radius:50%;object-fit:cover;margin:0 auto 14px;border:3px solid rgba(27,42,74,.04)">
+  <h4>Dr. Cassandra S. Diep, PhD</h4><p style="font-size:.82rem;color:var(--tm)">Assistant Teaching Professor, Rice University</p>
+</div>
+<div class="mdl" id="a3"><div class="mdi">
+  <button class="mdx" onclick="this.parentElement.parentElement.classList.remove('op')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <img src="images/Dr-Cassandra-Diep.jpg" alt="Dr. Cassandra S. Diep, PhD" class="mdph"><h3>Dr. Cassandra S. Diep, PhD</h3><span class="mdrl">Assistant Teaching Professor, Rice University</span>
+  <p>Dr. Diep teaches Public and Community Health at Rice University. Her research focuses on health disparities in diet and childhood obesity prevention.</p>
+</div></div><div class="cd wh" style="text-align:center;cursor:pointer" onclick="document.getElementById('a5').classList.add('op')">
+  <img src="images/Dr-Kedar-Mate.jpg" alt="Dr. Kedar Mate, MD" style="width:90px;height:90px;border-radius:50%;object-fit:cover;margin:0 auto 14px;border:3px solid rgba(27,42,74,.04)">
+  <h4>Dr. Kedar Mate, MD</h4><p style="font-size:.82rem;color:var(--tm)">President & CEO, Institute for Healthcare Improvement</p>
+</div>
+<div class="mdl" id="a5"><div class="mdi">
+  <button class="mdx" onclick="this.parentElement.parentElement.classList.remove('op')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <img src="images/Dr-Kedar-Mate.jpg" alt="Dr. Kedar Mate, MD" class="mdph"><h3>Dr. Kedar Mate, MD</h3><span class="mdrl">President & CEO, Institute for Healthcare Improvement</span>
+  <p>Dr. Mate's work focuses on health system design, quality, and strategies for large-scale change. He is faculty at Weill Cornell Medical College.</p>
+</div></div><div class="cd wh" style="text-align:center;cursor:pointer" onclick="document.getElementById('a6').classList.add('op')">
+  <img src="images/Dr-Kristi-Messer-819x1024.jpg" alt="Dr. Kristi Messer, DHSc" style="width:90px;height:90px;border-radius:50%;object-fit:cover;margin:0 auto 14px;border:3px solid rgba(27,42,74,.04)">
+  <h4>Dr. Kristi Messer, DHSc</h4><p style="font-size:.82rem;color:var(--tm)">Assistant Dean & Professor, Nova Southeastern University</p>
+</div>
+<div class="mdl" id="a6"><div class="mdi">
+  <button class="mdx" onclick="this.parentElement.parentElement.classList.remove('op')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <img src="images/Dr-Kristi-Messer-819x1024.jpg" alt="Dr. Kristi Messer, DHSc" class="mdph"><h3>Dr. Kristi Messer, DHSc</h3><span class="mdrl">Assistant Dean & Professor, Nova Southeastern University</span>
+  <p>Dr. Messer serves the Patel College of Osteopathic Medicine as professor of public health. She has dedicated her career to underserved populations.</p>
+</div></div></div>
+</div></section><section class="nl-s"><div class="c"><h2 class="fu">Get exclusive updates on our work.</h2><p class="fu">Join our mailing list for program announcements and community news.</p><div class="nf fu"><form onsubmit="event.preventDefault();var e=this.email.value.trim();if(!e){this.email.focus();return}window.location='mailto:info@projectunitynfp.com?subject=Newsletter%20Signup&body='+encodeURIComponent('Please add me to the Project UNITY newsletter.
+
+Email: '+e);" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;width:100%;max-width:460px;margin:0 auto"><input type="email" name="email" required placeholder="Enter your email address" aria-label="Email address" style="flex:1;min-width:220px"><button type="submit" class="btn bp">Subscribe</button></form></div></div></section>
+<footer class="ft"><div class="c">
+  <div class="fg">
+    <div class="fbr">
+      <div class="nl" style="margin-bottom:0"><img src="images/logo-white-dark-scaled-e1774294711846.png" alt="Project UNITY" style="height:42px;width:auto;display:block"></div>
+      <p>A youth-led nonprofit transforming how the next generation leads in healthcare, public health, and digital health. Founded in 2020.</p>
+    </div>
+    <div><h4>Our Work</h4><ul class="fk"><li><a href="catalyst-academy.html">Catalyst Academy</a></li><li><a href="yphic.html">Y-PHIC</a></li><li><a href="research.html">Research &amp; Press</a></li></ul></div>
+    <div><h4>Get Involved</h4><ul class="fk"><li><a href="catalyst-academy.html#apply">Apply as a Student</a></li><li><a href="catalyst-academy.html#become-mentor">Become a Mentor</a></li><li><a href="support.html">Support Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>About</h4><ul class="fk"><li><a href="about.html">About Us</a></li><li><a href="about.html#leadership">Leadership</a></li><li><a href="about.html#board">Board of Directors</a></li><li><a href="about.html#advisory">Advisory Board</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li></ul></div>
+  </div>
+  <div class="fbt">
+    <span>&copy; Project UNITY 2026 &mdash; All Rights Reserved.</span>
+    <div class="fsc">
+      <a href="https://www.instagram.com/projectunity.nfp/" target="_blank" aria-label="Instagram">IG</a>
+      <a href="https://www.youtube.com/@ProjectUNITYNFP" target="_blank" aria-label="YouTube">YT</a>
+      <a href="https://www.linkedin.com/company/project-unity-nfp" target="_blank" aria-label="LinkedIn">LI</a>
+      <a href="mailto:info@projectunitynfp.com" aria-label="Email">EM</a>
+    </div>
+  </div>
+</div></footer>
+<button class="stb" aria-label="Scroll to top"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg></button>
+<script>
+const ob=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&e.target.classList.add('v')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fu').forEach(e=>ob.observe(e));
+const sb=document.querySelector('.stb');if(sb){window.addEventListener('scroll',()=>{sb.classList.toggle('v',scrollY>400)});sb.addEventListener('click',()=>{scrollTo({top:0,behavior:'smooth'})})}
+document.querySelectorAll('.fq-q').forEach(q=>{q.addEventListener('click',()=>{q.parentElement.classList.toggle('op')})});
+document.querySelectorAll('.acc-h').forEach(h=>{h.addEventListener('click',()=>{const it=h.parentElement;const was=it.classList.contains('op');document.querySelectorAll('.acc-i').forEach(i=>i.classList.remove('op'));if(!was)it.classList.add('op')})});
+
+
+(function(){var mb=document.querySelector('.mb'),nk=document.querySelector('.nk');if(mb&&nk){mb.addEventListener('click',function(){nk.classList.toggle('op');mb.classList.toggle('op')});nk.querySelectorAll('.dd>a').forEach(function(a){a.addEventListener('click',function(e){if(window.innerWidth<=900){e.preventDefault();a.parentElement.classList.toggle('op')}})})}})();
+</script>
+
+<script>
+(function(){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.fu,.fu-l,.fu-r').forEach(function(el,i){el.style.transitionDelay=((i%6)*.06)+'s';io.observe(el)});
+  // animated counters
+  var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target;var end=parseFloat(el.getAttribute('data-count')||el.textContent.replace(/[^0-9.]/g,''));if(!end)return;var suf=(el.getAttribute('data-suf')||(/\+/.test(el.textContent)?'+':''));var pref=(el.getAttribute('data-pre')||(/\$/.test(el.textContent)?'$':''));var dur=1400,st=performance.now(),dec=(end%1!==0)?1:0;function tick(t){var p=Math.min(1,(t-st)/dur);var v=end*(1-Math.pow(1-p,3));el.textContent=pref+v.toFixed(dec).replace(/\B(?=(\d{3})+(?!\d))/g,',')+suf;if(p<1)requestAnimationFrame(tick)}requestAnimationFrame(tick);cio.unobserve(el)})},{threshold:.4});
+  document.querySelectorAll('[data-count],.num,.stn').forEach(function(el){if(/\d/.test(el.textContent))cio.observe(el)});
+})();
+</script>
+
+</body>
+</html>

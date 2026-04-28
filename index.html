@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home — Project UNITY</title>
+<link rel="icon" type="image/png" href="images/cropped-icon-square-transparent-1-32x32.png">
+<link rel="apple-touch-icon" href="images/cropped-icon-square-transparent-1-192x192.png">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{--teal:#00C9B7;--tm:#0A9B8E;--purp:#7B2D8E;--dk:#1B2A4A;--bk:#1A1A1A;--wh:#FFF;--bg:#F0F4F8;--grad:linear-gradient(135deg,#00C9B7,#5B4DC7,#7B2D8E);--fd:'Bricolage Grotesque',sans-serif;--fb:'Poppins',sans-serif;--mw:1200px;--sp:clamp(60px,8vw,120px)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--bk);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.c{max-width:var(--mw);margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+h1,h2,h3,h4{font-family:var(--fd);line-height:1.15}
+h1{font-weight:800;font-size:clamp(2.2rem,4.5vw,3.4rem);color:var(--dk)}
+h2{font-weight:700;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--dk)}
+h3{font-weight:600;font-size:clamp(1rem,1.8vw,1.3rem);color:var(--purp)}
+p{font-size:clamp(.95rem,1.1vw,1.05rem)}
+.sl{font-family:var(--fb);font-weight:600;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;color:var(--tm);margin-bottom:12px}
+.sh{margin-bottom:40px}
+.sh h2{margin-bottom:10px}
+.sh p{color:rgba(26,26,26,.6);max-width:560px}
+.ctr{text-align:center}
+.ctr p{margin:0 auto}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:50px;font-family:var(--fb);font-weight:600;font-size:.92rem;cursor:pointer;border:none;transition:all .3s ease}
+.bp{background:var(--tm);color:var(--wh);box-shadow:0 4px 16px rgba(10,155,142,.3)}
+.bp:hover{background:var(--teal);transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,201,183,.4)}
+.bo{background:0 0;color:var(--wh);border:2px solid rgba(255,255,255,.4)}
+.bo:hover{background:rgba(255,255,255,.1);border-color:var(--wh);transform:translateY(-2px)}
+.bod{background:0 0;color:var(--dk);border:2px solid var(--dk)}
+.bod:hover{background:var(--dk);color:var(--wh);transform:translateY(-2px)}
+
+/* Animations */
+.fu{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.fu.v{opacity:1;transform:translateY(0)}
+
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(27,42,74,.06)}
+.ni{max-width:var(--mw);margin:0 auto;padding:0 clamp(20px,4vw,40px);display:flex;align-items:center;justify-content:space-between;height:68px}
+.nl{display:flex;align-items:center;gap:10px}
+.nli{width:34px;height:34px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center}
+.nlt{font-family:var(--fd);font-weight:700;font-size:1.05rem;color:var(--dk)}
+.nlt span{color:var(--purp);font-weight:400}
+.nk{display:flex;align-items:center;gap:28px;list-style:none}
+.nk a{font-weight:500;font-size:.87rem;color:var(--dk);transition:color .2s;position:relative}
+.nk a:hover{color:var(--tm)}
+.nk .dd{position:relative;cursor:pointer}
+.nk .dm{position:absolute;top:calc(100% + 10px);left:-16px;background:var(--wh);border-radius:12px;box-shadow:0 12px 48px rgba(27,42,74,.1);padding:10px 0;min-width:210px;opacity:0;visibility:hidden;transform:translateY(6px);transition:all .2s}
+.nk .dd:hover .dm{opacity:1;visibility:visible;transform:translateY(0)}
+.dm a{display:block;padding:9px 18px;font-size:.85rem}
+.dm a:hover{background:var(--bg)}
+.nc{padding:9px 22px;font-size:.83rem;background:var(--tm);color:var(--wh)!important;border-radius:50px;font-weight:600}
+.nc:hover{background:var(--teal)!important}
+.mb{display:none;background:0 0;border:0;cursor:pointer;width:30px;height:30px;flex-direction:column;justify-content:center;align-items:center;gap:5px}
+.mb span{width:22px;height:2px;background:var(--dk);border-radius:2px}
+
+/* Announcement */
+.ann{background:var(--grad);color:var(--wh);text-align:center;padding:12px 20px;font-weight:600;font-size:.95rem;margin-top:68px;display:flex;align-items:center;justify-content:center;gap:8px}
+.ann a{color:var(--wh);text-decoration:underline;text-underline-offset:3px}
+
+/* Hero — sits flush under announcement */
+.hero{background:var(--dk);padding:clamp(50px,7vw,90px) 0 clamp(60px,10vw,100px);position:relative;overflow:hidden;text-align:center}
+.ann + .hero{padding-top:clamp(40px,5vw,70px)}
+.hero::before{content:'';position:absolute;top:-30%;right:-10%;width:70%;height:160%;background:radial-gradient(ellipse,rgba(0,201,183,.1),transparent 55%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-30%;left:-10%;width:50%;height:120%;background:radial-gradient(ellipse,rgba(123,45,142,.07),transparent 55%);pointer-events:none}
+.hc{position:relative;z-index:2;max-width:760px;margin:0 auto}
+.hc h1{color:var(--wh);margin-bottom:14px}
+.hrt{display:block;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hc p{color:rgba(255,255,255,.65);font-size:clamp(1rem,1.2vw,1.1rem);margin:0 auto 32px;max-width:600px;line-height:1.8}
+.hb{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+
+/* Programs */
+.pc{background:var(--bg);border-radius:20px;padding:36px 32px;border:1px solid rgba(27,42,74,.04);transition:all .4s ease;display:block}
+.pc:hover{transform:translateY(-6px) rotate(-.3deg);box-shadow:0 16px 48px rgba(27,42,74,.12);border-color:rgba(10,155,142,.12)}
+.pcb{display:inline-block;background:rgba(10,155,142,.1);color:var(--tm);font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:50px;margin-bottom:14px}
+.pc h3{font-family:var(--fd);font-weight:700;font-size:1.25rem;color:var(--dk);margin-bottom:10px}
+.pc p{color:rgba(26,26,26,.55);font-size:.9rem;margin-bottom:8px;line-height:1.7}
+.pcl{font-weight:600;font-size:.88rem;color:var(--tm);display:inline-flex;align-items:center;gap:6px;margin-top:12px;transition:gap .3s}
+.pc:hover .pcl{gap:12px}
+
+/* Impact */
+.imp{padding:var(--sp) 0;background:var(--dk);position:relative;overflow:hidden}
+.imp::before{content:'';position:absolute;top:-20%;left:-10%;width:50%;height:140%;background:radial-gradient(ellipse,rgba(0,201,183,.06),transparent 60%);pointer-events:none}
+.imp .sl{color:var(--teal)}
+.imp h2{color:var(--wh)}
+.ig{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;position:relative;z-index:2}
+.is{text-align:center;padding:36px 20px;background:rgba(255,255,255,.04);border-radius:18px;border:1px solid rgba(255,255,255,.06);transition:all .3s}
+.is:hover{background:rgba(255,255,255,.08);transform:translateY(-4px)}
+.isn{font-family:var(--fd);font-weight:800;font-size:clamp(2.6rem,5vw,3.4rem);color:var(--teal);line-height:1;margin-bottom:6px}
+.isl{font-weight:500;font-size:.88rem;color:rgba(255,255,255,.55)}
+
+/* Collab marquee */
+.cm{padding:var(--sp) 0 calc(var(--sp)*.6);background:var(--bg);text-align:center;overflow:hidden}
+.cml{font-weight:600;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(27,42,74,.3);margin-bottom:28px}
+.cmr{display:flex;gap:44px;animation:mq 55s linear infinite;width:max-content}
+.cli{height:38px;opacity:.3;filter:grayscale(100%);transition:all .3s;flex-shrink:0;object-fit:contain}
+.cli:hover{opacity:.75;filter:grayscale(0)}
+@keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* Testimonial */
+.tq{max-width:780px;margin:0 auto;background:var(--bg);border-radius:22px;padding:clamp(32px,5vw,48px);border:1px solid rgba(27,42,74,.04)}
+.tqt{font-family:var(--fd);font-weight:600;font-size:clamp(1rem,1.4vw,1.15rem);color:var(--dk);line-height:1.7;margin-bottom:24px;padding-left:20px;border-left:3px solid var(--teal)}
+.ta{display:flex;align-items:center;gap:14px}
+.tap{width:48px;height:48px;border-radius:50%;object-fit:cover}
+.tai h4{font-weight:600;font-size:.92rem;color:var(--dk)}
+.tai p{font-size:.82rem;color:rgba(26,26,26,.45);margin:0}
+
+/* Student cards */
+.sc{background:var(--wh);border-radius:14px;padding:28px 24px;border:1px solid rgba(27,42,74,.04);transition:all .3s}
+.sc:hover{box-shadow:0 8px 32px rgba(27,42,74,.08);transform:translateY(-3px)}
+.scs{margin-bottom:14px;display:flex;gap:2px}
+.scs svg{width:15px;height:15px;fill:var(--teal)}
+.sc p{font-size:.88rem;color:rgba(26,26,26,.6);line-height:1.75;margin-bottom:16px;font-style:italic}
+.sca{font-weight:600;font-size:.83rem;color:var(--dk)}
+.scc{font-size:.76rem;color:var(--tm);font-weight:500}
+
+/* Map */
+.mp{max-width:860px;margin:36px auto 0;background:var(--bg);border-radius:18px;padding:52px 36px;border:2px dashed rgba(27,42,74,.1);color:rgba(27,42,74,.35);font-weight:500;font-size:.9rem;text-align:center}
+
+/* Newsletter */
+.nl-s{padding:var(--sp) 0;background:var(--dk);text-align:center;position:relative;overflow:hidden}
+.nl-s::before{content:'';position:absolute;inset:0;background:var(--grad);opacity:.07;pointer-events:none}
+.nl-s h2{color:var(--wh);margin-bottom:10px;position:relative;z-index:2}
+.nl-s p{color:rgba(255,255,255,.55);margin-bottom:28px;position:relative;z-index:2}
+.nf{display:flex;gap:10px;max-width:460px;margin:0 auto;position:relative;z-index:2}
+.nf input{flex:1;padding:13px 18px;border:1px solid rgba(255,255,255,.12);border-radius:50px;background:rgba(255,255,255,.06);color:var(--wh);font-family:var(--fb);font-size:.88rem;outline:0;transition:border-color .3s}
+.nf input::placeholder{color:rgba(255,255,255,.3)}
+.nf input:focus{border-color:var(--teal)}
+
+/* Footer */
+.ft{background:#111B2E;padding:52px 0 28px;color:rgba(255,255,255,.45)}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:40px}
+.fbr p{font-size:.85rem;color:rgba(255,255,255,.35);line-height:1.7;margin-top:14px;max-width:300px}
+.ft h4{font-family:var(--fd);font-weight:600;font-size:.88rem;color:var(--wh);margin-bottom:16px}
+.fk{list-style:none;display:flex;flex-direction:column;gap:10px}
+.fk a{font-size:.85rem;color:rgba(255,255,255,.4);transition:color .2s}
+.fk a:hover{color:var(--teal)}
+.fbt{border-top:1px solid rgba(255,255,255,.06);padding-top:20px;display:flex;justify-content:space-between;align-items:center;font-size:.78rem}
+.fsc{display:flex;gap:14px}
+.fsc a{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;transition:all .3s;font-size:.7rem;color:rgba(255,255,255,.5);font-weight:600}
+.fsc a:hover{background:var(--tm);color:var(--wh)}
+
+/* Scroll btn */
+.stb{position:fixed;bottom:24px;right:24px;z-index:998;width:44px;height:44px;border-radius:50%;background:var(--dk);border:2px solid rgba(0,201,183,.3);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transform:translateY(12px);transition:all .4s ease}
+.stb.v{opacity:1;transform:translateY(0)}
+.stb:hover{background:var(--tm);border-color:var(--tm);transform:translateY(-2px)}
+.stb svg{width:18px;height:18px;stroke:var(--teal);fill:none;stroke-width:2.5;stroke-linecap:round}
+.stb:hover svg{stroke:var(--wh)}
+
+/* Grids */
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:36px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px}
+
+/* Responsive */
+@media(max-width:900px){.nk{display:none}.mb{display:flex}.ig{grid-template-columns:repeat(3,1fr);gap:14px}.is{padding:24px 14px}.g3{grid-template-columns:repeat(2,1fr)}.fg{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:600px){.g2{grid-template-columns:1fr}.ig{grid-template-columns:1fr}.hb{flex-direction:column;align-items:center}.nf{flex-direction:column}.fg{grid-template-columns:1fr}.fbt{flex-direction:column;gap:14px;text-align:center}}
+
+.hd{background:var(--dk);padding:clamp(70px,10vw,110px) 0 clamp(50px,7vw,80px);position:relative;overflow:hidden;margin-top:68px;text-align:center}
+.hd::before{content:'';position:absolute;top:-30%;right:-10%;width:70%;height:160%;background:radial-gradient(ellipse,rgba(0,201,183,.1),transparent 55%);pointer-events:none}
+.hd::after{content:'';position:absolute;bottom:-30%;left:-10%;width:50%;height:120%;background:radial-gradient(ellipse,rgba(123,45,142,.07),transparent 55%);pointer-events:none}
+.hd .hc{max-width:740px;margin:0 auto}
+.hd h1{color:var(--wh);margin-bottom:14px}
+.hd h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hd p{color:rgba(255,255,255,.6);margin:0 auto 28px;max-width:560px;line-height:1.8}
+.hd .hb{justify-content:center}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,201,183,.12);color:var(--teal);font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:18px}
+.badge svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+
+.hero::before{content:'';position:absolute;top:-30%;right:-10%;width:70%;height:160%;background:radial-gradient(ellipse,rgba(0,201,183,.1),transparent 55%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-30%;left:-10%;width:50%;height:120%;background:radial-gradient(ellipse,rgba(123,45,142,.07),transparent 55%);pointer-events:none}
+.hc{position:relative;z-index:2;max-width:740px;margin:0 auto}
+.hc h1{color:var(--wh);margin-bottom:14px}
+.hrt{display:block;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hc p{color:rgba(255,255,255,.6);font-size:clamp(1rem,1.2vw,1.1rem);margin:0 auto 28px;max-width:580px;line-height:1.8}
+.hb{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.ann{background:var(--grad);color:var(--wh);text-align:center;padding:14px 20px;font-weight:600;font-size:.95rem;margin-top:68px;display:flex;align-items:center;justify-content:center;gap:8px}
+.ann a{color:var(--wh);text-decoration:underline;text-underline-offset:3px}
+.pc{background:var(--bg);border-radius:20px;padding:36px 32px;border:1px solid rgba(27,42,74,.04);transition:all .4s ease;display:block}
+.pc:hover{transform:translateY(-6px) rotate(-.3deg);box-shadow:0 16px 48px rgba(27,42,74,.12)}
+.pcb{display:inline-block;background:rgba(10,155,142,.1);color:var(--tm);font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:50px;margin-bottom:14px}
+.pc h3{font-family:var(--fd);font-weight:700;font-size:1.25rem;color:var(--dk);margin-bottom:10px}
+.pc p{color:rgba(26,26,26,.55);font-size:.9rem;margin-bottom:8px;line-height:1.7}
+.pcl{font-weight:600;font-size:.88rem;color:var(--tm);display:inline-flex;align-items:center;gap:6px;margin-top:12px;transition:gap .3s}
+.pc:hover .pcl{gap:12px}
+.imp{padding:var(--sp) 0;background:var(--dk);position:relative;overflow:hidden}
+.imp::before{content:'';position:absolute;top:-20%;left:-10%;width:50%;height:140%;background:radial-gradient(ellipse,rgba(0,201,183,.06),transparent 60%);pointer-events:none}
+.imp .sl{color:var(--teal)}
+.imp h2{color:var(--wh)}
+.ig{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;position:relative;z-index:2}
+.is{text-align:center;padding:36px 20px;background:rgba(255,255,255,.04);border-radius:18px;border:1px solid rgba(255,255,255,.06);transition:all .3s}
+.is:hover{background:rgba(255,255,255,.08);transform:translateY(-4px)}
+.isn{font-family:var(--fd);font-weight:800;font-size:clamp(2.6rem,5vw,3.4rem);color:var(--teal);line-height:1;margin-bottom:6px}
+.isl{font-weight:500;font-size:.88rem;color:rgba(255,255,255,.55)}
+.cmq{padding:var(--sp) 0 calc(var(--sp)*.6);background:var(--bg);text-align:center;overflow:hidden}
+.cml{font-weight:600;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(27,42,74,.3);margin-bottom:28px}
+.cmr{display:flex;gap:44px;animation:mq 55s linear infinite;width:max-content}
+.cli{height:38px;opacity:.3;filter:grayscale(100%);transition:all .3s;flex-shrink:0;object-fit:contain}
+.cli:hover{opacity:.75;filter:grayscale(0)}
+@keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.tq{max-width:780px;margin:0 auto;background:var(--bg);border-radius:22px;padding:clamp(32px,5vw,48px);border:1px solid rgba(27,42,74,.04)}
+.tqt{font-family:var(--fd);font-weight:600;font-size:clamp(1rem,1.4vw,1.15rem);color:var(--dk);line-height:1.7;margin-bottom:24px;padding-left:20px;border-left:3px solid var(--teal)}
+.ta{display:flex;align-items:center;gap:14px}
+.tap{width:48px;height:48px;border-radius:50%;object-fit:cover}
+.tai h4{font-weight:600;font-size:.92rem;color:var(--dk)}.tai p{font-size:.82rem;color:rgba(26,26,26,.45);margin:0}
+.sc{background:var(--wh);border-radius:14px;padding:28px 24px;border:1px solid rgba(27,42,74,.04);transition:all .3s}
+.sc:hover{box-shadow:0 8px 32px rgba(27,42,74,.08);transform:translateY(-3px)}
+.scs{margin-bottom:14px;display:flex;gap:2px}
+.scs svg{width:15px;height:15px;fill:var(--teal)}
+.sc p{font-size:.88rem;color:rgba(26,26,26,.6);line-height:1.75;margin-bottom:16px;font-style:italic}
+.sca{font-weight:600;font-size:.83rem;color:var(--dk)}.scc{font-size:.76rem;color:var(--tm);font-weight:500}
+.mp{max-width:860px;margin:36px auto 0;background:var(--bg);border-radius:18px;padding:52px 36px;border:2px dashed rgba(27,42,74,.1);color:rgba(27,42,74,.35);font-weight:500;font-size:.9rem;text-align:center}
+@media(max-width:900px){.ig{grid-template-columns:repeat(3,1fr);gap:14px}.is{padding:24px 14px}}
+@media(max-width:600px){.ig{grid-template-columns:1fr}.hb{flex-direction:column;align-items:center}}
+
+
+/* Mobile nav */
+.nk.op{display:flex!important;position:fixed;top:68px;left:0;right:0;background:var(--wh);flex-direction:column;align-items:stretch;padding:18px 24px;gap:4px;box-shadow:0 12px 32px rgba(27,42,74,.08);border-top:1px solid rgba(27,42,74,.06);max-height:calc(100vh - 68px);overflow-y:auto}
+.nk.op li{width:100%}
+.nk.op .dd .dm{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding:4px 0 4px 16px;min-width:0;display:none}
+.nk.op .dd.op .dm{display:block}
+.nk.op a{display:block;padding:11px 8px;font-size:.95rem}
+.nk.op .nc{margin-top:8px;text-align:center}
+.mb.op span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.mb.op span:nth-child(2){opacity:0}
+.mb.op span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mb span{transition:all .25s ease}
+
+
+/* A11y type bump */
+.nlg{height:40px;width:auto;display:block}
+@media(max-width:600px){.nlg{height:34px}}
+body{font-size:16.5px;line-height:1.75}
+p{font-size:clamp(1rem,1.15vw,1.125rem);line-height:1.75}
+.btn{font-size:.98rem;padding:15px 30px}
+.nk a{font-size:.94rem}
+.nc{font-size:.9rem}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:4px}
+
+/* --- global motion --- */
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes gradShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes spinSlow{to{transform:rotate(360deg)}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes popIn{0%{opacity:0;transform:scale(.9)}60%{transform:scale(1.02)}100%{opacity:1;transform:scale(1)}}
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
+.hero,.hd,.ph,section[class*="hero"]{background-size:200% 200%;animation:gradShift 18s ease infinite}
+.fu{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.fu.in{opacity:1;transform:translateY(0)}
+.fu-l{opacity:0;transform:translateX(-30px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.fu-l.in{opacity:1;transform:translateX(0)}
+.fu-r{opacity:0;transform:translateX(30px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.fu-r.in{opacity:1;transform:translateX(0)}
+.card,.pc,.gc,.vc,.tm,.bc,.gr-card,.acri,.stat,.ic,.ev,.nc{transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .35s ease}
+.card:hover,.pc:hover,.gc:hover,.vc:hover,.tm:hover,.bc:hover,.gr-card:hover,.acri:hover,.ic:hover,.ev:hover,.nc:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(10,30,60,.12)}
+.btn{position:relative;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(10,155,142,.25)}
+.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent);transform:translateX(-100%);transition:transform .6s ease}
+.btn:hover::after{transform:translateX(100%)}
+.stat .num,.stn,.big{transition:transform .4s ease}
+.stat:hover .num,.stat:hover .stn{transform:scale(1.08)}
+.nlg{transition:transform .4s ease}
+.nl:hover .nlg{transform:scale(1.04) rotate(-1deg)}
+nav a,.nm a{position:relative;transition:color .25s ease}
+nav a::after,.nm a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--teal);transition:width .3s ease}
+nav a:hover::after,.nm a:hover::after{width:100%}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
+
+</style>
+</head>
+<body>
+<nav class="nav"><div class="ni">
+  <a href="index.html" class="nl" aria-label="Project UNITY home"><img src="images/logo-transparent-dark-scaled.png" alt="Project UNITY" class="nlg"></a>
+  <ul class="nk">
+    <li><a href="index.html">Home</a></li>
+    <li class="dd"><a href="javascript:void(0)" role="button" aria-haspopup="true">Our Work &#9662;</a><div class="dm"><a href="catalyst-academy.html">Catalyst Academy</a><a href="catalyst-academy-2025.html">2025 Cohort</a><a href="catalyst-academy-2024.html">2024 Cohort</a><a href="catalyst-academy-2023.html">2023 Cohort</a><a href="catalyst-academy.html#mentors">Mentors</a><a href="catalyst-academy.html#speakers">Guest Speakers</a><a href="yphic.html">Y-PHIC</a><a href="research.html">Research &amp; Press</a></div></li>
+    <li class="dd"><a href="javascript:void(0)" role="button" aria-haspopup="true">Get Involved &#9662;</a><div class="dm"><a href="catalyst-academy.html#apply">Apply as a Student</a><a href="catalyst-academy.html#become-mentor">Become a Mentor</a><a href="support.html">Support Us</a></div></li>
+    <li class="dd"><a href="javascript:void(0)" role="button" aria-haspopup="true">About &#9662;</a><div class="dm"><a href="about.html">About Us</a><a href="about.html#leadership">Leadership</a><a href="about.html#board">Board of Directors</a><a href="about.html#advisory">Advisory Board</a></div></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="catalyst-academy.html#apply" class="nc">Apply Now</a></li>
+  </ul>
+  <button class="mb" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></nav>
+
+<div class="ann"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:16px;height:16px;flex-shrink:0"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> Catalyst Academy 2026 Applications Extended &mdash; <a href="catalyst-academy.html#apply">Apply by March 29th &rarr;</a></div>
+
+<section class="hero"><div class="c"><div class="hc fu">
+  <div class="badge"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Welcome to Project UNITY</div>
+  <h1>Building the next generation of<br><span class="hrt" id="rt">Public Health Change-Makers</span></h1>
+  <p>A youth-led nonprofit and national innovation lab where high school students, college students, and young professionals build solutions that address urgent public health challenges and advance health equity.</p>
+  <div class="hb"><a href="catalyst-academy.html#apply" class="btn bp">Apply to Catalyst Academy &rarr;</a><a href="#programs" class="btn bo">Explore Our Programs</a></div>
+</div></div></section>
+
+<section style="padding:var(--sp) 0;background:var(--wh)"><div class="c">
+  <div class="sh ctr fu"><div class="sl">Who Are We?</div><h2>A National Innovation Lab for the Next Generation</h2></div>
+  <div style="max-width:740px;margin:0 auto" class="fu"><p style="text-align:center;color:rgba(26,26,26,.6);line-height:1.9">Project UNITY is a youth-led nonprofit transforming how the next generation prepares to lead. Founded in 2020, we operate as a national innovation lab where students and young professionals build solutions to urgent public health challenges. Through education, mentorship, and community innovation, we train leaders in <strong style="color:var(--dk)">public health, medicine, and digital health</strong> to shape the future of healthcare.</p></div>
+</div></section>
+
+<section id="programs" style="padding:var(--sp) 0;background:var(--bg)"><div class="c">
+  <div class="sh fu"><div class="sl">Programs</div><h2>Programs Housed in Our Innovation Lab</h2></div>
+  <div class="g2 fu">
+    <a href="catalyst-academy.html" class="pc"><div class="pcb">Flagship Program</div><h3>Catalyst Academy</h3><p style="font-weight:600;color:var(--dk);margin-bottom:6px">Our flagship public health summer research program.</p><p>A research &amp; mentorship program preparing high school students to lead at the intersection of public health, medicine, and digital health.</p><div class="pcl">Learn more &amp; apply <span>&rarr;</span></div></a>
+    <a href="yphic.html" class="pc"><div class="pcb">Social Impact Incubator</div><h3>Youth Public Health Innovation Coalition</h3><p style="font-weight:600;color:var(--dk);margin-bottom:6px">Our social impact incubator for youth-led initiatives.</p><p>A national nonprofit incubator connecting ambitious youth leaders with expert mentors to scale innovative health initiatives.</p><div class="pcl">Learn more <span>&rarr;</span></div></a>
+  </div>
+</div></section>
+
+<section class="cmq"><div class="c"><div class="cml fu">Collaborators from Leading Institutions</div></div><div class="cmr"><img src="images/Albert-Einstein-College-of-Medicine-300x300.png" alt="Albert Einstein" class="cli"><img src="images/Centers-for-Disease-Control-and-Prevention-300x214.png" alt="CDC" class="cli"><img src="images/Food-Drug-Administration-300x64.png" alt="FDA" class="cli"><img src="images/Harvard-Medical-School-300x98.png" alt="Harvard Medical" class="cli"><img src="images/Johns-Hopkins-University-300x82.png" alt="Johns Hopkins" class="cli"><img src="images/Microsoft-300x64.png" alt="Microsoft" class="cli"><img src="images/Georgetown-School-of-Medicine-300x117.png" alt="Georgetown" class="cli"><img src="images/Rice-University-300x129.png" alt="Rice" class="cli"><img src="images/Yale-School-of-Public-Health-300x274.png" alt="Yale SPH" class="cli"><img src="images/Salesforce-300x210.png" alt="Salesforce" class="cli"><img src="images/Northwestern-Feinberg-School-of-Medicine-300x42.png" alt="Northwestern" class="cli"><img src="images/UC-Davis-Health-300x107.png" alt="UC Davis" class="cli"><img src="images/Albert-Einstein-College-of-Medicine-300x300.png" alt="Albert Einstein" class="cli"><img src="images/Centers-for-Disease-Control-and-Prevention-300x214.png" alt="CDC" class="cli"><img src="images/Food-Drug-Administration-300x64.png" alt="FDA" class="cli"><img src="images/Harvard-Medical-School-300x98.png" alt="Harvard Medical" class="cli"><img src="images/Johns-Hopkins-University-300x82.png" alt="Johns Hopkins" class="cli"><img src="images/Microsoft-300x64.png" alt="Microsoft" class="cli"><img src="images/Georgetown-School-of-Medicine-300x117.png" alt="Georgetown" class="cli"><img src="images/Rice-University-300x129.png" alt="Rice" class="cli"><img src="images/Yale-School-of-Public-Health-300x274.png" alt="Yale SPH" class="cli"><img src="images/Salesforce-300x210.png" alt="Salesforce" class="cli"><img src="images/Northwestern-Feinberg-School-of-Medicine-300x42.png" alt="Northwestern" class="cli"><img src="images/UC-Davis-Health-300x107.png" alt="UC Davis" class="cli"></div></section>
+
+<section class="chc-s"><div class="c">
+  <div class="sh ctr fu"><div class="sl">Common Health Coalition</div><h2>Project UNITY Is a Proud Member</h2></div>
+  <div class="chc-poster fu">
+    <div class="chc-l">
+      <img src="images/Common-Health-Coalition-300x169.png" alt="Common Health Coalition" class="chc-logo">
+      <div class="chc-badge">Founding Institutional Partner of Y-PHIC</div>
+      <h3 class="chc-head">Building the future of public health — together.</h3>
+      <p class="chc-body">Project UNITY is a proud member of the Common Health Coalition, a national coalition of more than 300 organizations working to strengthen the bridge between health care and public health. The Coalition is the founding institutional funder of our Y-PHIC accelerator.</p>
+      <a href="yphic.html" class="btn bp" style="margin-top:8px">Learn about Y-PHIC &rarr;</a>
+    </div>
+    <div class="chc-r">
+      <svg class="chc-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 21c3-6 6-9 9-9s6 3 9 9"/><path d="M3 3c3 6 6 9 9 9s6-3 9-9"/></svg>
+      <blockquote class="chc-q">&ldquo;True to Project UNITY's mission, all of their initiatives embrace the power of community-led initiatives and go a step further by putting youth at the forefront. Their efforts are in lockstep with the Common Health Coalition's mission to build a more connected and resilient health system.&rdquo;</blockquote>
+      <div class="chc-att"><img src="images/headshot.png" alt="Chelsea Cipriano" class="chc-ap"><div><strong>Chelsea Cipriano, MPH</strong><div class="chc-role">Managing Director, Common Health Coalition</div></div></div>
+    </div>
+  </div>
+</div></section>
+<style>
+.chc-s{padding:var(--sp) 0;background:var(--wh)}
+.chc-poster{display:grid;grid-template-columns:1fr 1.1fr;gap:0;border-radius:28px;overflow:hidden;box-shadow:0 20px 60px rgba(27,42,74,.12);border:1px solid rgba(27,42,74,.06)}
+.chc-l{background:linear-gradient(135deg,#0A9B8E,#1B2A4A 90%);color:#fff;padding:clamp(36px,5vw,56px)}
+.chc-logo{background:#fff;border-radius:12px;padding:12px 18px;height:70px;width:auto;display:block;margin-bottom:22px}
+.chc-badge{display:inline-block;background:rgba(0,201,183,.18);color:#7DF0E3;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;border-radius:50px;margin-bottom:16px;border:1px solid rgba(0,201,183,.35)}
+.chc-head{font-family:var(--fd);font-weight:700;font-size:clamp(1.4rem,2.2vw,1.85rem);color:#fff;margin-bottom:14px;line-height:1.25}
+.chc-body{color:rgba(255,255,255,.8);font-size:1rem;line-height:1.8;margin-bottom:4px}
+.chc-r{background:#fff;padding:clamp(36px,5vw,56px);display:flex;flex-direction:column;justify-content:center;position:relative}
+.chc-mark{width:42px;height:42px;color:var(--purp);opacity:.5;margin-bottom:14px}
+.chc-q{font-family:var(--fd);font-size:clamp(1.05rem,1.4vw,1.2rem);line-height:1.65;color:var(--dk);margin-bottom:22px;font-weight:500;border:0;padding:0}
+.chc-att{display:flex;align-items:center;gap:14px}
+.chc-ap{width:56px;height:56px;border-radius:50%;object-fit:cover}
+.chc-role{font-size:.88rem;color:rgba(27,42,74,.6)}
+@media(max-width:900px){.chc-poster{grid-template-columns:1fr}}
+</style>
+
+<section class="imp"><div class="c">
+  <div class="sh ctr fu"><div class="sl">Our Impact</div><h2 style="color:var(--wh)">By the Numbers</h2></div>
+  <div class="ig fu">
+    <div class="is"><div class="isn">1,500+</div><div class="isl">Students Trained</div></div>
+    <div class="is"><div class="isn">75+</div><div class="isl">Papers Published</div></div>
+    <div class="is"><div class="isn">39+</div><div class="isl">States Represented</div></div>
+  </div>
+</div></section>
+
+<section class="map-s"><div class="c">
+  <div class="sh ctr fu"><div class="sl">Our Reach</div><h2>A National Footprint</h2><p style="margin:10px auto 0;max-width:620px">Project UNITY students, mentors, and alumni represent <strong>39 states across the country</strong>. Hover or tap a state to see it highlighted.</p></div>
+  <div class="us-legend fu"><span class="us-key us-key-a"></span> Active state &nbsp;&nbsp; <span class="us-key us-key-i"></span> No presence yet</div>
+  <div class="us-map-wrap fu">
+    <div id="us-map" aria-busy="true">
+      <div class="us-ld"><div class="us-sp"></div><span>Loading map…</span></div>
+    </div>
+    <div class="us-tt" id="us-tt" role="tooltip" aria-hidden="true"></div>
+  </div>
+  <div class="us-stat fu"><strong>39</strong> states and territories with Project UNITY students &amp; mentors</div>
+</div></section>
+<style>
+.map-s{padding:var(--sp) 0;background:var(--wh);text-align:center;position:relative;overflow:hidden}
+.map-s::before{content:'';position:absolute;top:-40%;left:-10%;width:60%;height:160%;background:radial-gradient(ellipse,rgba(0,201,183,.06),transparent 55%);pointer-events:none}
+.us-legend{display:inline-flex;align-items:center;gap:14px;font-size:.9rem;color:rgba(27,42,74,.65);margin:18px 0 24px;flex-wrap:wrap;justify-content:center}
+.us-key{display:inline-block;width:18px;height:18px;border-radius:4px;vertical-align:middle;margin-right:4px}
+.us-key-a{background:var(--tm);box-shadow:0 0 0 4px rgba(10,155,142,.18)}
+.us-key-i{background:rgba(27,42,74,.12)}
+.us-map-wrap{position:relative;max-width:1000px;margin:0 auto;padding:0 10px}
+#us-map{position:relative;width:100%}
+#us-map svg{width:100%;height:auto;overflow:visible;filter:drop-shadow(0 12px 24px rgba(27,42,74,.08))}
+.us-svg path{fill:rgba(27,42,74,.12);stroke:#fff;stroke-width:.5;transition:fill .35s ease,transform .35s ease,filter .35s ease;transform-origin:center;transform-box:fill-box}
+.us-svg path.a{fill:var(--tm);animation:pulsefill 6s ease-in-out infinite}
+.us-svg path.a:nth-of-type(3n){animation-delay:-2s}
+.us-svg path.a:nth-of-type(3n+1){animation-delay:-4s}
+.us-svg path:hover{filter:drop-shadow(0 4px 14px rgba(10,155,142,.6));cursor:pointer}
+.us-svg path.a:hover{fill:var(--teal);transform:scale(1.02)}
+.us-svg path:not(.a):hover{fill:rgba(27,42,74,.22)}
+@keyframes pulsefill{0%,100%{fill:var(--tm)}50%{fill:#1EB8A8}}
+.us-tt{position:absolute;pointer-events:none;background:var(--dk);color:#fff;padding:8px 14px;border-radius:8px;font-size:.85rem;font-weight:600;box-shadow:0 8px 22px rgba(0,0,0,.25);opacity:0;transform:translate(-50%,-140%);transition:opacity .18s;white-space:nowrap;z-index:5}
+.us-tt.sh{opacity:1}
+.us-tt::after{content:'';position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--dk);border-bottom:0}
+.us-tt .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--teal);margin-right:6px;vertical-align:middle}
+.us-ld{display:flex;align-items:center;justify-content:center;gap:12px;min-height:260px;color:rgba(27,42,74,.45);font-size:.9rem}
+.us-sp{width:22px;height:22px;border-radius:50%;border:2.5px solid rgba(10,155,142,.2);border-top-color:var(--tm);animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.us-stat{margin-top:28px;font-size:1.1rem;color:var(--dk)}
+.us-stat strong{color:var(--tm);font-family:var(--fd);font-size:1.6rem}
+</style>
+<script>
+(function(){
+  var ACTIVE=new Set(['CA','TX','FL','GA','AL','NC','VA','MD','PA','NY','CT','MA','OH','MI','IN','IL','WI','MN','IA','MO','AR','SD','HI','WA','OR','NV','AZ','UT','CO','NM','KS','NE','TN','SC','KY','NJ','RI','VT','ME']);
+  var host=document.getElementById('us-map'),tt=document.getElementById('us-tt');
+  if(!host) return;
+  fetch('images/us-map.svg').then(function(r){return r.text()}).then(function(svg){
+    host.innerHTML=svg;host.setAttribute('aria-busy','false');
+    var paths=host.querySelectorAll('path');
+    paths.forEach(function(p,i){
+      var st=p.getAttribute('data-st')||'';
+      if(ACTIVE.has(st))p.classList.add('a');else p.classList.remove('a');
+      p.style.animationDelay=(-(i%6)*.9)+'s';
+      p.addEventListener('mouseenter',function(e){
+        var nm=p.querySelector('title'); nm=nm?nm.textContent:st;
+        var act=p.classList.contains('a');
+        tt.innerHTML=(act?'<span class="dot"></span>':'')+nm+(act?' <span style="opacity:.6;font-weight:500;margin-left:6px">Active</span>':'');
+        tt.classList.add('sh');
+      });
+      p.addEventListener('mousemove',function(e){
+        var r=host.getBoundingClientRect();
+        tt.style.left=(e.clientX-r.left)+'px';
+        tt.style.top=(e.clientY-r.top)+'px';
+      });
+      p.addEventListener('mouseleave',function(){tt.classList.remove('sh')});
+    });
+  }).catch(function(){host.innerHTML='<div class="us-ld">Unable to load map</div>'});
+})();
+</script>
+
+<section style="padding:var(--sp) 0;background:var(--bg)"><div class="c">
+  <div class="sh fu"><div class="sl">Student Voices</div><h2>What Our Students Say</h2></div>
+  <div class="g3 fu">
+    <div class="sc"><div class="scs"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><p>&ldquo;Without this program, I'd still be undecided about my career path. Catalyst Academy clarified my goals and inspired me to pursue public health.&rdquo;</p><div class="sca">Rajan J.</div><div class="scc">Catalyst Academy '23</div></div>
+    <div class="sc"><div class="scs"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><p>&ldquo;Even after the program ended, the mentors stayed with us, helping turn our ideas into real-world solutions.&rdquo;</p><div class="sca">Emma B.</div><div class="scc">Catalyst Academy '23</div></div>
+    <div class="sc"><div class="scs"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><p>&ldquo;Catalyst Academy was truly an invigorating experience! I feel extremely educated about the plethora of opportunities public health has to offer!&rdquo;</p><div class="sca">Jada O.</div><div class="scc">Catalyst Academy '25</div></div>
+  </div>
+</div></section>
+
+<section class="gr-s"><div class="c">
+  <div class="sh ctr fu"><div class="sl">Google Reviews</div><h2>What Our Community Is Saying</h2><p style="margin:10px auto 0;max-width:560px">Verified reviews from students, mentors, and partners across the Project UNITY community.</p></div>
+
+  <div class="gr-head fu">
+    <div class="gr-g"><svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3c-1.7 4.7-6.2 8-11.3 8a12 12 0 1 1 0-24c3 0 5.8 1.1 7.9 3l5.7-5.7A20 20 0 1 0 44 24c0-1.3-.1-2.7-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3 0 5.8 1.1 7.9 3l5.7-5.7A20 20 0 0 0 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2A12 12 0 0 1 12.7 28.4l-6.6 5.1C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3a12 12 0 0 1-4.1 5.6l6.2 5.2c-.4.4 6.6-4.8 6.6-14.8 0-1.3-.1-2.7-.4-3.9z"/></svg><div><strong>Project UNITY</strong><div class="gr-rate"><span class="gr-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <span style="color:rgba(27,42,74,.6);font-size:.88rem">5.0 · Based on verified Google reviews</span></div></div></div>
+    <a href="https://www.google.com/search?q=Project+UNITY+NFP" target="_blank" rel="noopener" class="btn bod">Read all on Google &rarr;</a>
+  </div>
+
+  <div class="g3 fu gr-grid">
+    <div class="gr-card"><div class="gr-top"><div class="gr-av">KR</div><div><strong>Kendra R.</strong><div class="gr-meta">Catalyst Academy Parent · 2 weeks ago</div></div></div><div class="scs">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;My daughter came out of Catalyst Academy with a completely new sense of direction. The mentorship and rigor are beyond anything we could have found locally.&rdquo;</p></div>
+    <div class="gr-card"><div class="gr-top"><div class="gr-av">MT</div><div><strong>Marcus T.</strong><div class="gr-meta">Y-PHIC Founder · 1 month ago</div></div></div><div class="scs">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Project UNITY takes young public health leaders seriously. Their seed funding and mentorship took our initiative from idea to operating nonprofit in six months.&rdquo;</p></div>
+    <div class="gr-card"><div class="gr-top"><div class="gr-av">AS</div><div><strong>Dr. Anika S.</strong><div class="gr-meta">Mentor · 3 months ago</div></div></div><div class="scs">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;I've mentored for many programs and Project UNITY stands alone. The students arrive curious and leave as collaborators. An extraordinary national lab.&rdquo;</p></div>
+  </div>
+
+  <!-- Live widget container: paste Elfsight Google Reviews widget script here to replace the static cards above -->
+  <div id="google-reviews-widget" class="fu" style="margin-top:30px"></div>
+</div></section>
+<style>
+.gr-s{padding:var(--sp) 0;background:var(--wh)}
+.gr-head{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:0 auto 34px;max-width:760px;flex-wrap:wrap}
+.gr-g{display:flex;align-items:center;gap:14px}
+.gr-rate{display:flex;align-items:center;gap:8px;margin-top:2px}
+.gr-stars{color:#F6B100;letter-spacing:2px;font-size:1rem}
+.gr-card{background:var(--wh);border:1px solid rgba(27,42,74,.08);border-radius:18px;padding:28px 24px;box-shadow:0 4px 18px rgba(27,42,74,.04);transition:all .3s}
+.gr-card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(27,42,74,.1);border-color:rgba(10,155,142,.2)}
+.gr-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.gr-av{width:44px;height:44px;border-radius:50%;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:var(--fd);font-size:.95rem}
+.gr-meta{font-size:.78rem;color:rgba(27,42,74,.55)}
+.gr-card .scs{color:#F6B100;letter-spacing:2px;font-size:.9rem;margin-bottom:10px}
+.gr-card p{color:rgba(26,26,26,.72);font-size:.95rem;line-height:1.7}
+</style>
+
+<section class="nl-s"><div class="c"><h2 class="fu">Get exclusive updates on our work.</h2><p class="fu">Join our mailing list for program announcements and community news.</p><div class="nf fu"><form onsubmit="event.preventDefault();var e=this.email.value.trim();if(!e){this.email.focus();return}window.location='mailto:info@projectunitynfp.com?subject=Newsletter%20Signup&body='+encodeURIComponent('Please add me to the Project UNITY newsletter.
+
+Email: '+e);" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;width:100%;max-width:460px;margin:0 auto"><input type="email" name="email" required placeholder="Enter your email address" aria-label="Email address" style="flex:1;min-width:220px"><button type="submit" class="btn bp">Subscribe</button></form></div></div></section>
+<footer class="ft"><div class="c">
+  <div class="fg">
+    <div class="fbr">
+      <div class="nl" style="margin-bottom:0"><img src="images/logo-white-dark-scaled-e1774294711846.png" alt="Project UNITY" style="height:42px;width:auto;display:block"></div>
+      <p>A youth-led nonprofit transforming how the next generation leads in healthcare, public health, and digital health. Founded in 2020.</p>
+    </div>
+    <div><h4>Our Work</h4><ul class="fk"><li><a href="catalyst-academy.html">Catalyst Academy</a></li><li><a href="yphic.html">Y-PHIC</a></li><li><a href="research.html">Research &amp; Press</a></li></ul></div>
+    <div><h4>Get Involved</h4><ul class="fk"><li><a href="catalyst-academy.html#apply">Apply as a Student</a></li><li><a href="catalyst-academy.html#become-mentor">Become a Mentor</a></li><li><a href="support.html">Support Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>About</h4><ul class="fk"><li><a href="about.html">About Us</a></li><li><a href="about.html#leadership">Leadership</a></li><li><a href="about.html#board">Board of Directors</a></li><li><a href="about.html#advisory">Advisory Board</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li></ul></div>
+  </div>
+  <div class="fbt">
+    <span>&copy; Project UNITY 2026 &mdash; All Rights Reserved.</span>
+    <div class="fsc">
+      <a href="https://www.instagram.com/projectunity.nfp/" target="_blank" aria-label="Instagram">IG</a>
+      <a href="https://www.youtube.com/@ProjectUNITYNFP" target="_blank" aria-label="YouTube">YT</a>
+      <a href="https://www.linkedin.com/company/project-unity-nfp" target="_blank" aria-label="LinkedIn">LI</a>
+      <a href="mailto:info@projectunitynfp.com" aria-label="Email">EM</a>
+    </div>
+  </div>
+</div></footer>
+<button class="stb" aria-label="Scroll to top"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg></button>
+<script>
+const ob=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&e.target.classList.add('v')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fu').forEach(e=>ob.observe(e));
+const sb=document.querySelector('.stb');if(sb){window.addEventListener('scroll',()=>{sb.classList.toggle('v',scrollY>400)});sb.addEventListener('click',()=>{scrollTo({top:0,behavior:'smooth'})})}
+document.querySelectorAll('.fq-q').forEach(q=>{q.addEventListener('click',()=>{q.parentElement.classList.toggle('op')})});
+document.querySelectorAll('.acc-h').forEach(h=>{h.addEventListener('click',()=>{const it=h.parentElement;const was=it.classList.contains('op');document.querySelectorAll('.acc-i').forEach(i=>i.classList.remove('op'));if(!was)it.classList.add('op')})});
+const rt=document.getElementById('rt');
+if(rt){const p=['Public Health Change-Makers','Clinical Leaders','Digital Health Innovators'];let i=0;rt.style.transition='opacity .4s,transform .4s';setInterval(()=>{rt.style.opacity='0';rt.style.transform='translateY(10px)';setTimeout(()=>{i=(i+1)%p.length;rt.textContent=p[i];rt.style.opacity='1';rt.style.transform='translateY(0)'},400)},3000)}
+
+(function(){var mb=document.querySelector('.mb'),nk=document.querySelector('.nk');if(mb&&nk){mb.addEventListener('click',function(){nk.classList.toggle('op');mb.classList.toggle('op')});nk.querySelectorAll('.dd>a').forEach(function(a){a.addEventListener('click',function(e){if(window.innerWidth<=900){e.preventDefault();a.parentElement.classList.toggle('op')}})})}})();
+</script>
+
+<script>
+(function(){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.fu,.fu-l,.fu-r').forEach(function(el,i){el.style.transitionDelay=((i%6)*.06)+'s';io.observe(el)});
+  // animated counters
+  var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target;var end=parseFloat(el.getAttribute('data-count')||el.textContent.replace(/[^0-9.]/g,''));if(!end)return;var suf=(el.getAttribute('data-suf')||(/\+/.test(el.textContent)?'+':''));var pref=(el.getAttribute('data-pre')||(/\$/.test(el.textContent)?'$':''));var dur=1400,st=performance.now(),dec=(end%1!==0)?1:0;function tick(t){var p=Math.min(1,(t-st)/dur);var v=end*(1-Math.pow(1-p,3));el.textContent=pref+v.toFixed(dec).replace(/\B(?=(\d{3})+(?!\d))/g,',')+suf;if(p<1)requestAnimationFrame(tick)}requestAnimationFrame(tick);cio.unobserve(el)})},{threshold:.4});
+  document.querySelectorAll('[data-count],.num,.stn').forEach(function(el){if(/\d/.test(el.textContent))cio.observe(el)});
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catalyst Academy 2025 — Project UNITY</title>
+<link rel="icon" type="image/png" href="images/cropped-icon-square-transparent-1-32x32.png">
+<link rel="apple-touch-icon" href="images/cropped-icon-square-transparent-1-192x192.png">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#00C9B7;--tm:#0A9B8E;--purp:#7B2D8E;--dk:#1B2A4A;--bk:#1A1A1A;--wh:#FFF;--bg:#F0F4F8;--grad:linear-gradient(135deg,#00C9B7,#5B4DC7,#7B2D8E);--fd:'Bricolage Grotesque',sans-serif;--fb:'Poppins',sans-serif;--mw:1200px;--sp:clamp(60px,8vw,120px)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--bk);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.c{max-width:var(--mw);margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+h1,h2,h3,h4{font-family:var(--fd);line-height:1.15}
+h1{font-weight:800;font-size:clamp(2.2rem,4.5vw,3.4rem);color:var(--dk)}
+h2{font-weight:700;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--dk)}
+h3{font-weight:600;font-size:clamp(1rem,1.8vw,1.3rem);color:var(--purp)}
+p{font-size:clamp(.95rem,1.1vw,1.05rem)}
+.sl{font-family:var(--fb);font-weight:600;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;color:var(--tm);margin-bottom:12px}
+.sh{margin-bottom:40px}.sh h2{margin-bottom:10px}.sh p{color:rgba(26,26,26,.6);max-width:560px}
+.ctr{text-align:center}.ctr p{margin:0 auto}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:50px;font-family:var(--fb);font-weight:600;font-size:.92rem;cursor:pointer;border:none;transition:all .3s ease}
+.bp{background:var(--tm);color:var(--wh);box-shadow:0 4px 16px rgba(10,155,142,.3)}
+.bp:hover{background:var(--teal);transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,201,183,.4)}
+.fu{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.fu.v{opacity:1;transform:translateY(0)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(27,42,74,.06)}
+.ni{max-width:var(--mw);margin:0 auto;padding:0 clamp(20px,4vw,40px);display:flex;align-items:center;justify-content:space-between;height:68px}
+.nl{display:flex;align-items:center;gap:10px}
+.nli{width:34px;height:34px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center}
+.nlt{font-family:var(--fd);font-weight:700;font-size:1.05rem;color:var(--dk)}.nlt span{color:var(--purp);font-weight:400}
+.nk{display:flex;align-items:center;gap:28px;list-style:none}
+.nk a{font-weight:500;font-size:.87rem;color:var(--dk);transition:color .2s;position:relative}
+.nk a:hover{color:var(--tm)}
+.nk .dd{position:relative;cursor:pointer}
+.nk .dm{position:absolute;top:calc(100% + 10px);left:-16px;background:var(--wh);border-radius:12px;box-shadow:0 12px 48px rgba(27,42,74,.1);padding:10px 0;min-width:210px;opacity:0;visibility:hidden;transform:translateY(6px);transition:all .2s}
+.nk .dd:hover .dm{opacity:1;visibility:visible;transform:translateY(0)}
+.dm a{display:block;padding:9px 18px;font-size:.85rem}.dm a:hover{background:var(--bg)}
+.nc{padding:9px 22px;font-size:.83rem;background:var(--tm);color:var(--wh)!important;border-radius:50px;font-weight:600}.nc:hover{background:var(--teal)!important}
+.mb{display:none;background:0 0;border:0;cursor:pointer;width:30px;height:30px;flex-direction:column;justify-content:center;align-items:center;gap:5px}
+.mb span{width:22px;height:2px;background:var(--dk);border-radius:2px}
+.hd{background:var(--dk);padding:clamp(70px,10vw,110px) 0 clamp(50px,7vw,80px);position:relative;overflow:hidden;margin-top:68px;text-align:center}
+.hd::before{content:'';position:absolute;top:-30%;right:-10%;width:70%;height:160%;background:radial-gradient(ellipse,rgba(0,201,183,.1),transparent 55%);pointer-events:none}
+.hd::after{content:'';position:absolute;bottom:-30%;left:-10%;width:50%;height:120%;background:radial-gradient(ellipse,rgba(123,45,142,.07),transparent 55%);pointer-events:none}
+.hd .hc{max-width:740px;margin:0 auto;position:relative;z-index:2}
+.hd h1{color:var(--wh);margin-bottom:14px}
+.hd h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hd p{color:rgba(255,255,255,.6);margin:0 auto 28px;max-width:560px;line-height:1.8}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,201,183,.12);color:var(--teal);font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:18px}
+.badge svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+.ig{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;position:relative;z-index:2}
+.is{text-align:center;padding:26px 16px;background:rgba(255,255,255,.04);border-radius:16px;border:1px solid rgba(255,255,255,.06)}
+.isn{font-family:var(--fd);font-weight:800;font-size:clamp(2rem,4vw,2.8rem);color:var(--teal);line-height:1;margin-bottom:6px}
+.isl{font-weight:500;font-size:.82rem;color:rgba(255,255,255,.55)}
+.key{background:var(--wh);border-radius:22px;padding:clamp(32px,5vw,48px);border:1px solid rgba(27,42,74,.04);display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center}
+.keyph{width:160px;height:160px;border-radius:50%;object-fit:cover;border:4px solid var(--bg)}
+.keyt{font-family:var(--fd);font-weight:700;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;color:var(--tm);margin-bottom:6px}
+.key h3{font-family:var(--fd);font-weight:700;font-size:1.5rem;color:var(--dk);margin-bottom:6px}
+.keyrl{font-size:.95rem;color:var(--tm);font-weight:600;margin-bottom:12px;display:block}
+.key p{color:rgba(26,26,26,.65);font-size:.95rem}
+.aw{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:36px}
+.awc{background:var(--wh);border-radius:16px;padding:28px;border:1px solid rgba(27,42,74,.04);transition:all .3s;position:relative;overflow:hidden}
+.awc::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--grad)}
+.awc:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(27,42,74,.1)}
+.awt{font-family:var(--fd);font-weight:700;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--purp);margin-bottom:10px}
+.awc h4{font-family:var(--fd);font-weight:700;font-size:1.1rem;color:var(--dk);margin-bottom:6px;line-height:1.35}
+.awc p{font-size:.88rem;color:rgba(26,26,26,.6)}
+.sg{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px;margin-top:32px}
+.stu{background:var(--wh);border-radius:14px;padding:20px 14px;text-align:center;border:1px solid rgba(27,42,74,.04);transition:all .3s}
+.stu:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(27,42,74,.08);border-color:rgba(10,155,142,.15)}
+.stuav{width:70px;height:70px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;color:var(--wh);font-family:var(--fd);font-weight:700;font-size:1.25rem;margin:0 auto 12px}
+.stu h5{font-family:var(--fd);font-weight:600;font-size:.88rem;color:var(--dk);line-height:1.3}
+.nl-s{padding:var(--sp) 0;background:var(--dk);text-align:center;position:relative;overflow:hidden}
+.nl-s::before{content:'';position:absolute;inset:0;background:var(--grad);opacity:.07;pointer-events:none}
+.nl-s h2{color:var(--wh);margin-bottom:10px;position:relative;z-index:2}
+.nl-s p{color:rgba(255,255,255,.55);margin-bottom:28px;position:relative;z-index:2}
+.nf{display:flex;gap:10px;max-width:460px;margin:0 auto;position:relative;z-index:2}
+.nf input{flex:1;padding:13px 18px;border:1px solid rgba(255,255,255,.12);border-radius:50px;background:rgba(255,255,255,.06);color:var(--wh);font-family:var(--fb);font-size:.88rem;outline:0;transition:border-color .3s}
+.nf input::placeholder{color:rgba(255,255,255,.3)}.nf input:focus{border-color:var(--teal)}
+.ft{background:#111B2E;padding:52px 0 28px;color:rgba(255,255,255,.45)}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:40px}
+.fbr p{font-size:.85rem;color:rgba(255,255,255,.35);line-height:1.7;margin-top:14px;max-width:300px}
+.ft h4{font-family:var(--fd);font-weight:600;font-size:.88rem;color:var(--wh);margin-bottom:16px}
+.fk{list-style:none;display:flex;flex-direction:column;gap:10px}
+.fk a{font-size:.85rem;color:rgba(255,255,255,.4);transition:color .2s}.fk a:hover{color:var(--teal)}
+.fbt{border-top:1px solid rgba(255,255,255,.06);padding-top:20px;display:flex;justify-content:space-between;align-items:center;font-size:.78rem}
+.fsc{display:flex;gap:14px}
+.fsc a{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;transition:all .3s;font-size:.7rem;color:rgba(255,255,255,.5);font-weight:600}
+.fsc a:hover{background:var(--tm);color:var(--wh)}
+.stb{position:fixed;bottom:24px;right:24px;z-index:998;width:44px;height:44px;border-radius:50%;background:var(--dk);border:2px solid rgba(0,201,183,.3);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transform:translateY(12px);transition:all .4s ease}
+.stb.v{opacity:1;transform:translateY(0)}.stb:hover{background:var(--tm);border-color:var(--tm);transform:translateY(-2px)}
+.stb svg{width:18px;height:18px;stroke:var(--teal);fill:none;stroke-width:2.5;stroke-linecap:round}.stb:hover svg{stroke:var(--wh)}
+@media(max-width:900px){.nk{display:none}.mb{display:flex}.ig{grid-template-columns:repeat(2,1fr)}.key{grid-template-columns:1fr;text-align:center}.keyph{margin:0 auto}.aw{grid-template-columns:1fr}.fg{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:600px){.fg{grid-template-columns:1fr}.fbt{flex-direction:column;gap:14px;text-align:center}.nf{flex-direction:column}}
+
+/* Mobile nav */
+.nk.op{display:flex!important;position:fixed;top:68px;left:0;right:0;background:var(--wh);flex-direction:column;align-items:stretch;padding:18px 24px;gap:4px;box-shadow:0 12px 32px rgba(27,42,74,.08);border-top:1px solid rgba(27,42,74,.06);max-height:calc(100vh - 68px);overflow-y:auto}
+.nk.op li{width:100%}
+.nk.op .dd .dm{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding:4px 0 4px 16px;min-width:0;display:none}
+.nk.op .dd.op .dm{display:block}
+.nk.op a{display:block;padding:11px 8px;font-size:.95rem}
+.nk.op .nc{margin-top:8px;text-align:center}
+.mb.op span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.mb.op span:nth-child(2){opacity:0}
+.mb.op span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mb span{transition:all .25s ease}
+
+
+/* A11y type bump */
+.nlg{height:40px;width:auto;display:block}
+@media(max-width:600px){.nlg{height:34px}}
+body{font-size:16.5px;line-height:1.75}
+p{font-size:clamp(1rem,1.15vw,1.125rem);line-height:1.75}
+.btn{font-size:.98rem;padding:15px 30px}
+.nk a{font-size:.94rem}
+.nc{font-size:.9rem}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:4px}
+
+/* Breadcrumb */
+.cbc{background:var(--bg);border-bottom:1px solid rgba(27,42,74,.06);padding:14px 0;margin-top:68px}
+.cbc ol{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:.88rem;color:rgba(27,42,74,.55)}
+.cbc a{color:var(--tm);font-weight:500}
+.cbc a:hover{color:var(--teal)}
+.cbc [aria-current]{color:var(--dk);font-weight:600}
+.ann + .cbc,.cbc{margin-top:68px}
+.cbc + section.hd,.cbc + .hd{margin-top:0}
+section.hd{margin-top:0 !important}
+/* Fix hero to not double-add top spacing when a breadcrumb sits above it */
+.cbc ~ section:first-of-type{padding-top:clamp(40px,5vw,70px)}
+/* Upgraded student grid */
+.sg{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:18px}
+.stu{background:var(--wh);border-radius:16px;padding:18px 14px 16px;text-align:center;border:1px solid rgba(27,42,74,.06);transition:all .3s}
+.stu:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(27,42,74,.08);border-color:rgba(10,155,142,.25)}
+.stuav{width:96px;height:96px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--fd);font-weight:700;font-size:1.4rem;margin:0 auto 12px;letter-spacing:.04em;background:var(--grad);box-shadow:0 6px 18px rgba(10,155,142,.25)}
+.stu h5{font-family:var(--fd);font-weight:600;font-size:.95rem;color:var(--dk);line-height:1.35}
+@media(max-width:600px){.sg{grid-template-columns:repeat(2,1fr);gap:12px}.stuav{width:76px;height:76px;font-size:1.15rem}}
+
+/* --- global motion --- */
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes gradShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes spinSlow{to{transform:rotate(360deg)}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes popIn{0%{opacity:0;transform:scale(.9)}60%{transform:scale(1.02)}100%{opacity:1;transform:scale(1)}}
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
+.hero,.hd,.ph,section[class*="hero"]{background-size:200% 200%;animation:gradShift 18s ease infinite}
+.fu{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.fu.in{opacity:1;transform:translateY(0)}
+.fu-l{opacity:0;transform:translateX(-30px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.fu-l.in{opacity:1;transform:translateX(0)}
+.fu-r{opacity:0;transform:translateX(30px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.fu-r.in{opacity:1;transform:translateX(0)}
+.card,.pc,.gc,.vc,.tm,.bc,.gr-card,.acri,.stat,.ic,.ev,.nc{transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .35s ease}
+.card:hover,.pc:hover,.gc:hover,.vc:hover,.tm:hover,.bc:hover,.gr-card:hover,.acri:hover,.ic:hover,.ev:hover,.nc:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(10,30,60,.12)}
+.btn{position:relative;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(10,155,142,.25)}
+.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent);transform:translateX(-100%);transition:transform .6s ease}
+.btn:hover::after{transform:translateX(100%)}
+.stat .num,.stn,.big{transition:transform .4s ease}
+.stat:hover .num,.stat:hover .stn{transform:scale(1.08)}
+.nlg{transition:transform .4s ease}
+.nl:hover .nlg{transform:scale(1.04) rotate(-1deg)}
+nav a,.nm a{position:relative;transition:color .25s ease}
+nav a::after,.nm a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--teal);transition:width .3s ease}
+nav a:hover::after,.nm a:hover::after{width:100%}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
+
+</style>
+</head>
+<body>
+<nav class="nav"><div class="ni">
+  <a href="index.html" class="nl" aria-label="Project UNITY home"><img src="images/logo-transparent-dark-scaled.png" alt="Project UNITY" class="nlg"></a>
+  <ul class="nk">
+    <li><a href="index.html">Home</a></li>
+    <li class="dd"><a href="javascript:void(0)" role="button" aria-haspopup="true">Our Work &#9662;</a><div class="dm"><a href="catalyst-academy.html">Catalyst Academy</a><a href="catalyst-academy-2025.html">2025 Cohort</a><a href="catalyst-academy-2024.html">2024 Cohort</a><a href="catalyst-academy-2023.html">2023 Cohort</a><a href="catalyst-academy.html#mentors">Mentors</a><a href="catalyst-academy.html#speakers">Guest Speakers</a><a href="yphic.html">Y-PHIC</a><a href="research.html">Research &amp; Press</a></div></li>
+    <li class="dd"><a href="javascript:void(0)" role="button" aria-haspopup="true">Get Involved &#9662;</a><div class="dm"><a href="catalyst-academy.html#apply">Apply as a Student</a><a href="catalyst-academy.html#become-mentor">Become a Mentor</a><a href="support.html">Support Us</a></div></li>
+    <li class="dd"><a href="javascript:void(0)" role="button" aria-haspopup="true">About &#9662;</a><div class="dm"><a href="about.html">About Us</a><a href="about.html#leadership">Leadership</a><a href="about.html#board">Board of Directors</a><a href="about.html#advisory">Advisory Board</a></div></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="catalyst-academy.html#apply" class="nc">Apply Now</a></li>
+  </ul>
+  <button class="mb" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></nav>
+
+<nav class="cbc" aria-label="Breadcrumb"><div class="c"><ol><li><a href="index.html">Home</a></li><li aria-hidden="true">&rsaquo;</li><li><a href="catalyst-academy.html">Catalyst Academy</a></li><li aria-hidden="true">&rsaquo;</li><li aria-current="page">2025 Cohort</li></ol></div></nav>
+<section class="hd"><div class="c"><div class="hc fu">
+  <div class="badge"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Catalyst Academy 2025</div>
+  <h1>The <em>2025</em> Class</h1>
+  <p>Meet the students, explore their projects, and see the award-winning research from our largest summer cohort to date.</p>
+</div></div></section>
+
+<section style="padding:var(--sp) 0;background:var(--wh)"><div class="c">
+  <div class="sh ctr fu"><div class="sl">By the Numbers</div><h2>Our Largest Cohort Yet</h2></div>
+  <div class="ig fu">
+    <div class="is"><div class="isn" style="color:var(--dk)">35</div><div class="isl" style="color:rgba(27,42,74,.6)">Students</div></div>
+    <div class="is"><div class="isn" style="color:var(--dk)">8</div><div class="isl" style="color:rgba(27,42,74,.6)">Weeks</div></div>
+    <div class="is"><div class="isn" style="color:var(--dk)">4</div><div class="isl" style="color:rgba(27,42,74,.6)">Awards</div></div>
+    <div class="is"><div class="isn" style="color:var(--dk)">1</div><div class="isl" style="color:rgba(27,42,74,.6)">Research Conference</div></div>
+  </div>
+</div></section>
+
+<section style="padding:var(--sp) 0;background:var(--bg)"><div class="c">
+  <div class="sh ctr fu"><div class="sl">Conference Keynote</div><h2>Headlining Our Research Conference</h2></div>
+  <div class="key fu">
+    <img src="images/Keynote-Speaker-Dr.-Geeta-Nayyar-MD-MBA.jpg" alt="Dr. Geeta Nayyar, MD, MBA" class="keyph">
+    <div>
+      <div class="keyt">2025 Keynote</div>
+      <h3>Dr. Geeta Nayyar, MD, MBA</h3>
+      <span class="keyrl">Bestselling Author &middot; Former CMO, Salesforce &amp; AT&amp;T</span>
+      <p>Dr. Nayyar is a physician-executive, bestselling author of <em>Dead Wrong: Diagnosing and Treating Healthcare's Misinformation Illness</em>, and one of the country's most prominent voices on the intersection of medicine, technology, and trust.</p>
+    </div>
+  </div>
+</div></section>
+
+<section style="padding:var(--sp) 0;background:var(--wh)"><div class="c">
+  <div class="sh ctr fu"><div class="sl">Awards</div><h2>2025 Award Recipients</h2></div>
+  <div class="aw fu">
+    <div class="awc"><div class="awt">Public Health Trailblazers</div><h4>Violet Su</h4><p>Recognized for demonstrating exceptional leadership, initiative, and commitment to public health throughout the program.</p></div>
+    <div class="awc"><div class="awt">Best Research Poster</div><h4>The M.A.M.A. Initiative</h4><p>Awarded for the most compelling visual presentation of original research at the UNITY Research Conference.</p></div>
+    <div class="awc"><div class="awt">Best Research Paper</div><h4>The Risk of Lung Cancer in Construction Workers in Cincinnati, Ohio &mdash; A Public Health Perspective</h4><p>Honored as the top academic paper produced by a member of the 2025 cohort.</p></div>
+    <div class="awc"><div class="awt">Excellence in Public Health Mentorship</div><h4>Aida Aryan &amp; Diana Jacob</h4><p>Given to mentors whose guidance most deeply shaped their students' research and growth.</p></div>
+  </div>
+</div></section>
+
+<section style="padding:var(--sp) 0;background:var(--bg)"><div class="c">
+  <div class="sh ctr fu"><div class="sl">The Cohort</div><h2>Meet the 2025 Class</h2><p style="margin:0 auto">Thirty-five students from across the country spent eight weeks building original research and community interventions.</p></div>
+  <div class="sg fu">
+    <div class="stu"><div class="stuav">AA</div><h5>Ananya Agarwal</h5></div>
+    <div class="stu"><div class="stuav">MA</div><h5>Mariam Azam</h5></div>
+    <div class="stu"><div class="stuav">IB</div><h5>Isabelle Banaie</h5></div>
+    <div class="stu"><div class="stuav">DB</div><h5>Denise Bermudez</h5></div>
+    <div class="stu"><div class="stuav">TD</div><h5>Tanusiya Debnath</h5></div>
+    <div class="stu"><div class="stuav">JF</div><h5>Jiffannie Jose Asker Fredy</h5></div>
+    <div class="stu"><div class="stuav">BG</div><h5>Brayden Gallardo</h5></div>
+    <div class="stu"><div class="stuav">NG</div><h5>Najiba Ghafari</h5></div>
+    <div class="stu"><div class="stuav">IG</div><h5>Ishaan Ghosh</h5></div>
+    <div class="stu"><div class="stuav">DG</div><h5>Devika Gidhesh</h5></div>
+    <div class="stu"><div class="stuav">AG</div><h5>Akshita Gupta</h5></div>
+    <div class="stu"><div class="stuav">IG</div><h5>Ishani Gupta</h5></div>
+    <div class="stu"><div class="stuav">SH</div><h5>Shankar Harikrishnan</h5></div>
+    <div class="stu"><div class="stuav">DH</div><h5>Dalal Hasaballa</h5></div>
+    <div class="stu"><div class="stuav">AH</div><h5>Arnav Heddurshetti</h5></div>
+    <div class="stu"><div class="stuav">MH</div><h5>Madeline Hernandez</h5></div>
+    <div class="stu"><div class="stuav">LI</div><h5>Lakshmi Immadisetty</h5></div>
+    <div class="stu"><div class="stuav">SI</div><h5>Sophia Irigaray</h5></div>
+    <div class="stu"><div class="stuav">AJ</div><h5>Amish Jha</h5></div>
+    <div class="stu"><div class="stuav">LJ</div><h5>Lara Jlenkw</h5></div>
+    <div class="stu"><div class="stuav">SJ</div><h5>Sanya Joshi</h5></div>
+    <div class="stu"><div class="stuav">AK</div><h5>Ashlyn Karpinen</h5></div>
+    <div class="stu"><div class="stuav">SK</div><h5>Smrithi Karthik</h5></div>
+    <div class="stu"><div class="stuav">LL</div><h5>Lainey Laczkowski</h5></div>
+    <div class="stu"><div class="stuav">AL</div><h5>Aitran Le</h5></div>
+    <div class="stu"><div class="stuav">EL</div><h5>Eric Li</h5></div>
+    <div class="stu"><div class="stuav">GL</div><h5>Grace Lin</h5></div>
+    <div class="stu"><div class="stuav">VM</div><h5>Vincent Ma</h5></div>
+    <div class="stu"><div class="stuav">AM</div><h5>Ariyana Mahadeo</h5></div>
+    <div class="stu"><div class="stuav">JO</div><h5>Jada Okoye</h5></div>
+    <div class="stu"><div class="stuav">SP</div><h5>Sreenayan Palle</h5></div>
+    <div class="stu"><div class="stuav">RP</div><h5>Ruhikaa Pannem</h5></div>
+    <div class="stu"><div class="stuav">NP</div><h5>Nihar Patel</h5></div>
+    <div class="stu"><div class="stuav">SP</div><h5>Saranya Perali</h5></div>
+    <div class="stu"><div class="stuav">SP</div><h5>Shreya Pillai</h5></div>
+  </div>
+</div></section>
+
+<div class="c"><p style="text-align:center;margin-top:28px;font-size:.83rem;color:rgba(27,42,74,.35);font-style:italic" class="fu">Placeholder avatars are shown where student photos are pending.</p></div>
+<section class="nl-s"><div class="c"><h2 class="fu">Get exclusive updates on our work.</h2><p class="fu">Join our mailing list for program announcements and community news.</p><div class="nf fu"><form onsubmit="event.preventDefault();var e=this.email.value.trim();if(!e){this.email.focus();return}window.location='mailto:info@projectunitynfp.com?subject=Newsletter%20Signup&body='+encodeURIComponent('Please add me to the Project UNITY newsletter.
+
+Email: '+e);" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;width:100%;max-width:460px;margin:0 auto"><input type="email" name="email" required placeholder="Enter your email address" aria-label="Email address" style="flex:1;min-width:220px"><button type="submit" class="btn bp">Subscribe</button></form></div></div></section>
+
+<footer class="ft"><div class="c">
+  <div class="fg">
+    <div class="fbr">
+      <div class="nl" style="margin-bottom:0"><img src="images/logo-white-dark-scaled-e1774294711846.png" alt="Project UNITY" style="height:42px;width:auto;display:block"></div>
+      <p>A youth-led nonprofit transforming how the next generation leads in healthcare, public health, and digital health. Founded in 2020.</p>
+    </div>
+    <div><h4>Our Work</h4><ul class="fk"><li><a href="catalyst-academy.html">Catalyst Academy</a></li><li><a href="yphic.html">Y-PHIC</a></li><li><a href="research.html">Research &amp; Press</a></li></ul></div>
+    <div><h4>Get Involved</h4><ul class="fk"><li><a href="catalyst-academy.html#apply">Apply as a Student</a></li><li><a href="catalyst-academy.html#become-mentor">Become a Mentor</a></li><li><a href="support.html">Support Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>About</h4><ul class="fk"><li><a href="about.html">About Us</a></li><li><a href="about.html#leadership">Leadership</a></li><li><a href="about.html#board">Board of Directors</a></li><li><a href="about.html#advisory">Advisory Board</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li></ul></div>
+  </div>
+  <div class="fbt">
+    <span>&copy; Project UNITY 2026 &mdash; All Rights Reserved.</span>
+    <div class="fsc">
+      <a href="https://www.instagram.com/projectunity.nfp/" target="_blank" aria-label="Instagram">IG</a>
+      <a href="https://www.youtube.com/@ProjectUNITYNFP" target="_blank" aria-label="YouTube">YT</a>
+      <a href="https://www.linkedin.com/company/project-unity-nfp" target="_blank" aria-label="LinkedIn">LI</a>
+      <a href="mailto:info@projectunitynfp.com" aria-label="Email">EM</a>
+    </div>
+  </div>
+</div></footer>
+<button class="stb" aria-label="Scroll to top"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg></button>
+<script>
+const ob=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&e.target.classList.add('v')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fu').forEach(e=>ob.observe(e));
+const sb=document.querySelector('.stb');if(sb){window.addEventListener('scroll',()=>{sb.classList.toggle('v',scrollY>400)});sb.addEventListener('click',()=>{scrollTo({top:0,behavior:'smooth'})})}
+
+(function(){var mb=document.querySelector('.mb'),nk=document.querySelector('.nk');if(mb&&nk){mb.addEventListener('click',function(){nk.classList.toggle('op');mb.classList.toggle('op')});nk.querySelectorAll('.dd>a').forEach(function(a){a.addEventListener('click',function(e){if(window.innerWidth<=900){e.preventDefault();a.parentElement.classList.toggle('op')}})})}})();
+</script>
+
+<script>
+(function(){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.fu,.fu-l,.fu-r').forEach(function(el,i){el.style.transitionDelay=((i%6)*.06)+'s';io.observe(el)});
+  // animated counters
+  var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target;var end=parseFloat(el.getAttribute('data-count')||el.textContent.replace(/[^0-9.]/g,''));if(!end)return;var suf=(el.getAttribute('data-suf')||(/\+/.test(el.textContent)?'+':''));var pref=(el.getAttribute('data-pre')||(/\$/.test(el.textContent)?'$':''));var dur=1400,st=performance.now(),dec=(end%1!==0)?1:0;function tick(t){var p=Math.min(1,(t-st)/dur);var v=end*(1-Math.pow(1-p,3));el.textContent=pref+v.toFixed(dec).replace(/\B(?=(\d{3})+(?!\d))/g,',')+suf;if(p<1)requestAnimationFrame(tick)}requestAnimationFrame(tick);cio.unobserve(el)})},{threshold:.4});
+  document.querySelectorAll('[data-count],.num,.stn').forEach(function(el){if(/\d/.test(el.textContent))cio.observe(el)});
+})();
+</script>
+
+</body>
+</html>
