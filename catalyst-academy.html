@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Catalyst Academy — Project UNITY</title>
+<title>Catalyst Academy - Project UNITY</title>
 <link rel="icon" type="image/png" href="images/cropped-icon-square-transparent-1-32x32.png">
 <link rel="apple-touch-icon" href="images/cropped-icon-square-transparent-1-192x192.png">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -43,7 +43,7 @@ p{font-size:clamp(.95rem,1.1vw,1.05rem)}
 
 /* Nav */
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(27,42,74,.06)}
-.ni{max-width:var(--mw);margin:0 auto;padding:0 clamp(20px,4vw,40px);display:flex;align-items:center;justify-content:space-between;height:68px}
+.ni{max-width:var(--mw);margin:0 auto;padding:0 clamp(20px,4vw,40px);display:flex;align-items:center;justify-content:space-between;height:84px}
 .nl{display:flex;align-items:center;gap:10px}
 .nli{width:34px;height:34px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center}
 .nlt{font-family:var(--fd);font-weight:700;font-size:1.05rem;color:var(--dk)}
@@ -62,10 +62,10 @@ p{font-size:clamp(.95rem,1.1vw,1.05rem)}
 .mb span{width:22px;height:2px;background:var(--dk);border-radius:2px}
 
 /* Announcement */
-.ann{background:var(--grad);color:var(--wh);text-align:center;padding:12px 20px;font-weight:600;font-size:.95rem;margin-top:68px;display:flex;align-items:center;justify-content:center;gap:8px}
+.ann{background:var(--grad);color:var(--wh);text-align:center;padding:12px 20px;font-weight:600;font-size:.95rem;margin-top:84px;display:flex;align-items:center;justify-content:center;gap:8px}
 .ann a{color:var(--wh);text-decoration:underline;text-underline-offset:3px}
 
-/* Hero — sits flush beneath announcement bar */
+/* Hero - sits flush beneath announcement bar */
 .hero{background:var(--dk);padding:clamp(50px,7vw,90px) 0 clamp(56px,9vw,90px);position:relative;overflow:hidden;text-align:center}
 .ann + .hero{padding-top:clamp(40px,5vw,70px)}
 .hero::before{content:'';position:absolute;top:-30%;right:-10%;width:70%;height:160%;background:radial-gradient(ellipse,rgba(0,201,183,.1),transparent 55%);pointer-events:none}
@@ -163,7 +163,8 @@ p{font-size:clamp(.95rem,1.1vw,1.05rem)}
 @media(max-width:600px){.g2{grid-template-columns:1fr}.ig{grid-template-columns:1fr}.hb{flex-direction:column;align-items:center}.nf{flex-direction:column}.fg{grid-template-columns:1fr}.fbt{flex-direction:column;gap:14px;text-align:center}}
 
 
-.hd{background:var(--dk);padding:clamp(70px,10vw,110px) 0 clamp(50px,7vw,80px);position:relative;overflow:hidden;margin-top:68px;text-align:center}
+.hd{background:var(--dk);padding:clamp(70px,10vw,110px) 0 clamp(50px,7vw,80px);position:relative;overflow:hidden;margin-top:84px;text-align:center}
+.ann + .hd{margin-top:0;padding-top:clamp(40px,5vw,70px)}
 .hd::before{content:'';position:absolute;top:-30%;right:-10%;width:70%;height:160%;background:radial-gradient(ellipse,rgba(0,201,183,.1),transparent 55%);pointer-events:none}
 .hd::after{content:'';position:absolute;bottom:-30%;left:-10%;width:50%;height:120%;background:radial-gradient(ellipse,rgba(123,45,142,.07),transparent 55%);pointer-events:none}
 .hd .hc{max-width:740px;margin:0 auto}
@@ -294,7 +295,7 @@ p{font-size:clamp(.95rem,1.1vw,1.05rem)}
 
 
 /* Mobile nav */
-.nk.op{display:flex!important;position:fixed;top:68px;left:0;right:0;background:var(--wh);flex-direction:column;align-items:stretch;padding:18px 24px;gap:4px;box-shadow:0 12px 32px rgba(27,42,74,.08);border-top:1px solid rgba(27,42,74,.06);max-height:calc(100vh - 68px);overflow-y:auto}
+.nk.op{display:flex!important;position:fixed;top:84px;left:0;right:0;background:var(--wh);flex-direction:column;align-items:stretch;padding:18px 24px;gap:4px;box-shadow:0 12px 32px rgba(27,42,74,.08);border-top:1px solid rgba(27,42,74,.06);max-height:calc(100vh - 68px);overflow-y:auto}
 .nk.op li{width:100%}
 .nk.op .dd .dm{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding:4px 0 4px 16px;min-width:0;display:none}
 .nk.op .dd.op .dm{display:block}
@@ -307,8 +308,8 @@ p{font-size:clamp(.95rem,1.1vw,1.05rem)}
 
 
 /* A11y type bump */
-.nlg{height:40px;width:auto;display:block}
-@media(max-width:600px){.nlg{height:34px}}
+.nlg{height:56px;width:auto;display:block}
+@media(max-width:600px){.nlg{height:46px}}
 body{font-size:16.5px;line-height:1.75}
 p{font-size:clamp(1rem,1.15vw,1.125rem);line-height:1.75}
 .btn{font-size:.98rem;padding:15px 30px}
@@ -348,7 +349,7 @@ nav a:hover::after,.nm a:hover::after{width:100%}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
 
 
-.subnav{position:sticky;top:68px;z-index:90;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(27,42,74,.08)}
+.subnav{position:sticky;top:84px;z-index:90;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(27,42,74,.08)}
 .subnav ul{list-style:none;display:flex;gap:24px;overflow-x:auto;padding:14px 0;margin:0;scrollbar-width:none}
 .subnav ul::-webkit-scrollbar{display:none}
 .subnav a{font-weight:600;font-size:.85rem;color:var(--dk);white-space:nowrap;padding:6px 0}
@@ -417,7 +418,7 @@ nav a:hover::after,.nm a:hover::after{width:100%}
 .stb svg{width:18px;height:18px;stroke:var(--teal);fill:none;stroke-width:2.5;stroke-linecap:round}.stb:hover svg{stroke:var(--wh)}
 @media(max-width:900px){.nk{display:none}.mb{display:flex}.pg{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}.fg{grid-template-columns:1fr 1fr;gap:28px}}
 @media(max-width:600px){.fg{grid-template-columns:1fr}.fbt{flex-direction:column;gap:14px;text-align:center}.nf{flex-direction:column}}
-.ann{background:var(--grad);color:var(--wh);text-align:center;padding:14px 20px;font-weight:600;font-size:.95rem;margin-top:68px;display:flex;align-items:center;justify-content:center;gap:8px}
+.ann{background:var(--grad);color:var(--wh);text-align:center;padding:14px 20px;font-weight:600;font-size:.95rem;margin-top:84px;display:flex;align-items:center;justify-content:center;gap:8px}
 /* Hero */
 .hero{background:var(--dk);padding:clamp(80px,12vw,140px) 0 clamp(60px,10vw,100px);position:relative;overflow:hidden;text-align:center}
 .tfhl{display:flex;align-items:center;gap:10px}.tfhl svg{width:18px;height:18px;stroke:var(--tm);fill:none;stroke-width:2;stroke-linecap:round}
@@ -480,14 +481,14 @@ nav a:hover::after,.nm a:hover::after{width:100%}
 
 <div class="ann">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:16px;height:16px;flex-shrink:0"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-  Catalyst Academy 2026 &mdash; <a href="catalyst-academy.html#apply">Apply by April 30, 2026 &rarr;</a>
+  Catalyst Academy 2026 - <a href="catalyst-academy.html#apply">Apply by April 30, 2026 &rarr;</a>
 </div>
 <section class="hd">
 <div class="c"><div class="hc fu">
   <div class="badge"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Flagship Program</div>
   <h1>Catalyst <em>Academy</em></h1>
   <p>An 8-week virtual summer research and mentorship program preparing high school students to lead at the intersection of public health, medicine, and digital health.</p>
-  <div class="hb"><a href="#apply" class="btn bp">Apply Now &mdash; Extended Deadline</a><a href="https://youtu.be/NbD5-HQyvWA" target="_blank" class="btn bo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:16px;height:16px"><polygon points="5 3 19 12 5 21 5 3"/></svg> Watch 2025 Recap</a></div>
+  <div class="hb"><a href="#apply" class="btn bp">Apply Now - Extended Deadline</a><a href="https://youtu.be/NbD5-HQyvWA" target="_blank" class="btn bo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:16px;height:16px"><polygon points="5 3 19 12 5 21 5 3"/></svg> Watch 2025 Recap</a></div>
 </div></div>
 </section><nav class="subnav" aria-label="Catalyst Academy sections"><div class="c"><ul>
 <li><a href="#overview">Overview</a></li>
@@ -501,16 +502,16 @@ nav a:hover::after,.nm a:hover::after{width:100%}
 </ul></div></nav>
 
 <section id="overview" class="cat-ss-s"><div class="c"><div class="ssi fu">
-  <div class="si"><div class="sii"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><span><strong>8 Weeks</strong> &mdash; June 15 to Aug 7</span></div>
-  <div class="si"><div class="sii"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><span><strong>Virtual</strong> &mdash; Zoom &amp; Classroom</span></div>
-  <div class="si"><div class="sii"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><span><strong>$750</strong> &mdash; Scholarships available</span></div>
-  <div class="si"><div class="sii"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><span><strong>U.S. &amp; Canada</strong> &mdash; High schoolers</span></div>
+  <div class="si"><div class="sii"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><span><strong>8 Weeks</strong> - June 15 to Aug 7</span></div>
+  <div class="si"><div class="sii"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><span><strong>Virtual</strong> - Zoom &amp; Classroom</span></div>
+  <div class="si"><div class="sii"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><span><strong>$750</strong> - Scholarships available</span></div>
+  <div class="si"><div class="sii"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><span><strong>U.S. &amp; Canada</strong> - High schoolers</span></div>
 </div></div></section>
 <style>.cat-ss-s{padding:clamp(32px,4vw,50px) 0;background:var(--wh);border-bottom:1px solid rgba(27,42,74,.06)}.cat-ss-s .ssi{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}@media(max-width:900px){.cat-ss-s .ssi{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.cat-ss-s .ssi{grid-template-columns:1fr}}</style>
 
 <section style="padding:var(--sp) 0;background:var(--wh)">
 <div class="c">
-  <div class="sh ctr fu"><div class="sl">What You'll Do</div><h2>Translating Education into Action</h2><p style="margin:0 auto">Catalyst Academy immerses students in the fields reshaping health &mdash; from data and clinical insight to community engagement and AI.</p></div>
+  <div class="sh ctr fu"><div class="sl">What You'll Do</div><h2>Translating Education into Action</h2><p style="margin:0 auto">Catalyst Academy immerses students in the fields reshaping health - from data and clinical insight to community engagement and AI.</p></div>
   <div class="g3 fu">
     <div class="cd"><div class="ci t"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><h4>Original Research</h4><p>Conduct guided research and publish your findings in the UNITY Research Journal.</p></div>
     <div class="cd"><div class="ci p"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div><h4>Community Interventions</h4><p>Design 12-month, evidence-backed health interventions for real communities.</p></div>
@@ -523,7 +524,7 @@ nav a:hover::after,.nm a:hover::after{width:100%}
 
 <section style="padding:var(--sp) 0;background:var(--bg)">
 <div class="c">
-  <div class="sh ctr fu"><div class="sl">Beyond the Summer</div><h2>Your Journey Doesn't End in August</h2><p style="margin:0 auto">Catalyst Academy is more than an 8-week program &mdash; it's the beginning of a career pipeline.</p></div>
+  <div class="sh ctr fu"><div class="sl">Beyond the Summer</div><h2>Your Journey Doesn't End in August</h2><p style="margin:0 auto">Catalyst Academy is more than an 8-week program - it's the beginning of a career pipeline.</p></div>
   <div class="pw fu">
     <div class="pws"><div class="pwn">1</div><h4>Implement Your Intervention</h4><p>Execute your 12-month community health intervention during the school year with Project UNITY support.</p></div>
     <div class="pws"><div class="pwn">2</div><h4>Internship Opportunity</h4><p>Select students complete a semester-long internship gaining hands-on nonprofit experience.</p></div>
@@ -535,9 +536,9 @@ nav a:hover::after,.nm a:hover::after{width:100%}
 <div class="c">
   <div class="sh ctr fu"><div class="sl">Application Timeline</div><h2>Key Dates for Summer 2026</h2></div>
   <div class="tl fu">
-    <div class="tli pa"><div class="tld"></div><div class="tldt">February 6, 2026 &mdash; 11:59 PM PST</div><div class="tlev">Priority Deadline</div><div class="tlnt">Letters of recommendation must be submitted by deadline</div></div>
+    <div class="tli pa"><div class="tld"></div><div class="tldt">February 6, 2026 - 11:59 PM PST</div><div class="tlev">Priority Deadline</div><div class="tlnt">Letters of recommendation must be submitted by deadline</div></div>
     <div class="tli pa"><div class="tld"></div><div class="tldt">February 25, 2026</div><div class="tlev">Second Priority Decisions Released</div></div>
-    <div class="tli pa"><div class="tld"></div><div class="tldt">March 1, 2026 &mdash; 11:59 PM PST</div><div class="tlev">Final Deadline</div></div>
+    <div class="tli pa"><div class="tld"></div><div class="tldt">March 1, 2026 - 11:59 PM PST</div><div class="tlev">Final Deadline</div></div>
     <div class="tli pa"><div class="tld"></div><div class="tldt">March 10, 2026</div><div class="tlev">All Decisions Released</div></div>
     <div class="tli ac"><div class="tld"></div><div class="tldt">March 29, 2026</div><div class="tlev">Extended Deadline</div><div class="tlnt">Late applications may still be accepted</div></div>
     <div class="tli"><div class="tld"></div><div class="tldt">June 7, 2026</div><div class="tlev">Orientation Day</div></div>
@@ -628,7 +629,7 @@ nav a:hover::after,.nm a:hover::after{width:100%}
 </div></section>
 
 <div id="mentors" style="scroll-margin-top:130px"><section style="padding:var(--sp) 0;background:var(--wh)"><div class="c">
-  <div class="sh ctr fu"><div class="sl">Our Mentors</div><h2>25 mentors across two cohorts</h2><p style="margin:0 auto">Each mentor commits to roughly 40 hours over the eight-week program — leading small-group sessions, reviewing research, and supporting the students&apos; final deliverables.</p></div>
+  <div class="sh ctr fu"><div class="sl">Our Mentors</div><h2>25 mentors across two cohorts</h2><p style="margin:0 auto">Each mentor commits to roughly 40 hours over the eight-week program - leading small-group sessions, reviewing research, and supporting the students&apos; final deliverables.</p></div>
 
   <div class="ys fu">
     <div class="yh">Summer 2025 <span class="yct">16 mentors</span></div>
@@ -847,7 +848,7 @@ nav a:hover::after,.nm a:hover::after{width:100%}
     <div>
       <div class="sl">Who We're Looking For</div>
       <h2 style="margin-bottom:14px">Mentors from Across Health</h2>
-      <p style="color:rgba(26,26,26,.55);margin-bottom:22px;font-size:.92rem;line-height:1.8">You don't need teaching experience &mdash; you need passion for public health and willingness to invest in the next generation.</p>
+      <p style="color:rgba(26,26,26,.55);margin-bottom:22px;font-size:.92rem;line-height:1.8">You don't need teaching experience - you need passion for public health and willingness to invest in the next generation.</p>
       <div class="wr"><div class="wri"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div class="wrt"><h4>Public Health Graduate Students</h4><p>MPH, DrPH, or PhD candidates</p></div></div>
       <div class="wr"><div class="wri"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="wrt"><h4>Public Health Professionals</h4><p>Researchers, epidemiologists, health educators</p></div></div>
       <div class="wr"><div class="wri"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div><div class="wrt"><h4>Clinicians &amp; Medical Students</h4><p>MD, DO, MD/MPH students or practicing clinicians</p></div></div>
@@ -857,8 +858,8 @@ nav a:hover::after,.nm a:hover::after{width:100%}
       <div style="background:var(--wh);border-radius:16px;padding:28px 24px;border:1px solid rgba(27,42,74,.04)">
         <h3 style="font-family:var(--fd);font-weight:700;font-size:1.05rem;color:var(--dk);margin-bottom:14px">Time Commitment</h3>
         <div style="display:flex;flex-direction:column;gap:10px">
-          <div style="display:flex;align-items:flex-start;gap:9px;font-size:.88rem;color:rgba(26,26,26,.55)"><div style="width:20px;height:20px;border-radius:50%;background:rgba(0,201,183,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px"><svg viewBox="0 0 24 24" style="width:11px;height:11px;stroke:var(--tm);fill:none;stroke-width:2.5;stroke-linecap:round"><polyline points="20 6 9 17 4 12"/></svg></div><span>8 weeks (June 15 &ndash; August 7, 2026)</span></div>
-          <div style="display:flex;align-items:flex-start;gap:9px;font-size:.88rem;color:rgba(26,26,26,.55)"><div style="width:20px;height:20px;border-radius:50%;background:rgba(0,201,183,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px"><svg viewBox="0 0 24 24" style="width:11px;height:11px;stroke:var(--tm);fill:none;stroke-width:2.5;stroke-linecap:round"><polyline points="20 6 9 17 4 12"/></svg></div><span>5&ndash;8 hours per week, flexible</span></div>
+          <div style="display:flex;align-items:flex-start;gap:9px;font-size:.88rem;color:rgba(26,26,26,.55)"><div style="width:20px;height:20px;border-radius:50%;background:rgba(0,201,183,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px"><svg viewBox="0 0 24 24" style="width:11px;height:11px;stroke:var(--tm);fill:none;stroke-width:2.5;stroke-linecap:round"><polyline points="20 6 9 17 4 12"/></svg></div><span>8 weeks (June 15 - August 7, 2026)</span></div>
+          <div style="display:flex;align-items:flex-start;gap:9px;font-size:.88rem;color:rgba(26,26,26,.55)"><div style="width:20px;height:20px;border-radius:50%;background:rgba(0,201,183,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px"><svg viewBox="0 0 24 24" style="width:11px;height:11px;stroke:var(--tm);fill:none;stroke-width:2.5;stroke-linecap:round"><polyline points="20 6 9 17 4 12"/></svg></div><span>5-8 hours per week, flexible</span></div>
           <div style="display:flex;align-items:flex-start;gap:9px;font-size:.88rem;color:rgba(26,26,26,.55)"><div style="width:20px;height:20px;border-radius:50%;background:rgba(0,201,183,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px"><svg viewBox="0 0 24 24" style="width:11px;height:11px;stroke:var(--tm);fill:none;stroke-width:2.5;stroke-linecap:round"><polyline points="20 6 9 17 4 12"/></svg></div><span>Two sessions per week with your team</span></div>
           <div style="display:flex;align-items:flex-start;gap:9px;font-size:.88rem;color:rgba(26,26,26,.55)"><div style="width:20px;height:20px;border-radius:50%;background:rgba(0,201,183,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px"><svg viewBox="0 0 24 24" style="width:11px;height:11px;stroke:var(--tm);fill:none;stroke-width:2.5;stroke-linecap:round"><polyline points="20 6 9 17 4 12"/></svg></div><span>Fully virtual via Zoom</span></div>
         </div>
@@ -870,12 +871,16 @@ nav a:hover::after,.nm a:hover::after{width:100%}
 
 <section id="mapply" style="padding:var(--sp) 0;background:var(--bg)">
 <div class="c">
-  <div class="sh ctr fu"><div class="sl">Apply</div><h2>Mentor Application</h2><p style="margin:0 auto">Complete the form below to apply. The client is currently building this Typeform.</p></div>
+  <div class="sh ctr fu"><div class="sl">Apply</div><h2>Mentor Application</h2><p style="margin:0 auto">Choose the role that fits you and complete the form below.</p></div>
   <div class="tfw fu">
-    <div class="tfh"><div class="tfhl"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Mentor Application</span></div><div class="tfhr"><span class="ldot"></span> Accepting</div></div>
+    <div class="tfh"><div class="tfhl"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Catalyst Academy Mentor</span></div><div class="tfhr"><span class="ldot"></span> Accepting</div></div>
     <div data-tf-live="01KPDRA1DRNECMGAB4YGVCJ1SB" style="width:100%;min-height:640px"></div>
-<script src="//embed.typeform.com/next/embed.js"></script>
   </div>
+  <div class="tfw fu" style="margin-top:28px">
+    <div class="tfh"><div class="tfhl"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg><span>Y-PHIC Mentor / Coach</span></div><div class="tfhr"><span class="ldot"></span> Accepting</div></div>
+    <div data-tf-live="01KPK4JY00P67Z441KZE3C3VD6" style="width:100%;min-height:640px"></div>
+  </div>
+<script src="//embed.typeform.com/next/embed.js"></script>
   <div class="apn dk2">Questions? Contact <a href="mailto:justin.chang@projectunitynfp.org">Justin Chang, MPH</a>.</div>
 </div></section>
 
@@ -907,7 +912,7 @@ Email: '+e);" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center
 <footer class="ft"><div class="c">
   <div class="fg">
     <div class="fbr">
-      <div class="nl" style="margin-bottom:0"><img src="images/logo-white-dark-scaled-e1774294711846.png" alt="Project UNITY" style="height:42px;width:auto;display:block"></div>
+      <div class="nl" style="margin-bottom:0"><img src="images/logo-white-dark-scaled-e1774294711846.png" alt="Project UNITY" style="height:56px;width:auto;display:block"></div>
       <p>A youth-led nonprofit transforming how the next generation leads in healthcare, public health, and digital health. Founded in 2020.</p>
     </div>
     <div><h4>Our Work</h4><ul class="fk"><li><a href="catalyst-academy.html">Catalyst Academy</a></li><li><a href="yphic.html">Y-PHIC</a></li><li><a href="research.html">Research &amp; Press</a></li></ul></div>
@@ -915,7 +920,7 @@ Email: '+e);" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center
     <div><h4>About</h4><ul class="fk"><li><a href="about.html">About Us</a></li><li><a href="about.html#leadership">Leadership</a></li><li><a href="about.html#board">Board of Directors</a></li><li><a href="about.html#advisory">Advisory Board</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li></ul></div>
   </div>
   <div class="fbt">
-    <span>&copy; Project UNITY 2026 &mdash; All Rights Reserved.</span>
+    <span>&copy; Project UNITY 2026 - All Rights Reserved.</span>
     <div class="fsc">
       <a href="https://www.instagram.com/projectunity.nfp/" target="_blank" aria-label="Instagram">IG</a>
       <a href="https://www.youtube.com/@ProjectUNITYNFP" target="_blank" aria-label="YouTube">YT</a>
