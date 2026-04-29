@@ -274,6 +274,13 @@ nav a::after,.nm a::after{content:"";position:absolute;left:0;bottom:-4px;width:
 nav a:hover::after,.nm a:hover::after{width:100%}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
 
+
+/* Animated molecule background for hero sections */
+.hero,.hd{position:relative;overflow:hidden}
+.hero::after,.hd::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'><g fill='none' stroke='%2300C9B7' stroke-width='.7' opacity='.35'><circle cx='120' cy='140' r='5' fill='%2300C9B7'/><circle cx='320' cy='90' r='4' fill='%237B2D8E'/><circle cx='540' cy='180' r='5' fill='%2300C9B7'/><circle cx='760' cy='110' r='4' fill='%237B2D8E'/><circle cx='980' cy='200' r='5' fill='%2300C9B7'/><circle cx='1100' cy='420' r='4' fill='%237B2D8E'/><circle cx='880' cy='560' r='5' fill='%2300C9B7'/><circle cx='620' cy='480' r='4' fill='%237B2D8E'/><circle cx='380' cy='560' r='5' fill='%2300C9B7'/><circle cx='160' cy='430' r='4' fill='%237B2D8E'/><circle cx='240' cy='280' r='3' fill='%2300C9B7'/><circle cx='480' cy='340' r='3' fill='%237B2D8E'/><circle cx='720' cy='320' r='3' fill='%2300C9B7'/><circle cx='940' cy='380' r='3' fill='%237B2D8E'/><line x1='120' y1='140' x2='320' y2='90'/><line x1='320' y1='90' x2='540' y2='180'/><line x1='540' y1='180' x2='760' y2='110'/><line x1='760' y1='110' x2='980' y2='200'/><line x1='980' y1='200' x2='1100' y2='420'/><line x1='1100' y1='420' x2='880' y2='560'/><line x1='880' y1='560' x2='620' y2='480'/><line x1='620' y1='480' x2='380' y2='560'/><line x1='380' y1='560' x2='160' y2='430'/><line x1='160' y1='430' x2='120' y2='140'/><line x1='240' y1='280' x2='480' y2='340'/><line x1='480' y1='340' x2='720' y2='320'/><line x1='720' y1='320' x2='940' y2='380'/><line x1='240' y1='280' x2='320' y2='90'/><line x1='480' y1='340' x2='540' y2='180'/><line x1='720' y1='320' x2='760' y2='110'/><line x1='940' y1='380' x2='980' y2='200'/><line x1='240' y1='280' x2='160' y2='430'/><line x1='480' y1='340' x2='380' y2='560'/><line x1='720' y1='320' x2='620' y2='480'/><line x1='940' y1='380' x2='880' y2='560'/></g></svg>") center/cover no-repeat;opacity:.55;animation:molDrift 28s ease-in-out infinite;pointer-events:none;z-index:1}
+.hero > *,.hd > *{position:relative;z-index:2}
+@keyframes molDrift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-22px,-14px) scale(1.06)}}
+@media (prefers-reduced-motion:reduce){.hero::after,.hd::after{animation:none}}
 </style>
 </head>
 <body>
@@ -340,6 +347,43 @@ nav a:hover::after,.nm a:hover::after{width:100%}
   </div>
   <p class="chc-cap">Common Health Coalition 2025 Annual Meeting - December 2025</p>
 </div></section>
+
+<section class="apha-s"><div class="c">
+  <div class="sh ctr fu"><div class="sl">National Partnership</div><h2>Endorsed by the American Public Health Association</h2></div>
+  <div class="apha-card fu">
+    <div class="apha-l">
+      <div class="apha-mark">&ldquo;</div>
+      <blockquote class="apha-q">APHA is proud to stand behind Catalyst Academy and the young leaders it is building.</blockquote>
+      <div class="apha-att">
+        <strong>Dr. Nandi Marshall, DrPH, MPH</strong>
+        <span>President, American Public Health Association</span>
+      </div>
+      <a href="https://www.apha.org/news-and-media/news-releases/apha-news-releases/apha-and-project-unity-announce-partnership" target="_blank" rel="noopener" class="apha-link">Read the partnership announcement &rarr;</a>
+    </div>
+    <div class="apha-r" aria-hidden="true">
+      <div class="apha-logo">APHA</div>
+      <div class="apha-tag">American Public Health Association</div>
+    </div>
+  </div>
+</div></section>
+<style>
+.apha-s{padding:var(--sp) 0;background:var(--bg);position:relative;overflow:hidden}
+.apha-s::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'><g fill='none' stroke='%230A9B8E' stroke-width='.6' opacity='.18'><circle cx='90' cy='110' r='5' fill='%230A9B8E'/><circle cx='250' cy='80' r='5' fill='%230A9B8E'/><circle cx='420' cy='150' r='5' fill='%230A9B8E'/><circle cx='540' cy='300' r='5' fill='%230A9B8E'/><circle cx='460' cy='460' r='5' fill='%230A9B8E'/><circle cx='250' cy='510' r='5' fill='%230A9B8E'/><circle cx='90' cy='420' r='5' fill='%230A9B8E'/><circle cx='180' cy='280' r='5' fill='%230A9B8E'/><circle cx='340' cy='280' r='5' fill='%230A9B8E'/><line x1='90' y1='110' x2='250' y2='80'/><line x1='250' y1='80' x2='420' y2='150'/><line x1='420' y1='150' x2='540' y2='300'/><line x1='540' y1='300' x2='460' y2='460'/><line x1='460' y1='460' x2='250' y2='510'/><line x1='250' y1='510' x2='90' y2='420'/><line x1='90' y1='420' x2='90' y2='110'/><line x1='180' y1='280' x2='90' y2='110'/><line x1='180' y1='280' x2='90' y2='420'/><line x1='180' y1='280' x2='340' y2='280'/><line x1='340' y1='280' x2='420' y2='150'/><line x1='340' y1='280' x2='540' y2='300'/><line x1='340' y1='280' x2='460' y2='460'/></g></svg>") center/680px no-repeat;animation:moleculeFloat 18s ease-in-out infinite;pointer-events:none}
+@keyframes moleculeFloat{0%,100%{transform:translate(0,0) scale(1);opacity:.85}50%{transform:translate(-12px,-8px) scale(1.04);opacity:1}}
+.apha-card{position:relative;z-index:2;display:grid;grid-template-columns:1.4fr .9fr;gap:0;border-radius:28px;overflow:hidden;box-shadow:0 24px 60px rgba(27,42,74,.14);border:1px solid rgba(27,42,74,.06);background:var(--wh)}
+.apha-l{padding:clamp(40px,5vw,60px);background:linear-gradient(135deg,#1B2A4A 0%,#23355C 60%,#0A9B8E 130%);color:#fff;position:relative}
+.apha-mark{font-family:var(--fd);font-size:5.5rem;line-height:1;color:#FFD86B;margin-bottom:-20px;opacity:.95}
+.apha-q{font-family:var(--fd);font-style:italic;font-weight:700;font-size:clamp(1.4rem,2.2vw,1.9rem);line-height:1.35;color:#fff;margin:0 0 28px;border:0;padding:0}
+.apha-att{display:flex;flex-direction:column;gap:4px;padding:14px 0 0;border-top:2px solid #FFD86B;display:inline-flex;margin-bottom:22px}
+.apha-att strong{font-family:var(--fd);font-weight:700;font-size:1.05rem;color:#fff}
+.apha-att span{font-size:.9rem;color:rgba(255,255,255,.75)}
+.apha-link{color:#7DF0E3;font-weight:600;font-size:.95rem;display:inline-block;border-bottom:1px solid rgba(125,240,227,.4);padding-bottom:2px}
+.apha-link:hover{color:#fff;border-color:#fff}
+.apha-r{padding:clamp(40px,5vw,60px);background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px}
+.apha-logo{font-family:var(--fd);font-weight:800;font-size:clamp(2.6rem,5vw,4rem);color:#1B2A4A;letter-spacing:.04em;line-height:1}
+.apha-tag{font-size:.78rem;color:rgba(27,42,74,.55);letter-spacing:.16em;text-transform:uppercase;font-weight:600;max-width:180px;line-height:1.5}
+@media(max-width:800px){.apha-card{grid-template-columns:1fr}.apha-r{padding:32px 24px;flex-direction:row;justify-content:center;gap:20px}.apha-tag{text-align:left;max-width:none}}
+</style>
 <style>
 .chc-s{padding:var(--sp) 0;background:var(--wh)}
 .chc-poster{display:grid;grid-template-columns:1fr 1.1fr;gap:0;border-radius:28px;overflow:hidden;box-shadow:0 20px 60px rgba(27,42,74,.12);border:1px solid rgba(27,42,74,.06)}

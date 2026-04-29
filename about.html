@@ -315,6 +315,13 @@ nav a:hover::after,.nm a:hover::after{width:100%}
 .mdi p{font-size:.88rem;color:rgba(26,26,26,.6);line-height:1.8}
 @media(max-width:900px){.tg.c4{grid-template-columns:repeat(2,1fr)}.tg.c3{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.tg.c4,.tg.c3{grid-template-columns:1fr}}
+
+/* Animated molecule background for hero sections */
+.hero,.hd{position:relative;overflow:hidden}
+.hero::after,.hd::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'><g fill='none' stroke='%2300C9B7' stroke-width='.7' opacity='.35'><circle cx='120' cy='140' r='5' fill='%2300C9B7'/><circle cx='320' cy='90' r='4' fill='%237B2D8E'/><circle cx='540' cy='180' r='5' fill='%2300C9B7'/><circle cx='760' cy='110' r='4' fill='%237B2D8E'/><circle cx='980' cy='200' r='5' fill='%2300C9B7'/><circle cx='1100' cy='420' r='4' fill='%237B2D8E'/><circle cx='880' cy='560' r='5' fill='%2300C9B7'/><circle cx='620' cy='480' r='4' fill='%237B2D8E'/><circle cx='380' cy='560' r='5' fill='%2300C9B7'/><circle cx='160' cy='430' r='4' fill='%237B2D8E'/><circle cx='240' cy='280' r='3' fill='%2300C9B7'/><circle cx='480' cy='340' r='3' fill='%237B2D8E'/><circle cx='720' cy='320' r='3' fill='%2300C9B7'/><circle cx='940' cy='380' r='3' fill='%237B2D8E'/><line x1='120' y1='140' x2='320' y2='90'/><line x1='320' y1='90' x2='540' y2='180'/><line x1='540' y1='180' x2='760' y2='110'/><line x1='760' y1='110' x2='980' y2='200'/><line x1='980' y1='200' x2='1100' y2='420'/><line x1='1100' y1='420' x2='880' y2='560'/><line x1='880' y1='560' x2='620' y2='480'/><line x1='620' y1='480' x2='380' y2='560'/><line x1='380' y1='560' x2='160' y2='430'/><line x1='160' y1='430' x2='120' y2='140'/><line x1='240' y1='280' x2='480' y2='340'/><line x1='480' y1='340' x2='720' y2='320'/><line x1='720' y1='320' x2='940' y2='380'/><line x1='240' y1='280' x2='320' y2='90'/><line x1='480' y1='340' x2='540' y2='180'/><line x1='720' y1='320' x2='760' y2='110'/><line x1='940' y1='380' x2='980' y2='200'/><line x1='240' y1='280' x2='160' y2='430'/><line x1='480' y1='340' x2='380' y2='560'/><line x1='720' y1='320' x2='620' y2='480'/><line x1='940' y1='380' x2='880' y2='560'/></g></svg>") center/cover no-repeat;opacity:.55;animation:molDrift 28s ease-in-out infinite;pointer-events:none;z-index:1}
+.hero > *,.hd > *{position:relative;z-index:2}
+@keyframes molDrift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-22px,-14px) scale(1.06)}}
+@media (prefers-reduced-motion:reduce){.hero::after,.hd::after{animation:none}}
 </style>
 </head>
 <body>
@@ -394,9 +401,9 @@ nav a:hover::after,.nm a:hover::after{width:100%}
   <p>At Project UNITY, we are committed to building a diverse, equitable, and inclusive community. We actively engage individuals from diverse racial, cultural, professional, and socio-economic backgrounds, believing that diverse perspectives strengthen our impact. We strive to cultivate a team that reflects the communities we partner with - fostering trust, youth mentorship, and lasting relationships that inspire positive health outcomes.</p>
 </div></div></section>
 
-<section id="leadership" style="padding:calc(var(--sp)*.6) 0 20px;background:var(--wh);scroll-margin-top:130px"><div class="c"><div class="sh ctr fu"><div class="sl">Our People</div><h2>Leadership</h2></div></div></section><section style="padding:var(--sp) 0;background:var(--wh)"><div class="c fu">
-  <p style="text-align:center;color:rgba(26,26,26,.6);max-width:620px;margin:0 auto">Our Co-Founders &amp; Executive Directors, <strong>Morish Shah</strong> and <strong>Pranav Mehta</strong>, serve on our <a href="board-of-directors.html" style="color:var(--tm);font-weight:600">Board of Directors</a>. Meet the team leading programs, research, and growth below.</p>
-</div></section><section style="padding:var(--sp) 0;background:var(--bg)"><div class="c fu">
+<section id="leadership" style="padding:clamp(50px,7vw,80px) 0 20px;background:var(--wh);scroll-margin-top:130px"><div class="c">
+  <div class="sh ctr fu"><div class="sl">Our People</div><h2>Leadership</h2><p style="margin:14px auto 0;max-width:620px;color:rgba(26,26,26,.65)">Our Co-Founders &amp; Executive Directors, <strong>Morish Shah</strong> and <strong>Pranav Mehta</strong>, serve on our <a href="#board" style="color:var(--tm);font-weight:600">Board of Directors</a>. Meet the team leading programs, research, and growth below.</p></div>
+</div></section><section style="padding:clamp(30px,4vw,50px) 0 var(--sp);background:var(--bg)"><div class="c fu">
   <div class="tsl">Education & Programming</div>
   <div class="tg c4 fu"><div class="tm" data-bio="m2" onclick="document.getElementById('m2').classList.add('op')">
   <img src="images/Justin-Chang-MPH.jpeg" alt="Justin Chang, MPH" class="tmph"><h4>Justin Chang, MPH</h4><div class="tmr">Senior Director of Education</div>
