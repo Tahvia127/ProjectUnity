@@ -135,7 +135,7 @@ p{font-size:clamp(.95rem,1.1vw,1.05rem)}
 .nf input:focus{border-color:var(--teal)}
 
 /* Footer */
-.ft{background:#111B2E;padding:52px 0 28px;color:rgba(255,255,255,.45)}
+.ft{background:linear-gradient(135deg,#1B2A4A 0%,#3B1F5C 55%,#0A4F6B 100%);padding:60px 0 32px;color:rgba(255,255,255,.55)}
 .fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:40px}
 .fbr p{font-size:.85rem;color:rgba(255,255,255,.35);line-height:1.7;margin-top:14px;max-width:300px}
 .ft h4{font-family:var(--fd);font-weight:600;font-size:.88rem;color:var(--wh);margin-bottom:16px}
@@ -281,6 +281,37 @@ nav a:hover::after,.nm a:hover::after{width:100%}
 .hero > *,.hd > *{position:relative;z-index:2}
 @keyframes molDrift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-22px,-14px) scale(1.06)}}
 @media (prefers-reduced-motion:reduce){.hero::after,.hd::after{animation:none}}
+
+/* ===== Global type & alignment v2 ===== */
+html{font-size:17.5px}
+@media(max-width:600px){html{font-size:16.5px}}
+body{text-align:center}
+.c,.c.fu,main,header,footer{text-align:center}
+.fbr p,.fk,.fk li,.fk a,.fbt,footer .c{text-align:center}
+footer .fg{text-align:center}
+footer .fbr,footer .fbr .nl,footer .fbr p{display:flex;flex-direction:column;align-items:center;gap:10px;margin:0 auto}
+footer .fk{list-style:none;padding:0;display:flex;flex-direction:column;align-items:center;gap:8px}
+footer h4{text-align:center}
+.fg{justify-items:center}
+.fbt{justify-content:center;flex-wrap:wrap;gap:14px}
+.fsc{justify-content:center}
+.tg,.bg,.g3,.gr,.is-row,.wk-grid{justify-items:center}
+p,h1,h2,h3,h4,h5,h6,blockquote,figcaption,li{text-align:center}
+.bc p,.pc p,.tm p,.cd p,.gc p,.vc p,.mdi p{text-align:center}
+.tsl{text-align:center}
+ul.fk{align-items:center}
+/* Slightly bump headline weight scale */
+h1{font-size:clamp(2.2rem,4.6vw,3.6rem)!important;line-height:1.1}
+h2{font-size:clamp(1.8rem,3.4vw,2.6rem)!important;line-height:1.15}
+h3{font-size:1.5rem!important;line-height:1.25}
+h4{font-size:1.15rem!important}
+p{font-size:1.0625rem;line-height:1.7}
+.sl{font-size:.82rem!important;letter-spacing:.16em}
+.bcr{font-size:1.05rem!important}
+.tmr,.mdrl{font-size:.95rem!important}
+/* Logo mark badge for compact spots */
+.umk{display:inline-block;width:48px;height:48px;border-radius:12px;vertical-align:middle}
+
 </style>
 </head>
 <body>
@@ -525,7 +556,7 @@ Email: '+e);" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center
 <footer class="ft"><div class="c">
   <div class="fg">
     <div class="fbr">
-      <div class="nl" style="margin-bottom:0"><img src="images/logo-white-dark-scaled-e1774294711846.png" alt="Project UNITY" style="height:56px;width:auto;display:block"></div>
+      <div class="nl" style="margin-bottom:0"><img src="images/unity-mark.svg" alt="" class="umk" style="width:42px;height:42px;border-radius:10px;margin-right:10px;vertical-align:middle"><img src="images/logo-white-dark-scaled-e1774294711846.png" alt="Project UNITY" style="height:56px;width:auto;display:block"></div>
       <p>A youth-led nonprofit transforming how the next generation leads in healthcare, public health, and digital health. Founded in 2020.</p>
     </div>
     <div><h4>Our Work</h4><ul class="fk"><li><a href="catalyst-academy.html">Catalyst Academy</a></li><li><a href="yphic.html">Y-PHIC</a></li><li><a href="research.html">Research &amp; Press</a></li></ul></div>

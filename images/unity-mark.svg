@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Project UNITY mark">
+  <defs>
+    <linearGradient id="ug" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7B2D8E"/>
+      <stop offset=".55" stop-color="#5B5BD6"/>
+      <stop offset="1" stop-color="#5AA9FF"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="256" height="256" rx="44" ry="44" fill="url(#ug)"/>
+  <path d="M82 70 v74 a46 46 0 0 0 92 0 V70 h-26 v74 a20 20 0 0 1 -40 0 V70 z" fill="#fff"/>
+  <path d="M128 188 l14 14 -14 14 -14 -14 z" fill="#fff"/>
+</svg>
