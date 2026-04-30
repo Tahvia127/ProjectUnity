@@ -234,6 +234,12 @@ p{font-size:1.0625rem;line-height:1.7}
 .key.inaug{position:relative;border:1px solid rgba(242,196,74,.35);background:linear-gradient(180deg,#FFFBEF 0%,var(--wh) 60%)}
 .key.inaug::after{content:'1st';position:absolute;top:-18px;right:24px;background:linear-gradient(135deg,#F2C44A,#F49B3F);color:#1B2A4A;font-family:var(--fd);font-weight:800;font-size:1rem;padding:8px 16px;border-radius:50px;box-shadow:0 6px 18px rgba(242,196,74,.4)}
 @media(max-width:780px){.key.inaug::after{right:50%;transform:translateX(50%)}}
+
+/* hero background image */
+.hd{isolation:isolate}
+.hd-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.32;z-index:0;pointer-events:none}
+.hd-tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,42,74,.55) 0%,rgba(27,42,74,.78) 70%,rgba(27,42,74,.92) 100%);z-index:1;pointer-events:none}
+.hd > .c, .hd > div.c {position:relative;z-index:2}
 </style>
 </head>
 <body>
@@ -251,7 +257,7 @@ p{font-size:1.0625rem;line-height:1.7}
 </div></nav>
 
 <nav class="cbc" aria-label="Breadcrumb"><div class="c"><ol><li><a href="index.html">Home</a></li><li aria-hidden="true">&rsaquo;</li><li><a href="catalyst-academy.html">Catalyst Academy</a></li><li aria-hidden="true">&rsaquo;</li><li aria-current="page">2023 Cohort</li></ol></div></nav>
-<section class="hd"><div class="c"><div class="hc fu">
+<section class="hd"><img class="hd-bg" src="images/hero-mol-5.jpg" alt="" aria-hidden="true" loading="eager"><div class="hd-tint"></div><div class="c"><div class="hc fu">
   <div class="inaug-rib">Est. 2023 &middot; The Beginning</div>
   <div class="badge"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Catalyst Academy 2023</div>
   <h1>The <em>Inaugural</em> Class</h1>

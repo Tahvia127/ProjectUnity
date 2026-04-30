@@ -503,6 +503,12 @@ p{font-size:1.0625rem;line-height:1.7}
 /* Logo mark badge for compact spots */
 .umk{display:inline-block;width:48px;height:48px;border-radius:12px;vertical-align:middle}
 
+
+/* hero background image */
+.hd{isolation:isolate}
+.hd-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.32;z-index:0;pointer-events:none}
+.hd-tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,42,74,.55) 0%,rgba(27,42,74,.78) 70%,rgba(27,42,74,.92) 100%);z-index:1;pointer-events:none}
+.hd > .c, .hd > div.c {position:relative;z-index:2}
 </style>
 </head>
 <body>
@@ -523,7 +529,7 @@ p{font-size:1.0625rem;line-height:1.7}
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:16px;height:16px;flex-shrink:0"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
   Catalyst Academy 2026 - <a href="catalyst-academy.html">Applications for 2027 open December 2026</a>
 </div>
-<section class="hd">
+<section class="hd"><img class="hd-bg" src="images/hero-mol-1.jpg" alt="" aria-hidden="true" loading="eager"><div class="hd-tint"></div>
 <div class="c"><div class="hc fu">
   <div class="badge"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Flagship Program</div>
   <h1>Catalyst <em>Academy</em></h1>
