@@ -26,6 +26,8 @@ p{font-size:clamp(.95rem,1.1vw,1.05rem)}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:50px;font-family:var(--fb);font-weight:600;font-size:.92rem;cursor:pointer;border:none;transition:all .3s ease}
 .bp{background:var(--tm);color:var(--wh);box-shadow:0 4px 16px rgba(10,155,142,.3)}
 .bp:hover{background:var(--teal);transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,201,183,.4)}
+.bo{background:0 0;color:var(--wh);border:2px solid rgba(255,255,255,.4)}
+.bo:hover{background:rgba(255,255,255,.1);border-color:var(--wh);transform:translateY(-2px)}
 .fu{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
 .fu.v{opacity:1;transform:translateY(0)}
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(27,42,74,.06)}
@@ -57,7 +59,7 @@ p{font-size:clamp(.95rem,1.1vw,1.05rem)}
 .isn{font-family:var(--fd);font-weight:800;font-size:clamp(2rem,4vw,2.8rem);color:var(--teal);line-height:1;margin-bottom:6px}
 .isl{font-weight:500;font-size:.82rem;color:rgba(255,255,255,.55)}
 .key{background:var(--wh);border-radius:22px;padding:clamp(32px,5vw,48px);border:1px solid rgba(27,42,74,.04);display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center}
-.keyph{width:160px;height:160px;border-radius:50%;object-fit:cover;border:4px solid var(--bg)}
+.keyph{width:160px;height:160px;border-radius:50%;object-fit:cover;border:4px solid var(--bg);background:var(--grad);display:flex;align-items:center;justify-content:center;color:var(--wh);font-family:var(--fd);font-weight:700;font-size:2.4rem}
 .keyt{font-family:var(--fd);font-weight:700;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;color:var(--tm);margin-bottom:6px}
 .key h3{font-family:var(--fd);font-weight:700;font-size:1.5rem;color:var(--dk);margin-bottom:6px}
 .keyrl{font-size:.95rem;color:var(--tm);font-weight:600;margin-bottom:12px;display:block}
@@ -74,10 +76,6 @@ p{font-size:clamp(.95rem,1.1vw,1.05rem)}
 .stu:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(27,42,74,.08);border-color:rgba(10,155,142,.15)}
 .stuav{width:70px;height:70px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;color:var(--wh);font-family:var(--fd);font-weight:700;font-size:1.25rem;margin:0 auto 12px}
 .stu h5{font-family:var(--fd);font-weight:600;font-size:.88rem;color:var(--dk);line-height:1.3}
-.in{background:rgba(10,155,142,.06);border:1px solid rgba(10,155,142,.15);border-radius:16px;padding:22px 26px;max-width:720px;margin:32px auto 0;display:flex;gap:14px;align-items:flex-start}
-.in svg{width:22px;height:22px;stroke:var(--tm);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
-.in p{font-size:.92rem;color:var(--dk);margin:0}
-.in strong{font-weight:600}
 .nl-s{padding:var(--sp) 0;background:var(--dk);text-align:center;position:relative;overflow:hidden}
 .nl-s::before{content:'';position:absolute;inset:0;background:var(--grad);opacity:.07;pointer-events:none}
 .nl-s h2{color:var(--wh);margin-bottom:10px;position:relative;z-index:2}
@@ -215,31 +213,39 @@ p{font-size:1.0625rem;line-height:1.7}
 /* Logo mark badge for compact spots */
 .umk{display:inline-block;width:48px;height:48px;border-radius:12px;vertical-align:middle}
 
-/* ===== 2023 INAUGURAL TREATMENT ===== */
-.inaug-rib{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(90deg,#F2C44A,#F49B3F);color:#1B2A4A;font-family:var(--fd);font-weight:700;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;padding:8px 22px;border-radius:50px;box-shadow:0 6px 22px rgba(242,196,74,.35);margin-bottom:22px}
-.inaug-rib::before{content:'';width:8px;height:8px;border-radius:50%;background:#1B2A4A}
-.hd h1 em{background:linear-gradient(135deg,#F2C44A 0%,#F49B3F 50%,#7B2D8E 100%)!important;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.fnote{background:var(--wh);border-radius:24px;padding:clamp(36px,5vw,56px) clamp(28px,4vw,48px);max-width:880px;margin:0 auto;border:1px solid rgba(27,42,74,.06);box-shadow:0 18px 44px rgba(27,42,74,.08);position:relative;overflow:hidden}
-.fnote::before{content:'';position:absolute;left:0;top:0;width:6px;height:100%;background:linear-gradient(180deg,#F2C44A,#7B2D8E)}
-.fnote .qmark{font-family:var(--fd);font-size:5rem;line-height:1;color:#F2C44A;opacity:.55;margin-bottom:-12px}
-.fnote blockquote{font-family:var(--fd);font-weight:600;font-size:clamp(1.1rem,1.8vw,1.4rem);color:var(--dk);line-height:1.5;margin:0 0 22px}
-.fnote .by{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;font-size:.95rem;color:rgba(26,26,26,.6)}
-.fnote .by strong{color:var(--dk);font-weight:600}
-.tline{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:42px}
-.tline-c{position:relative;padding:26px 18px;background:var(--wh);border-radius:18px;border:1px solid rgba(27,42,74,.06);text-align:center}
-.tline-c::before{content:attr(data-step);position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#F2C44A,#F49B3F);color:#1B2A4A;font-family:var(--fd);font-weight:700;font-size:.7rem;letter-spacing:.14em;padding:5px 14px;border-radius:50px}
-.tline-c h4{font-size:1.05rem!important;color:var(--dk);margin:8px 0 6px}
-.tline-c p{font-size:.88rem!important;color:rgba(26,26,26,.6);margin:0}
-@media(max-width:780px){.tline{grid-template-columns:repeat(2,1fr)}}
-.key.inaug{position:relative;border:1px solid rgba(242,196,74,.35);background:linear-gradient(180deg,#FFFBEF 0%,var(--wh) 60%)}
-.key.inaug::after{content:'1st';position:absolute;top:-18px;right:24px;background:linear-gradient(135deg,#F2C44A,#F49B3F);color:#1B2A4A;font-family:var(--fd);font-weight:800;font-size:1rem;padding:8px 16px;border-radius:50px;box-shadow:0 6px 18px rgba(242,196,74,.4)}
-@media(max-width:780px){.key.inaug::after{right:50%;transform:translateX(50%)}}
 
 /* hero background image */
 .hd{isolation:isolate}
 .hd-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.32;z-index:0;pointer-events:none}
 .hd-tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,42,74,.55) 0%,rgba(27,42,74,.78) 70%,rgba(27,42,74,.92) 100%);z-index:1;pointer-events:none}
 .hd > .c, .hd > div.c {position:relative;z-index:2}
+
+/* ===== Footer white v3 ===== */
+.ft{background:#FFFFFF!important;color:rgba(27,42,74,.7)!important;border-top:1px solid rgba(27,42,74,.08);padding:48px 0 24px!important}
+.ft h4{color:var(--dk)!important}
+.ft .fk a{color:rgba(27,42,74,.7)!important}
+.ft .fk a:hover{color:var(--tm)!important}
+.ft .fbr p{color:rgba(27,42,74,.6)!important}
+.ft .fbt{border-top:1px solid rgba(27,42,74,.08)!important;color:rgba(27,42,74,.55)!important}
+.ft .fsc a{background:var(--bg)!important;color:var(--dk)!important}
+.ft .fsc a:hover{background:var(--tm)!important;color:var(--wh)!important}
+.ft .fsc a svg{stroke:currentColor;display:block}
+/* ===== Tighten whitespace ===== */
+:root{--sp:clamp(40px,5.5vw,84px)!important}
+section{padding-top:clamp(40px,5vw,72px)!important;padding-bottom:clamp(40px,5vw,72px)!important}
+.sh{margin-bottom:28px!important}
+.hd{padding:clamp(80px,9vw,120px) 0 clamp(36px,5vw,60px)!important}
+
+/* ===== Remove banner/divider lines ===== */
+.ann{border:0!important;box-shadow:none!important}
+.cbc{border:0!important;box-shadow:none!important;background:transparent!important}
+.nav{border-bottom:0!important}
+.fbt{border-top:0!important}
+.yhr{display:none!important}
+.flt{border:0!important}
+hr{border:0!important;height:0!important;background:transparent!important}
+.ann + .ann{border-top:0!important}
+.nl-s{padding:48px 0!important}
 </style>
 </head>
 <body>
@@ -247,7 +253,7 @@ p{font-size:1.0625rem;line-height:1.7}
   <a href="index.html" class="nl" aria-label="Project UNITY home"><img src="images/logo-transparent-dark-scaled.png" alt="Project UNITY" class="nlg"></a>
   <ul class="nk">
     <li><a href="index.html">Home</a></li>
-    <li class="dd"><a href="javascript:void(0)" role="button" aria-haspopup="true">Our Work &#9662;</a><div class="dm"><a href="catalyst-academy.html">Catalyst Academy</a><a href="catalyst-academy-2025.html">2025 Cohort</a><a href="catalyst-academy-2024.html">2024 Cohort</a><a href="catalyst-academy-2023.html">2023 Cohort</a><a href="catalyst-academy.html#mentors">Mentors</a><a href="catalyst-academy.html#speakers">Guest Speakers</a><a href="yphic.html">Y-PHIC</a><a href="research.html">Research &amp; Press</a></div></li>
+    <li class="dd"><a href="javascript:void(0)" role="button" aria-haspopup="true">Our Work &#9662;</a><div class="dm"><a href="catalyst-academy.html">Catalyst Academy</a><a href="catalyst-academy-2025.html">2025 Cohort</a><a href="catalyst-academy-2024.html">2023 Cohort</a><a href="catalyst-academy-2023.html">2023 Cohort</a><a href="catalyst-academy.html#mentors">Mentors</a><a href="catalyst-academy.html#speakers">Guest Speakers</a><a href="yphic.html">Y-PHIC</a><a href="research.html">Research &amp; Press</a></div></li>
     <li class="dd"><a href="javascript:void(0)" role="button" aria-haspopup="true">Get Involved &#9662;</a><div class="dm"><a href="catalyst-academy.html#become-mentor">Become a Mentor</a><a href="support.html">Support Us</a></div></li>
     <li class="dd"><a href="javascript:void(0)" role="button" aria-haspopup="true">About &#9662;</a><div class="dm"><a href="about.html">About Us</a><a href="about.html#leadership">Leadership</a><a href="about.html#board">Board of Directors</a><a href="about.html#advisory">Advisory Board</a></div></li>
     <li><a href="contact.html">Contact</a></li>
@@ -258,29 +264,10 @@ p{font-size:1.0625rem;line-height:1.7}
 
 <nav class="cbc" aria-label="Breadcrumb"><div class="c"><ol><li><a href="index.html">Home</a></li><li aria-hidden="true">&rsaquo;</li><li><a href="catalyst-academy.html">Catalyst Academy</a></li><li aria-hidden="true">&rsaquo;</li><li aria-current="page">2023 Cohort</li></ol></div></nav>
 <section class="hd"><img class="hd-bg" src="images/hero-mol-5.jpg" alt="" aria-hidden="true" loading="eager"><div class="hd-tint"></div><div class="c"><div class="hc fu">
-  <div class="inaug-rib">Est. 2023 &middot; The Beginning</div>
   <div class="badge"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Catalyst Academy 2023</div>
   <h1>The <em>Inaugural</em> Class</h1>
   <p>Where it began. Fifteen students launched Catalyst Academy with original research, community interventions, and the first UNITY Research Conference.</p>
 </div></div></section>
-
-<section style="padding:clamp(60px,8vw,100px) 0 20px;background:var(--bg)"><div class="c">
-  <div class="fnote fu">
-    <div class="qmark">&ldquo;</div>
-    <blockquote>In 2023, fifteen high-school students proved a thesis that became Project UNITY: that young people, given real research, real mentorship, and a real stage, could move public health forward.</blockquote>
-    <div class="by"><strong>Morish Shah &amp; Pranav Mehta</strong> <span>&middot;</span> Co-Founders, Project UNITY</div>
-  </div>
-</div></section>
-
-<section style="padding:clamp(40px,6vw,72px) 0 var(--sp);background:var(--bg)"><div class="c">
-  <div class="sh ctr fu"><div class="sl">The Founding Year</div><h2>How It Began</h2></div>
-  <div class="tline fu">
-    <div class="tline-c" data-step="Step 01"><h4>15 Students</h4><p>The first cohort, recruited from across the country.</p></div>
-    <div class="tline-c" data-step="Step 02"><h4>8 Weeks</h4><p>Original research projects on real public-health questions.</p></div>
-    <div class="tline-c" data-step="Step 03"><h4>1st Conference</h4><p>The very first UNITY Research Conference convened.</p></div>
-    <div class="tline-c" data-step="Step 04"><h4>3 Awards</h4><p>Recognizing trailblazers, posters, and papers.</p></div>
-  </div>
-</div></section>
 
 <section style="padding:var(--sp) 0;background:var(--wh)"><div class="c">
   <div class="sh ctr fu"><div class="sl">By the Numbers</div><h2>Where Catalyst Academy Began</h2></div>
@@ -294,7 +281,7 @@ p{font-size:1.0625rem;line-height:1.7}
 
 <section style="padding:var(--sp) 0;background:var(--bg)"><div class="c">
   <div class="sh ctr fu"><div class="sl">Conference Keynote</div><h2>Headlining Our First Research Conference</h2></div>
-  <div class="key inaug fu">
+  <div class="key fu">
     <img src="images/Dr-Kedar-Mate-1.jpg" alt="Dr. Kedar Mate, MD" class="keyph">
     <div>
       <div class="keyt">2023 Keynote</div>
@@ -335,6 +322,7 @@ p{font-size:1.0625rem;line-height:1.7}
 </div>
 </section>
 
+
 <section style="padding:var(--sp) 0;background:var(--bg)"><div class="c">
   <div class="sh ctr fu"><div class="sl">Photos</div><h2>2023 Cohort Gallery</h2><p style="margin:0 auto">Highlights from the program.</p></div>
   <div class="cgal fu">
@@ -355,7 +343,7 @@ Email: '+e);" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center
 <footer class="ft"><div class="c">
   <div class="fg">
     <div class="fbr">
-      <div class="nl" style="margin-bottom:0"><img src="images/unity-mark.svg" alt="" class="umk" style="width:42px;height:42px;border-radius:10px;margin-right:10px;vertical-align:middle"><img src="images/logo-white-dark-scaled-e1774294711846.png" alt="Project UNITY" style="height:56px;width:auto;display:block"></div>
+      <div class="nl" style="margin-bottom:0"><img src="images/logo-white-dark-scaled-e1774294711846.png" alt="Project UNITY" style="height:56px;width:auto;display:block"></div>
       <p>A youth-led nonprofit transforming how the next generation leads in healthcare, public health, and digital health. Founded in 2020.</p>
     </div>
     <div><h4>Our Work</h4><ul class="fk"><li><a href="catalyst-academy.html">Catalyst Academy</a></li><li><a href="yphic.html">Y-PHIC</a></li><li><a href="research.html">Research &amp; Press</a></li></ul></div>
@@ -365,10 +353,10 @@ Email: '+e);" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center
   <div class="fbt">
     <span>&copy; Project UNITY 2026 - All Rights Reserved.</span>
     <div class="fsc">
-      <a href="https://www.instagram.com/projectunity.nfp/" target="_blank" aria-label="Instagram">IG</a>
-      <a href="https://www.youtube.com/@ProjectUNITYNFP" target="_blank" aria-label="YouTube">YT</a>
-      <a href="https://www.linkedin.com/company/project-unity-nfp" target="_blank" aria-label="LinkedIn">LI</a>
-      <a href="mailto:info@projectunitynfp.com" aria-label="Email">EM</a>
+      <a href="https://www.instagram.com/projectunity.nfp/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://www.youtube.com/@ProjectUNITYNFP" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+      <a href="https://www.linkedin.com/company/project-unity-nfp" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <a href="mailto:info@projectunitynfp.com" aria-label="Email"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
     </div>
   </div>
 </div></footer>

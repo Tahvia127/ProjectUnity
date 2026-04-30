@@ -65,12 +65,13 @@ p{font-size:clamp(.95rem,1.1vw,1.05rem)}
 .ann{background:var(--grad);color:var(--wh);text-align:center;padding:12px 20px;font-weight:600;font-size:.95rem;margin-top:96px;display:flex;align-items:center;justify-content:center;gap:8px}
 .ann a{color:var(--wh);text-decoration:underline;text-underline-offset:3px}
 
-/* Hero - sits flush under announcement */
-.hero{background:var(--dk);padding:clamp(50px,7vw,90px) 0 clamp(60px,10vw,100px);position:relative;overflow:hidden;text-align:center}
-.hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45;z-index:0;pointer-events:none}
-.hero-tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,42,74,.55) 0%,rgba(27,42,74,.7) 60%,rgba(27,42,74,.85) 100%);z-index:1;pointer-events:none}
+/* Hero - text overlaid directly on video */
+.hero{background:var(--dk);padding:clamp(80px,10vw,120px) 0 clamp(60px,8vw,90px);position:relative;overflow:hidden;text-align:center;min-height:min(82vh,760px);display:flex;align-items:center}
+.hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.6;z-index:0;pointer-events:none}
+.hero-tint{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(27,42,74,.32) 0%,rgba(27,42,74,.68) 55%,rgba(27,42,74,.94) 100%);z-index:1;pointer-events:none}
+.hero .hc h1,.hero .hc p,.hero .hc .badge{text-shadow:0 2px 28px rgba(0,0,0,.5)}
 @media(prefers-reduced-motion:reduce){.hero-vid{display:none}}
-.ann + .hero{padding-top:clamp(40px,5vw,70px)}
+.ann + .hero{padding-top:clamp(60px,8vw,100px)}
 .hero::before{content:'';position:absolute;top:-30%;right:-10%;width:70%;height:160%;background:radial-gradient(ellipse,rgba(0,201,183,.1),transparent 55%);pointer-events:none}
 .hero::after{content:'';position:absolute;bottom:-30%;left:-10%;width:50%;height:120%;background:radial-gradient(ellipse,rgba(123,45,142,.07),transparent 55%);pointer-events:none}
 .hc{position:relative;z-index:2;max-width:760px;margin:0 auto}
@@ -315,6 +316,33 @@ p{font-size:1.0625rem;line-height:1.7}
 /* Logo mark badge for compact spots */
 .umk{display:inline-block;width:48px;height:48px;border-radius:12px;vertical-align:middle}
 
+
+/* ===== Footer white v3 ===== */
+.ft{background:#FFFFFF!important;color:rgba(27,42,74,.7)!important;border-top:1px solid rgba(27,42,74,.08);padding:48px 0 24px!important}
+.ft h4{color:var(--dk)!important}
+.ft .fk a{color:rgba(27,42,74,.7)!important}
+.ft .fk a:hover{color:var(--tm)!important}
+.ft .fbr p{color:rgba(27,42,74,.6)!important}
+.ft .fbt{border-top:1px solid rgba(27,42,74,.08)!important;color:rgba(27,42,74,.55)!important}
+.ft .fsc a{background:var(--bg)!important;color:var(--dk)!important}
+.ft .fsc a:hover{background:var(--tm)!important;color:var(--wh)!important}
+.ft .fsc a svg{stroke:currentColor;display:block}
+/* ===== Tighten whitespace ===== */
+:root{--sp:clamp(40px,5.5vw,84px)!important}
+section{padding-top:clamp(40px,5vw,72px)!important;padding-bottom:clamp(40px,5vw,72px)!important}
+.sh{margin-bottom:28px!important}
+.hd{padding:clamp(80px,9vw,120px) 0 clamp(36px,5vw,60px)!important}
+
+/* ===== Remove banner/divider lines ===== */
+.ann{border:0!important;box-shadow:none!important}
+.cbc{border:0!important;box-shadow:none!important;background:transparent!important}
+.nav{border-bottom:0!important}
+.fbt{border-top:0!important}
+.yhr{display:none!important}
+.flt{border:0!important}
+hr{border:0!important;height:0!important;background:transparent!important}
+.ann + .ann{border-top:0!important}
+.nl-s{padding:48px 0!important}
 </style>
 </head>
 <body>
@@ -332,7 +360,7 @@ p{font-size:1.0625rem;line-height:1.7}
 </div></nav>
 
 <div class="ann"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:16px;height:16px;flex-shrink:0"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> NEW: APHA &amp; Project UNITY announce national partnership - <a href="https://www.apha.org/news-and-media/news-releases/apha-news-releases/apha-and-project-unity-announce-partnership" target="_blank" rel="noopener">Read announcement &rarr;</a></div>
-<div class="ann" style="margin-top:0;background:var(--dk);font-size:.88rem;padding:10px 20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:14px;height:14px;flex-shrink:0"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg> Catalyst Academy 2026 applications are now closed - 2027 applications open December 2026</div>
+<div class="ann" style="margin-top:0;background:var(--dk);font-size:.88rem;padding:10px 20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:14px;height:14px;flex-shrink:0"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg> 2027 Catalyst Academy applications open December 2026</div>
 
 <section class="hero"><video class="hero-vid" autoplay muted loop playsinline preload="auto" poster="images/hero-dna.jpg"><source src="images/hero-animation.mp4" type="video/mp4"></video><div class="hero-tint"></div><div class="c"><div class="hc fu">
   <div class="badge"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Welcome to Project UNITY</div>
@@ -354,7 +382,22 @@ p{font-size:1.0625rem;line-height:1.7}
   </div>
 </div></section>
 
-<section class="cmq"><div class="c"><div class="cml fu">Collaborators from Leading Institutions</div></div><div class="cmr"><img src="images/Albert-Einstein-College-of-Medicine-300x300.png" alt="Albert Einstein" class="cli"><img src="images/Centers-for-Disease-Control-and-Prevention-300x214.png" alt="CDC" class="cli"><img src="images/Food-Drug-Administration-300x64.png" alt="FDA" class="cli"><img src="images/Harvard-Medical-School-300x98.png" alt="Harvard Medical" class="cli"><img src="images/Johns-Hopkins-University-300x82.png" alt="Johns Hopkins" class="cli"><img src="images/Microsoft-300x64.png" alt="Microsoft" class="cli"><img src="images/Georgetown-School-of-Medicine-300x117.png" alt="Georgetown" class="cli"><img src="images/Rice-University-300x129.png" alt="Rice" class="cli"><img src="images/Yale-School-of-Public-Health-300x274.png" alt="Yale SPH" class="cli"><img src="images/Salesforce-300x210.png" alt="Salesforce" class="cli"><img src="images/Northwestern-Feinberg-School-of-Medicine-300x42.png" alt="Northwestern" class="cli"><img src="images/UC-Davis-Health-300x107.png" alt="UC Davis" class="cli"><img src="images/Albert-Einstein-College-of-Medicine-300x300.png" alt="Albert Einstein" class="cli"><img src="images/Centers-for-Disease-Control-and-Prevention-300x214.png" alt="CDC" class="cli"><img src="images/Food-Drug-Administration-300x64.png" alt="FDA" class="cli"><img src="images/Harvard-Medical-School-300x98.png" alt="Harvard Medical" class="cli"><img src="images/Johns-Hopkins-University-300x82.png" alt="Johns Hopkins" class="cli"><img src="images/Microsoft-300x64.png" alt="Microsoft" class="cli"><img src="images/Georgetown-School-of-Medicine-300x117.png" alt="Georgetown" class="cli"><img src="images/Rice-University-300x129.png" alt="Rice" class="cli"><img src="images/Yale-School-of-Public-Health-300x274.png" alt="Yale SPH" class="cli"><img src="images/Salesforce-300x210.png" alt="Salesforce" class="cli"><img src="images/Northwestern-Feinberg-School-of-Medicine-300x42.png" alt="Northwestern" class="cli"><img src="images/UC-Davis-Health-300x107.png" alt="UC Davis" class="cli"></div></section>
+<section class="cmq"><div class="c">
+  <div class="cml fu">Collaborators from Leading Institutions</div>
+  <ul class="part-list fu">
+    <li>Harvard Medical School</li>
+    <li>Centers for Disease Control</li>
+    <li>Food &amp; Drug Administration</li>
+    <li>Johns Hopkins University</li>
+    <li>Yale School of Public Health</li>
+  </ul>
+</div></section>
+<style>
+.cmq{padding:48px 0!important;text-align:center}
+.part-list{list-style:none;padding:0;margin:24px auto 0;display:flex;flex-wrap:wrap;justify-content:center;gap:14px 28px;max-width:920px}
+.part-list li{font-family:var(--fd);font-weight:600;font-size:1.05rem;color:var(--dk);padding:10px 22px;background:var(--wh);border:1px solid rgba(27,42,74,.08);border-radius:50px;box-shadow:0 4px 14px rgba(27,42,74,.04)}
+@media(max-width:720px){.part-list li{font-size:.95rem;padding:8px 16px}}
+</style>
 
 <section class="chc-s"><div class="c">
   <div class="sh ctr fu"><div class="sl">Common Health Coalition</div><h2>Project UNITY Is a Proud Member</h2></div>
@@ -559,7 +602,7 @@ Email: '+e);" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center
 <footer class="ft"><div class="c">
   <div class="fg">
     <div class="fbr">
-      <div class="nl" style="margin-bottom:0"><img src="images/unity-mark.svg" alt="" class="umk" style="width:42px;height:42px;border-radius:10px;margin-right:10px;vertical-align:middle"><img src="images/logo-white-dark-scaled-e1774294711846.png" alt="Project UNITY" style="height:56px;width:auto;display:block"></div>
+      <div class="nl" style="margin-bottom:0"><img src="images/logo-white-dark-scaled-e1774294711846.png" alt="Project UNITY" style="height:56px;width:auto;display:block"></div>
       <p>A youth-led nonprofit transforming how the next generation leads in healthcare, public health, and digital health. Founded in 2020.</p>
     </div>
     <div><h4>Our Work</h4><ul class="fk"><li><a href="catalyst-academy.html">Catalyst Academy</a></li><li><a href="yphic.html">Y-PHIC</a></li><li><a href="research.html">Research &amp; Press</a></li></ul></div>
@@ -569,10 +612,10 @@ Email: '+e);" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center
   <div class="fbt">
     <span>&copy; Project UNITY 2026 - All Rights Reserved.</span>
     <div class="fsc">
-      <a href="https://www.instagram.com/projectunity.nfp/" target="_blank" aria-label="Instagram">IG</a>
-      <a href="https://www.youtube.com/@ProjectUNITYNFP" target="_blank" aria-label="YouTube">YT</a>
-      <a href="https://www.linkedin.com/company/project-unity-nfp" target="_blank" aria-label="LinkedIn">LI</a>
-      <a href="mailto:info@projectunitynfp.com" aria-label="Email">EM</a>
+      <a href="https://www.instagram.com/projectunity.nfp/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://www.youtube.com/@ProjectUNITYNFP" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+      <a href="https://www.linkedin.com/company/project-unity-nfp" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <a href="mailto:info@projectunitynfp.com" aria-label="Email"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
     </div>
   </div>
 </div></footer>
