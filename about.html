@@ -43,7 +43,7 @@ p{font-size:clamp(.95rem,1.1vw,1.05rem)}
 
 /* Nav */
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(27,42,74,.06)}
-.ni{max-width:var(--mw);margin:0 auto;padding:0 clamp(20px,4vw,40px);display:flex;align-items:center;justify-content:space-between;height:84px}
+.ni{max-width:var(--mw);margin:0 auto;padding:0 clamp(20px,4vw,40px);display:flex;align-items:center;justify-content:space-between;height:96px}
 .nl{display:flex;align-items:center;gap:10px}
 .nli{width:34px;height:34px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center}
 .nlt{font-family:var(--fd);font-weight:700;font-size:1.05rem;color:var(--dk)}
@@ -52,7 +52,7 @@ p{font-size:clamp(.95rem,1.1vw,1.05rem)}
 .nk a{font-weight:500;font-size:.87rem;color:var(--dk);transition:color .2s;position:relative}
 .nk a:hover{color:var(--tm)}
 .nk .dd{position:relative;cursor:pointer}
-.nk .dm{position:absolute;top:calc(100% + 10px);left:-16px;background:var(--wh);border-radius:12px;box-shadow:0 12px 48px rgba(27,42,74,.1);padding:10px 0;min-width:210px;opacity:0;visibility:hidden;transform:translateY(6px);transition:all .2s}
+.nk .dm{position:absolute;top:calc(100% + 8px);left:-16px;background:var(--wh);border-radius:12px;box-shadow:0 12px 48px rgba(27,42,74,.1);padding:10px 0;min-width:210px;opacity:0;visibility:hidden;transform:translateY(6px);transition:all .2s}
 .nk .dd:hover .dm{opacity:1;visibility:visible;transform:translateY(0)}
 .dm a{display:block;padding:9px 18px;font-size:.85rem}
 .dm a:hover{background:var(--bg)}
@@ -62,7 +62,7 @@ p{font-size:clamp(.95rem,1.1vw,1.05rem)}
 .mb span{width:22px;height:2px;background:var(--dk);border-radius:2px}
 
 /* Announcement */
-.ann{background:var(--grad);color:var(--wh);text-align:center;padding:14px 20px;font-weight:600;font-size:.95rem;margin-top:84px;display:flex;align-items:center;justify-content:center;gap:8px}
+.ann{background:var(--grad);color:var(--wh);text-align:center;padding:14px 20px;font-weight:600;font-size:.95rem;margin-top:96px;display:flex;align-items:center;justify-content:center;gap:8px}
 .ann a{color:var(--wh);text-decoration:underline;text-underline-offset:3px}
 
 /* Hero */
@@ -161,7 +161,7 @@ p{font-size:clamp(.95rem,1.1vw,1.05rem)}
 @media(max-width:900px){.nk{display:none}.mb{display:flex}.ig{grid-template-columns:repeat(3,1fr);gap:14px}.is{padding:24px 14px}.g3{grid-template-columns:repeat(2,1fr)}.fg{grid-template-columns:1fr 1fr;gap:28px}}
 @media(max-width:600px){.g2{grid-template-columns:1fr}.ig{grid-template-columns:1fr}.hb{flex-direction:column;align-items:center}.nf{flex-direction:column}.fg{grid-template-columns:1fr}.fbt{flex-direction:column;gap:14px;text-align:center}}
 
-.hd{background:var(--dk);padding:clamp(70px,10vw,110px) 0 clamp(50px,7vw,80px);position:relative;overflow:hidden;margin-top:84px;text-align:center}
+.hd{background:var(--dk);padding:clamp(70px,10vw,110px) 0 clamp(50px,7vw,80px);position:relative;overflow:hidden;margin-top:96px;text-align:center}
 .hd::before{content:'';position:absolute;top:-30%;right:-10%;width:70%;height:160%;background:radial-gradient(ellipse,rgba(0,201,183,.1),transparent 55%);pointer-events:none}
 .hd::after{content:'';position:absolute;bottom:-30%;left:-10%;width:50%;height:120%;background:radial-gradient(ellipse,rgba(123,45,142,.07),transparent 55%);pointer-events:none}
 .hd .hc{max-width:740px;margin:0 auto}
@@ -191,7 +191,7 @@ p{font-size:clamp(.95rem,1.1vw,1.05rem)}
 
 
 /* Mobile nav */
-.nk.op{display:flex!important;position:fixed;top:84px;left:0;right:0;background:var(--wh);flex-direction:column;align-items:stretch;padding:18px 24px;gap:4px;box-shadow:0 12px 32px rgba(27,42,74,.08);border-top:1px solid rgba(27,42,74,.06);max-height:calc(100vh - 68px);overflow-y:auto}
+.nk.op{display:flex!important;position:fixed;top:96px;left:0;right:0;background:var(--wh);flex-direction:column;align-items:stretch;padding:18px 24px;gap:4px;box-shadow:0 12px 32px rgba(27,42,74,.08);border-top:1px solid rgba(27,42,74,.06);max-height:calc(100vh - 96px);overflow-y:auto}
 .nk.op li{width:100%}
 .nk.op .dd .dm{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding:4px 0 4px 16px;min-width:0;display:none}
 .nk.op .dd.op .dm{display:block}
@@ -204,8 +204,8 @@ p{font-size:clamp(.95rem,1.1vw,1.05rem)}
 
 
 /* A11y type bump */
-.nlg{height:56px;width:auto;display:block}
-@media(max-width:600px){.nlg{height:46px}}
+.nlg{height:74px;width:auto;display:block}
+@media(max-width:600px){.nlg{height:60px}}
 body{font-size:16.5px;line-height:1.75}
 p{font-size:clamp(1rem,1.15vw,1.125rem);line-height:1.75}
 .btn{font-size:.98rem;padding:15px 30px}
@@ -250,7 +250,7 @@ nav a:hover::after,.nm a:hover::after{width:100%}
 .subnav ul::-webkit-scrollbar{display:none}
 .subnav a{font-weight:600;font-size:.88rem;color:var(--dk);white-space:nowrap;padding:6px 0;position:relative}
 .subnav a:hover{color:var(--tm)}
-#leadership,#board,#advisory{scroll-margin-top:130px}
+#leadership,#board,#advisory{scroll-margin-top:160px}
 
 .tg{display:grid;gap:34px;margin-top:40px}.tg.c4{grid-template-columns:repeat(4,1fr)}.tg.c3{grid-template-columns:repeat(3,1fr)}
 @media(max-width:900px){.tg.c4{grid-template-columns:repeat(3,1fr)}.tg.c3{grid-template-columns:repeat(2,1fr)}}
@@ -292,6 +292,12 @@ nav a:hover::after,.nm a:hover::after{width:100%}
 .bck{display:flex;justify-content:center;gap:10px}
 .bck a{padding:7px 14px;border-radius:50px;font-size:.78rem;font-weight:600;background:var(--bg);color:var(--dk);transition:all .3s;display:inline-flex;align-items:center;gap:5px}
 .bck a:hover{background:var(--tm);color:var(--wh)}
+#advisory ~ section .g3{gap:28px}
+#advisory ~ section .cd{background:var(--wh)!important;border-radius:20px;padding:36px 28px;border:1px solid rgba(27,42,74,.04)}
+#advisory ~ section .cd img{width:200px!important;height:200px!important;margin:0 auto 22px!important;border:5px solid var(--bg)!important;box-shadow:0 8px 26px rgba(27,42,74,.08)!important}
+#advisory ~ section .cd h4{font-family:var(--fd)!important;font-weight:700!important;font-size:1.4rem!important;color:var(--dk)!important;margin-bottom:8px!important;line-height:1.25!important}
+#advisory ~ section .cd p{font-size:1rem!important;color:var(--tm)!important;font-weight:600!important}
+@media(max-width:900px){#advisory ~ section .cd img{width:160px!important;height:160px!important}#advisory ~ section .cd h4{font-size:1.15rem!important}}
 .nf input::placeholder{color:rgba(255,255,255,.3)}.nf input:focus{border-color:var(--teal)}
 .fk a{font-size:.85rem;color:rgba(255,255,255,.4);transition:color .2s}.fk a:hover{color:var(--teal)}
 .stb.v{opacity:1;transform:translateY(0)}.stb:hover{background:var(--tm);border-color:var(--tm);transform:translateY(-2px)}
@@ -330,10 +336,10 @@ nav a:hover::after,.nm a:hover::after{width:100%}
   <ul class="nk">
     <li><a href="index.html">Home</a></li>
     <li class="dd"><a href="javascript:void(0)" role="button" aria-haspopup="true">Our Work &#9662;</a><div class="dm"><a href="catalyst-academy.html">Catalyst Academy</a><a href="catalyst-academy-2025.html">2025 Cohort</a><a href="catalyst-academy-2024.html">2024 Cohort</a><a href="catalyst-academy-2023.html">2023 Cohort</a><a href="catalyst-academy.html#mentors">Mentors</a><a href="catalyst-academy.html#speakers">Guest Speakers</a><a href="yphic.html">Y-PHIC</a><a href="research.html">Research &amp; Press</a></div></li>
-    <li class="dd"><a href="javascript:void(0)" role="button" aria-haspopup="true">Get Involved &#9662;</a><div class="dm"><a href="catalyst-academy.html#apply">Apply as a Student</a><a href="catalyst-academy.html#become-mentor">Become a Mentor</a><a href="support.html">Support Us</a></div></li>
+    <li class="dd"><a href="javascript:void(0)" role="button" aria-haspopup="true">Get Involved &#9662;</a><div class="dm"><a href="catalyst-academy.html#become-mentor">Become a Mentor</a><a href="support.html">Support Us</a></div></li>
     <li class="dd"><a href="javascript:void(0)" role="button" aria-haspopup="true">About &#9662;</a><div class="dm"><a href="about.html">About Us</a><a href="about.html#leadership">Leadership</a><a href="about.html#board">Board of Directors</a><a href="about.html#advisory">Advisory Board</a></div></li>
     <li><a href="contact.html">Contact</a></li>
-    <li><a href="catalyst-academy.html#apply" class="nc">Apply Now</a></li>
+    <li><a href="catalyst-academy.html" class="nc">Catalyst Academy</a></li>
   </ul>
   <button class="mb" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </div></nav>
@@ -351,7 +357,7 @@ nav a:hover::after,.nm a:hover::after{width:100%}
 <li><a href="#board">Board</a></li>
 <li><a href="#advisory">Advisory</a></li>
 </ul></div></nav>
-<section id="overview" style="padding:var(--sp) 0;background:var(--wh);scroll-margin-top:130px">
+<section id="overview" style="padding:var(--sp) 0;background:var(--wh);scroll-margin-top:160px">
 <div class="c">
   <div class="sh ctr fu"><div class="sl">Our Approach</div><h2>How We Work</h2></div>
   <div style="max-width:680px;margin:0 auto" class="fu">
@@ -401,8 +407,20 @@ nav a:hover::after,.nm a:hover::after{width:100%}
   <p>At Project UNITY, we are committed to building a diverse, equitable, and inclusive community. We actively engage individuals from diverse racial, cultural, professional, and socio-economic backgrounds, believing that diverse perspectives strengthen our impact. We strive to cultivate a team that reflects the communities we partner with - fostering trust, youth mentorship, and lasting relationships that inspire positive health outcomes.</p>
 </div></div></section>
 
-<section id="leadership" style="padding:clamp(50px,7vw,80px) 0 20px;background:var(--wh);scroll-margin-top:130px"><div class="c">
-  <div class="sh ctr fu"><div class="sl">Our People</div><h2>Leadership</h2><p style="margin:14px auto 0;max-width:620px;color:rgba(26,26,26,.65)">Our Co-Founders &amp; Executive Directors, <strong>Morish Shah</strong> and <strong>Pranav Mehta</strong>, serve on our <a href="#board" style="color:var(--tm);font-weight:600">Board of Directors</a>. Meet the team leading programs, research, and growth below.</p></div>
+<section id="leadership" style="padding:clamp(50px,7vw,80px) 0 20px;background:var(--wh);scroll-margin-top:160px"><div class="c">
+  <div class="sh ctr fu"><div class="sl">Our People</div><h2>Leadership</h2></div>
+  <div class="bg fu" style="grid-template-columns:1fr;max-width:520px;margin:32px auto 0">
+    <article class="bc">
+      <img class="bcp" src="images/Morish-Shah.png" alt="Morish Shah">
+      <h3>Morish Shah</h3>
+      <span class="bcr">Co-Founder, Executive Director &amp; Board of Director</span>
+      <p>Morish co-founded Project UNITY in 2020 to build the public-health leadership pipeline he wished existed as a high-school student. He oversees the organization&apos;s strategy, partnerships, and long-term vision.</p>
+      <div class="bck">
+        <a href="https://www.linkedin.com/in/morish-shah/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:morish.shah@projectunitynfp.org">Email</a>
+      </div>
+    </article>
+  </div>
 </div></section><section style="padding:clamp(30px,4vw,50px) 0 var(--sp);background:var(--bg)"><div class="c fu">
   <div class="tsl">Education & Programming</div>
   <div class="tg c4 fu"><div class="tm" data-bio="m2" onclick="document.getElementById('m2').classList.add('op')">
@@ -484,23 +502,12 @@ nav a:hover::after,.nm a:hover::after{width:100%}
   <div class="mdlk"><a href="https://www.linkedin.com/in/zakariya-gordon-4b83b01b5/" target="_blank">LinkedIn</a><a href="mailto:zakariya.gordon@projectunitynfp.org">Email</a></div>
   <p>Zakariya graduated from Spelman College in Biochemistry and is pursuing her MPH at GW in Mother, Youth, and Child Health.</p>
 </div></div></div>
-</div></section><section id="board" style="padding:calc(var(--sp)*.6) 0 20px;background:var(--bg);scroll-margin-top:130px"><div class="c"><div class="sh ctr fu"><div class="sl">Our People</div><h2>Board of Directors</h2></div></div></section><section style="padding:var(--sp) 0;background:var(--bg)"><div class="c">
+</div></section><section id="board" style="padding:calc(var(--sp)*.6) 0 20px;background:var(--bg);scroll-margin-top:160px"><div class="c"><div class="sh ctr fu"><div class="sl">Our People</div><h2>Board of Directors</h2></div></div></section><section style="padding:var(--sp) 0;background:var(--bg)"><div class="c">
   <div class="bg fu">
-    <article class="bc">
-      <img class="bcp" src="images/Morish-Shah.png" alt="Morish Shah">
-      <h3>Morish Shah</h3>
-      <span class="bcr">Co-Founder &amp; Executive Director</span>
-      <p>Morish co-founded Project UNITY in 2020 to build the public-health leadership pipeline he wished existed as a high-school student. He oversees the organization&apos;s strategy, partnerships, and long-term vision.</p>
-      <div class="bck">
-        <a href="https://www.linkedin.com/in/morish-shah/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:morish.shah@projectunitynfp.org">Email</a>
-      </div>
-    </article>
-
     <article class="bc">
       <img class="bcp" src="images/Pranav-Mehta.jpg" alt="Pranav Mehta">
       <h3>Pranav Mehta</h3>
-      <span class="bcr">Co-Founder &amp; Executive Director</span>
+      <span class="bcr">Co-Founder, President of Board</span>
       <p>Pranav co-founded Project UNITY and has led programmatic growth from the first Catalyst Academy cohort through Y-PHIC&apos;s national launch. On the Board, he focuses on organizational sustainability and national partnerships.</p>
       <div class="bck">
         <a href="https://www.linkedin.com/in/pranav-mehta310/" target="_blank" rel="noopener">LinkedIn</a>
@@ -518,7 +525,7 @@ nav a:hover::after,.nm a:hover::after{width:100%}
       </div>
     </article>
   </div>
-</div></section><section id="advisory" style="padding:calc(var(--sp)*.6) 0 20px;background:var(--wh);scroll-margin-top:130px"><div class="c"><div class="sh ctr fu"><div class="sl">Our People</div><h2>Advisory Board</h2></div></div></section><section style="padding:var(--sp) 0;background:var(--wh)"><div class="c">
+</div></section><section id="advisory" style="padding:calc(var(--sp)*.6) 0 20px;background:var(--wh);scroll-margin-top:160px"><div class="c"><div class="sh ctr fu"><div class="sl">Our People</div><h2>Advisory Board</h2></div></div></section><section style="padding:var(--sp) 0;background:var(--wh)"><div class="c">
   <div class="g3 fu"><div class="cd wh" style="text-align:center;cursor:pointer" onclick="document.getElementById('a0').classList.add('op')">
   <img src="images/Dr-Ashish-Atreja.jpg" alt="Dr. Ashish Atreja, MD, MPH" style="width:90px;height:90px;border-radius:50%;object-fit:cover;margin:0 auto 14px;border:3px solid rgba(27,42,74,.04)">
   <h4>Dr. Ashish Atreja, MD, MPH</h4><p style="font-size:.82rem;color:var(--tm)">Chief Information & Digital Health Officer, UC Davis Health</p>
@@ -578,7 +585,7 @@ Email: '+e);" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center
       <p>A youth-led nonprofit transforming how the next generation leads in healthcare, public health, and digital health. Founded in 2020.</p>
     </div>
     <div><h4>Our Work</h4><ul class="fk"><li><a href="catalyst-academy.html">Catalyst Academy</a></li><li><a href="yphic.html">Y-PHIC</a></li><li><a href="research.html">Research &amp; Press</a></li></ul></div>
-    <div><h4>Get Involved</h4><ul class="fk"><li><a href="catalyst-academy.html#apply">Apply as a Student</a></li><li><a href="catalyst-academy.html#become-mentor">Become a Mentor</a></li><li><a href="support.html">Support Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>Get Involved</h4><ul class="fk"><li></li><li><a href="catalyst-academy.html#become-mentor">Become a Mentor</a></li><li><a href="support.html">Support Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     <div><h4>About</h4><ul class="fk"><li><a href="about.html">About Us</a></li><li><a href="about.html#leadership">Leadership</a></li><li><a href="about.html#board">Board of Directors</a></li><li><a href="about.html#advisory">Advisory Board</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li></ul></div>
   </div>
   <div class="fbt">

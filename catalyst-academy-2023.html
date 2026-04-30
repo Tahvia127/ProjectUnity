@@ -29,7 +29,7 @@ p{font-size:clamp(.95rem,1.1vw,1.05rem)}
 .fu{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
 .fu.v{opacity:1;transform:translateY(0)}
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(27,42,74,.06)}
-.ni{max-width:var(--mw);margin:0 auto;padding:0 clamp(20px,4vw,40px);display:flex;align-items:center;justify-content:space-between;height:84px}
+.ni{max-width:var(--mw);margin:0 auto;padding:0 clamp(20px,4vw,40px);display:flex;align-items:center;justify-content:space-between;height:96px}
 .nl{display:flex;align-items:center;gap:10px}
 .nli{width:34px;height:34px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center}
 .nlt{font-family:var(--fd);font-weight:700;font-size:1.05rem;color:var(--dk)}.nlt span{color:var(--purp);font-weight:400}
@@ -37,13 +37,13 @@ p{font-size:clamp(.95rem,1.1vw,1.05rem)}
 .nk a{font-weight:500;font-size:.87rem;color:var(--dk);transition:color .2s;position:relative}
 .nk a:hover{color:var(--tm)}
 .nk .dd{position:relative;cursor:pointer}
-.nk .dm{position:absolute;top:calc(100% + 10px);left:-16px;background:var(--wh);border-radius:12px;box-shadow:0 12px 48px rgba(27,42,74,.1);padding:10px 0;min-width:210px;opacity:0;visibility:hidden;transform:translateY(6px);transition:all .2s}
+.nk .dm{position:absolute;top:calc(100% + 8px);left:-16px;background:var(--wh);border-radius:12px;box-shadow:0 12px 48px rgba(27,42,74,.1);padding:10px 0;min-width:210px;opacity:0;visibility:hidden;transform:translateY(6px);transition:all .2s}
 .nk .dd:hover .dm{opacity:1;visibility:visible;transform:translateY(0)}
 .dm a{display:block;padding:9px 18px;font-size:.85rem}.dm a:hover{background:var(--bg)}
 .nc{padding:9px 22px;font-size:.83rem;background:var(--tm);color:var(--wh)!important;border-radius:50px;font-weight:600}.nc:hover{background:var(--teal)!important}
 .mb{display:none;background:0 0;border:0;cursor:pointer;width:30px;height:30px;flex-direction:column;justify-content:center;align-items:center;gap:5px}
 .mb span{width:22px;height:2px;background:var(--dk);border-radius:2px}
-.hd{background:var(--dk);padding:clamp(70px,10vw,110px) 0 clamp(50px,7vw,80px);position:relative;overflow:hidden;margin-top:84px;text-align:center}
+.hd{background:var(--dk);padding:clamp(70px,10vw,110px) 0 clamp(50px,7vw,80px);position:relative;overflow:hidden;margin-top:96px;text-align:center}
 .hd::before{content:'';position:absolute;top:-30%;right:-10%;width:70%;height:160%;background:radial-gradient(ellipse,rgba(0,201,183,.1),transparent 55%);pointer-events:none}
 .hd::after{content:'';position:absolute;bottom:-30%;left:-10%;width:50%;height:120%;background:radial-gradient(ellipse,rgba(123,45,142,.07),transparent 55%);pointer-events:none}
 .hd .hc{max-width:740px;margin:0 auto;position:relative;z-index:2}
@@ -102,7 +102,7 @@ p{font-size:clamp(.95rem,1.1vw,1.05rem)}
 @media(max-width:600px){.fg{grid-template-columns:1fr}.fbt{flex-direction:column;gap:14px;text-align:center}.nf{flex-direction:column}}
 
 /* Mobile nav */
-.nk.op{display:flex!important;position:fixed;top:84px;left:0;right:0;background:var(--wh);flex-direction:column;align-items:stretch;padding:18px 24px;gap:4px;box-shadow:0 12px 32px rgba(27,42,74,.08);border-top:1px solid rgba(27,42,74,.06);max-height:calc(100vh - 68px);overflow-y:auto}
+.nk.op{display:flex!important;position:fixed;top:96px;left:0;right:0;background:var(--wh);flex-direction:column;align-items:stretch;padding:18px 24px;gap:4px;box-shadow:0 12px 32px rgba(27,42,74,.08);border-top:1px solid rgba(27,42,74,.06);max-height:calc(100vh - 96px);overflow-y:auto}
 .nk.op li{width:100%}
 .nk.op .dd .dm{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding:4px 0 4px 16px;min-width:0;display:none}
 .nk.op .dd.op .dm{display:block}
@@ -115,8 +115,8 @@ p{font-size:clamp(.95rem,1.1vw,1.05rem)}
 
 
 /* A11y type bump */
-.nlg{height:56px;width:auto;display:block}
-@media(max-width:600px){.nlg{height:46px}}
+.nlg{height:74px;width:auto;display:block}
+@media(max-width:600px){.nlg{height:60px}}
 body{font-size:16.5px;line-height:1.75}
 p{font-size:clamp(1rem,1.15vw,1.125rem);line-height:1.75}
 .btn{font-size:.98rem;padding:15px 30px}
@@ -125,12 +125,12 @@ p{font-size:clamp(1rem,1.15vw,1.125rem);line-height:1.75}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:4px}
 
 /* Breadcrumb */
-.cbc{background:var(--bg);border-bottom:1px solid rgba(27,42,74,.06);padding:14px 0;margin-top:84px}
+.cbc{background:var(--bg);border-bottom:1px solid rgba(27,42,74,.06);padding:14px 0;margin-top:96px}
 .cbc ol{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:.88rem;color:rgba(27,42,74,.55)}
 .cbc a{color:var(--tm);font-weight:500}
 .cbc a:hover{color:var(--teal)}
 .cbc [aria-current]{color:var(--dk);font-weight:600}
-.ann + .cbc,.cbc{margin-top:84px}
+.ann + .cbc,.cbc{margin-top:96px}
 .cbc + section.hd,.cbc + .hd{margin-top:0}
 section.hd{margin-top:0 !important}
 /* Fix hero to not double-add top spacing when a breadcrumb sits above it */
@@ -192,10 +192,10 @@ nav a:hover::after,.nm a:hover::after{width:100%}
   <ul class="nk">
     <li><a href="index.html">Home</a></li>
     <li class="dd"><a href="javascript:void(0)" role="button" aria-haspopup="true">Our Work &#9662;</a><div class="dm"><a href="catalyst-academy.html">Catalyst Academy</a><a href="catalyst-academy-2025.html">2025 Cohort</a><a href="catalyst-academy-2024.html">2024 Cohort</a><a href="catalyst-academy-2023.html">2023 Cohort</a><a href="catalyst-academy.html#mentors">Mentors</a><a href="catalyst-academy.html#speakers">Guest Speakers</a><a href="yphic.html">Y-PHIC</a><a href="research.html">Research &amp; Press</a></div></li>
-    <li class="dd"><a href="javascript:void(0)" role="button" aria-haspopup="true">Get Involved &#9662;</a><div class="dm"><a href="catalyst-academy.html#apply">Apply as a Student</a><a href="catalyst-academy.html#become-mentor">Become a Mentor</a><a href="support.html">Support Us</a></div></li>
+    <li class="dd"><a href="javascript:void(0)" role="button" aria-haspopup="true">Get Involved &#9662;</a><div class="dm"><a href="catalyst-academy.html#become-mentor">Become a Mentor</a><a href="support.html">Support Us</a></div></li>
     <li class="dd"><a href="javascript:void(0)" role="button" aria-haspopup="true">About &#9662;</a><div class="dm"><a href="about.html">About Us</a><a href="about.html#leadership">Leadership</a><a href="about.html#board">Board of Directors</a><a href="about.html#advisory">Advisory Board</a></div></li>
     <li><a href="contact.html">Contact</a></li>
-    <li><a href="catalyst-academy.html#apply" class="nc">Apply Now</a></li>
+    <li><a href="catalyst-academy.html" class="nc">Catalyst Academy</a></li>
   </ul>
   <button class="mb" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </div></nav>
@@ -284,7 +284,7 @@ Email: '+e);" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center
       <p>A youth-led nonprofit transforming how the next generation leads in healthcare, public health, and digital health. Founded in 2020.</p>
     </div>
     <div><h4>Our Work</h4><ul class="fk"><li><a href="catalyst-academy.html">Catalyst Academy</a></li><li><a href="yphic.html">Y-PHIC</a></li><li><a href="research.html">Research &amp; Press</a></li></ul></div>
-    <div><h4>Get Involved</h4><ul class="fk"><li><a href="catalyst-academy.html#apply">Apply as a Student</a></li><li><a href="catalyst-academy.html#become-mentor">Become a Mentor</a></li><li><a href="support.html">Support Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>Get Involved</h4><ul class="fk"><li></li><li><a href="catalyst-academy.html#become-mentor">Become a Mentor</a></li><li><a href="support.html">Support Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     <div><h4>About</h4><ul class="fk"><li><a href="about.html">About Us</a></li><li><a href="about.html#leadership">Leadership</a></li><li><a href="about.html#board">Board of Directors</a></li><li><a href="about.html#advisory">Advisory Board</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li></ul></div>
   </div>
   <div class="fbt">
